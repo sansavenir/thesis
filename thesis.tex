@@ -1,0 +1,214 @@
+\documentclass[a4paper,twoside,12pt,nochapterprefix]{scrbook}
+
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[footnotesize,sl,SL,hang,tight]{subfigure}  % helpful package for aligning figures next to each other
+\usepackage{longtable} % tables over several pages
+\usepackage[font={small,sl},hang,labelfont=bf]{caption} % configure captions
+\usepackage{booktabs} % publication quality tables for LaTeX
+%\usepackage{showkeys} % shows the labels above the references for easier development
+
+\ifpdfoutput{%
+	\usepackage[pdftex]{graphicx}
+	\usepackage[]{pdfpages} %for including full pdf pages
+}{%
+	\usepackage{graphicx}
+}
+\usepackage{epstopdf}
+\epstopdfsetup{update} % only regenerate pdf files when eps file is newer
+
+\usepackage{rotating} % rotate figures
+
+\usepackage[headinclude]{scrpage2}
+
+
+% Font packages:
+\usepackage{times}
+\usepackage{helvet}   % sets sans serif font
+\usepackage[T1]{fontenc}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+
+\usepackage{tikz}
+\usepackage{blkarray}
+\usepackage{amsmath}
+\usepackage{tikz,forest}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{trees}
+
+
+%PDF hyperref config
+\ifpdfoutput{%
+	\usepackage[pdftex,
+		a4paper,
+		bookmarks,
+		bookmarksopen=true,
+		bookmarksnumbered=true,
+		pdfauthor={Jacqueline Staub},       % FILL THIS IN PROPERLY
+		pdftitle={Sound Analysis on low Quality Microphones: An Approach to a game-based Android Application},   % FILL THIS IN PRPERLY
+		colorlinks,
+		linkcolor=black,
+		citecolor=black,
+		filecolor=black,
+		urlcolor=black,
+		anchorcolor=black,
+		menucolor=black,
+		breaklinks=true,
+		pageanchor=true,
+		plainpages=false,
+		pdfpagelabels=true]{hyperref}
+}{}
+
+\ifpdfoutput{%
+	\pdfcompresslevel=9
+	\pdfoutput=1
+	\DeclareGraphicsExtensions{.pdf,.png}
+}{}
+
+\bibliographystyle{acmsiggraph}
+
+
+
+% A4
+%
+\topmargin -0.5in
+\textheight 9.3in
+\textwidth 6.3in
+\oddsidemargin 0.18in
+\evensidemargin -0.22in
+\parskip 0.1in
+\parindent 0in
+
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\baselinestretch}{1}
+
+\input{./chapters/preamble}
+\input{./chapters/bibpre}
+
+\begin{document}
+
+%% Define leading chapter pages
+%
+\input{./chapters/studchapter}
+\newpagestyle{mychapterpagestyle}{{\protect\mychpstyleintl}{\protect\mychpstyleintl}}{}
+\newpagestyle{myappendixpagestyle}{{\protect\mychpstyleintl}{\protect\mychpstyleintl}}{}
+%%
+
+%% macros e.g.
+\newcommand{\mfytext}[0]{my fancy text}
+
+%refs
+\newcommand{\chpref}[1]{Chapter \ref{#1}}
+\newcommand{\secref}[1]{Section \ref{#1}}
+%\newcommand{\equref}[1]{Equation \ref{#1}} %better use builtin \eqref{}
+\newcommand{\figref}[1]{Figure \ref{#1}}
+\newcommand{\tabref}[1]{Table \ref{#1}}
+\newcommand{\apxref}[1]{Appendix \ref{#1}}
+%%
+
+%% Replace this by your own design of a title page
+%
+%\title{Sound analysis on smartphones}
+%\author{Jacqueline Staub}
+%\date{March 2014}
+%\maketitle
+%\clearemptydoublepage
+% --- selfmade version ----
+\begin{titlepage}
+	\topmargin 1.0cm
+	\oddsidemargin 0.0cm
+	\evensidemargin 0.0cm
+	%\textwidth 6.5in
+	\centering
+	\Huge
+	\vspace{3.0cm}
+	\textbf{\textsf{Fast Polyhedra Analysis with deep Q-networks}} \\[2.0cm]
+	\vspace{3cm}
+	\sffamily
+	\Large
+	Jakub Kotal
+	\\[0.8cm]
+	\large
+	Bachelor Thesis
+	\\
+	Novemeber 2018
+	\\[1.3cm]
+	\emph{Supervisor:}\\
+	%Dr.\ My Supervisor\\ 					% The name of the thesis supervisor
+	Prof.\ Dr.\ Otmar Hilliges, 		% The supervising professor\\
+	Prof.\ Dr.\ Martin Vechev		% The supervising professor
+	\vfill
+	\includegraphics*[height=0.8cm]{figures/eth_logo_kurz_pos.eps} \hfill
+	\includegraphics*[height=0.8cm]{figures/logo-ait}
+	\vspace{3.4cm}
+\end{titlepage}
+\clearemptydoublepage
+%%
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\input{./chapters/abstract}
+\input{./chapters/acknowledgment}
+
+%-----------------------------------------------------------------------------------------------
+%include task description here:
+\cleardoublepage
+%\includegraphics[viewport=3cm 0cm 20cm 27.5cm]{task_description} %better use includepdf below!
+%\includepdf{task_description}
+\cleardoublepage
+%-----------------------------------------------------------------------------------------------
+
+%include acknowledgment here:
+%\include{acknowledgment}
+
+\tableofcontents
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\cleardoublepage
+
+\pagenumbering{arabic}
+\renewcommand*{\chapterpagestyle}{mychapterpagestyle}
+\renewcommand*{\chapterformat}{} % show chapter titles only (no numbers)
+% \setchapterpreamble[o]{...}  unfortunately does not move the \chapter output downwards
+
+% ---- MAIN PART ----
+
+
+\input{./chapters/ch01-introduction}
+\input{./chapters/ch02-background}
+\input{./chapters/ch03-related-work}
+\input{./chapters/ch04-technical-aspects}
+\input{./chapters/ch05-implementation}
+\input{./chapters/ch06-evaluation}
+\input{./chapters/ch07-conclusion}
+
+
+% ---- END MAIN PART ----
+
+
+\appendix
+\clearpage
+\renewcommand*{\chapterpagestyle}{myappendixpagestyle}
+
+\input{./chapters/appendix}
+
+\clearpage
+\renewcommand*{\chapterpagestyle}{empty}
+
+%\nocite{*}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{graphics}
+
+\end{document}

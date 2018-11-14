@@ -1,0 +1,59 @@
+\BOOKMARK [0][]{section*.4}{List of Figures}{}% 1
+\BOOKMARK [0][]{section*.6}{List of Tables}{}% 2
+\BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 3
+\BOOKMARK [1][]{section.1.1}{1.1 Problem Statement}{chapter.1}% 4
+\BOOKMARK [1][]{section.1.2}{1.2 Goals}{chapter.1}% 5
+\BOOKMARK [1][]{section.1.3}{1.3 Structure of this Document}{chapter.1}% 6
+\BOOKMARK [1][]{section.1.4}{1.4 Conventions}{chapter.1}% 7
+\BOOKMARK [0][]{chapter.2}{2 Background}{}% 8
+\BOOKMARK [1][]{section.2.1}{2.1 Debugging}{chapter.2}% 9
+\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Heap state}{section.2.1}% 10
+\BOOKMARK [2][]{subsection.2.1.2}{2.1.2 User interactions}{section.2.1}% 11
+\BOOKMARK [0][]{chapter.3}{3 Related Work}{}% 12
+\BOOKMARK [1][]{section.3.1}{3.1 DDD Debugger and PyTutorial}{chapter.3}% 13
+\BOOKMARK [1][]{section.3.2}{3.2 Static Analysis}{chapter.3}% 14
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 HeapViz and ...}{section.3.2}% 15
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Pen and touch interaction}{section.3.2}% 16
+\BOOKMARK [2][]{subsection.3.2.3}{3.2.3 Algorithm visualization}{section.3.2}% 17
+\BOOKMARK [0][]{chapter.4}{4 Technical Aspects}{}% 18
+\BOOKMARK [1][]{section.4.1}{4.1 Approach}{chapter.4}% 19
+\BOOKMARK [1][]{section.4.2}{4.2 Definitions of interactions}{chapter.4}% 20
+\BOOKMARK [1][]{section.4.3}{4.3 Semantic description of the interactions}{chapter.4}% 21
+\BOOKMARK [1][]{section.4.4}{4.4 Common Setup and system architecture}{chapter.4}% 22
+\BOOKMARK [1][]{section.4.5}{4.5 Java Debug Interface}{chapter.4}% 23
+\BOOKMARK [1][]{section.4.6}{4.6 Incremental graph drawing algorithms}{chapter.4}% 24
+\BOOKMARK [0][]{chapter.5}{5 Implementation}{}% 25
+\BOOKMARK [1][]{section.5.1}{5.1 Software Components}{chapter.5}% 26
+\BOOKMARK [1][]{section.5.2}{5.2 Graphics}{chapter.5}% 27
+\BOOKMARK [1][]{section.5.3}{5.3 Sound Analysis}{chapter.5}% 28
+\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Songs}{section.5.3}% 29
+\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 Notes}{section.5.3}% 30
+\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 Timing}{section.5.3}% 31
+\BOOKMARK [2][]{subsection.5.3.4}{5.3.4 Midi Playback}{section.5.3}% 32
+\BOOKMARK [2][]{subsection.5.3.5}{5.3.5 Noise Detection}{section.5.3}% 33
+\BOOKMARK [1][]{section.5.4}{5.4 Game Controller}{chapter.5}% 34
+\BOOKMARK [2][]{subsection.5.4.1}{5.4.1 Player}{section.5.4}% 35
+\BOOKMARK [2][]{subsection.5.4.2}{5.4.2 Score}{section.5.4}% 36
+\BOOKMARK [1][]{section.5.5}{5.5 User Interface}{chapter.5}% 37
+\BOOKMARK [0][]{chapter.6}{6 Evaluation}{}% 38
+\BOOKMARK [1][]{section.6.1}{6.1 Methodology}{chapter.6}% 39
+\BOOKMARK [1][]{section.6.2}{6.2 Experiment: Comparison of two Prototypes}{chapter.6}% 40
+\BOOKMARK [2][]{subsection.6.2.1}{6.2.1 Setup}{section.6.2}% 41
+\BOOKMARK [2][]{subsection.6.2.2}{6.2.2 Results}{section.6.2}% 42
+\BOOKMARK [1][]{section.6.3}{6.3 Experiment: Cognitive Walkthrough}{chapter.6}% 43
+\BOOKMARK [2][]{subsection.6.3.1}{6.3.1 Setup}{section.6.3}% 44
+\BOOKMARK [2][]{subsection.6.3.2}{6.3.2 Results}{section.6.3}% 45
+\BOOKMARK [1][]{section.6.4}{6.4 Long term study}{chapter.6}% 46
+\BOOKMARK [2][]{subsection.6.4.1}{6.4.1 Setup}{section.6.4}% 47
+\BOOKMARK [2][]{subsection.6.4.2}{6.4.2 Discussion}{section.6.4}% 48
+\BOOKMARK [1][]{section.6.5}{6.5 Limitations}{chapter.6}% 49
+\BOOKMARK [0][]{chapter.7}{7 Conclusion and Future Work}{}% 50
+\BOOKMARK [0][]{appendix.A}{A Appendix}{}% 51
+\BOOKMARK [1][]{section.A.1}{A.1 Controlled Comparison}{appendix.A}% 52
+\BOOKMARK [2][]{subsection.A.1.1}{A.1.1 Guides}{section.A.1}% 53
+\BOOKMARK [2][]{subsection.A.1.2}{A.1.2 Questionnaire}{section.A.1}% 54
+\BOOKMARK [1][]{section.A.2}{A.2 Cognitive Walkthrough}{appendix.A}% 55
+\BOOKMARK [2][]{subsection.A.2.1}{A.2.1 Guides}{section.A.2}% 56
+\BOOKMARK [2][]{subsection.A.2.2}{A.2.2 Questionnaire}{section.A.2}% 57
+\BOOKMARK [1][]{section.A.3}{A.3 Long Term Study}{appendix.A}% 58
+\BOOKMARK [2][]{subsection.A.3.1}{A.3.1 Guides}{section.A.3}% 59

@@ -1,0 +1,278 @@
+% !TEX root = ../thesis.tex
+
+\chapter{Fast polyhedra analysis with deep Q-networks}
+
+The goal of my work was to build upon the existing solutions, used to make polyhedra analysis more efficient and use deep Q-networks to further improve the performance. Specifically, my goal was to extend the Elina Framework, the version of it that used reinforcement learning for polyhedra analysis, in order to use deep Q networks for the Q function estimation. The work I have done can be separated into three major subtasks. First of all, I had to figure out a way of calling a deep neural network form Elina, so that I could use it for the Q function estimation. Secondly, the most interesting part was writing the training algorithm. This included choosing an adequate feature vector, modifying the reward function and testing various action selection policies. Finally, once my training algorithm was written and the link to Elina created, I could train, optimise and last of all test my algorithm. 
+\section{Incorporating Neural Networks inside Elina}
+The first part, whilst definitely being the least interesting was probably the most laborious and I very key part of the whole work. The problem was that for my Q function estimation I wanted to use neural network regression from Keras in Python. I decided to use this framework as it is very widely used for this type of problem, is relatively easy and intuitive to use whilst remaining very powerful. However, Elina being written in C, I somehow had to make the link between my Python code and the C code of Elina. I finally achieved this by using the Python/C API and embedding the python code into the Elina framework. Initialising all the python code as well as importing all the necessary libraries such as Keras, is done in the $op\_pk\_manager\_alloc()$ function so that it doesn't have to be done every time we call the join function. Inside the join function we simply have to call the learning or prediction algorithms.
+\section{Training Algorithm}
+Once this has been done, I could finally proceed to the more interesting part of writing the training algorithm. I experimented with various different training algorithms in order to obtain the best possible results, the last of which I will describe in the following paragraphs. First of all, I shall describe a broad outline of the different steps taken and afterwards I will get into more detail about the specific feature selection, reward function modelling and action selection policy.
+\subsection{Separating the problem into two}
+I decided to separate the problem into two independent subproblems. The objective of Polyhedra Analysis is to obtain the most precise result in the quickest way possible. Therefore, I separated these two objectives with two different q networks, one estimating the precision of the result and the other the time complexity of getting there. There are two main advantages to dividing the problem in such a way. Firstly, the features estimating precision and the ones estimating time complexity may very well be different. The separation therefore allows us to use only the necessary features for each subsystem making the learning and prediction less complex and therefore more precise and converge faster. Secondly, two separate subsystems allow for a more flexible algorithm post training. Since during training, we will have trained two different Q function estimators, during prediction we will have a greater possibility of optimizing our results by changing the importance we give to each subsystem at different points in time. I will get into more detail about this in the section about the action selection policy.\\
+\subsection{Problems}
+During the testing of the different training algorithms I ran into two major problems. The first of which was the divergence of the action selection strategy. Meaning that neural networks were not able of creating a consistent strategy but would be picking different actions all the time. The second of which was the divergence of the predicted Q towards infinity. In order to combat these problems, I used a combination of different methods.
+\subsection{Action replay memory}
+The first of which, was using an experience replay memory. During training, an array of the last 1000 memory objects is kept. Each memory object stores the following data: the current state features for both time complexity and precision, the action taken, the respective reward for both time complexity and precision after this action, and finally the next state features for both precision and time complexity once the action has been taken. Every n joins, we pick a random subsample of fifty memory objects from the array, compute the targets and refit the neural networks.\\
+The objective of this is to homogenize the training data. I observed that during the execution of a program, often a particular strategy would be optimal during a certain period of time and afterwards another one would be the new optimal. This caused two major problems. First of all, it is not very time efficient as we do not gain much information by learning from the same data. Secondly, as there was low diversity in the training data and the decision strategy would frequently change it either led to the neural network getting stuck in local minima or simply to diverge and not obtain a global policy. \\
+Picking a random subsample from the last 1000 joins helped to increase the variance amongst the training data allowing the network to learn a more global policy. 
+The fitting of the neural networks only begins after a certain number of joins has been done already. I decided to do this in order to decrease the training time and not give a greater probability of training on the first joins of a program, since the polyhedra are mostly relatively small at the beginning and therefore not the most interesting ones to learn from.
+\subsection{Q-estimator separation}
+Another modification I made, in order to reduce the divergence of the predicted Q values towards infinity, was to reduce the correlation between the prediction of the maximum Q value and the Q value prediction. I did this because, since the networks were being fitted based on the maximum Q value estimation, diverging towards infinity reduced their error and therefore was a valid strategy that they would use. In order to reduce this correlation, I separated the networks predicting the maximum Q value and the ones predicting the Q value. I would only update the weights of the networks predicting the maximum values every two hundred and fifty steps, so that they would still remain up to date. I also made some modifications on the neural network level to reduce this problem which I will get into inside the neural network characteristics part.
+
+\paragraph{Pseudo code of the training algorithm}
+\begin{center}
+	
+\begin{algorithm}[H]
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \textbf{function} \text{learn} $(S,A,r,\gamma,\alpha,\phi,len,l\_freq,b\_size,update\_nn\_freq)$\;
+    
+    
+    \Indp\Input{\\$S \leftarrow states, A \leftarrow Actions, r \leftarrow reward,$\\$ \gamma \leftarrow discount$ $factor, \alpha \leftarrow learning$ $rate,$\\$\phi \leftarrow$ set of feature functions over S and A \\ len $\leftarrow$ size of memory, l\_freq$\leftarrow$ learning frequency,\\ b\_size $\leftarrow$ batch size,\\ update\_nn\_freq $\leftarrow$ frequency of updating max Q estimators}\Indm
+    \Indp\Output{\\$\theta_1 \leftarrow$ trained weights of neural network for performance \\ $\theta_2 \leftarrow$ trained weights of neural network for precision}\Indm
+    \Indp
+    $\theta_1 = $ initialise random weights\\
+    $\theta_2 = $ initialise random weights\\
+    $\theta_{1\_max} = $ initialise random weights\\
+    $\theta_{2\_max} = $ initialise random weights\\
+    $m = $ initialise an empty memory\\
+    
+    \For{each episode}{
+    start with initial states $s_{pr\_0} \in S, s_{pe\_0} \in S$\\
+    \For{$t=0,1,2,...$}{
+    Initialise new memory item $m_t$\\
+    Take action $a_t$ according to the action selection algorithm \\ observe next state $s_{pr\_t+1},s_{pe\_t+1}$ and
+     $r_{pe}(s_{pe\_t},a_t,s_{pe\_t+1}),r_{pr}(s_{pr\_t},a_t,s_{pr\_t+1})$\\
+     Set $m_t.a = a_t,m_t.s_{pr\_1}=s_{pr\_t},m_t.s_{pe\_1}=s_{pe\_t},m_t.s_{pr\_2}=s_{pr\_t+1},m_t.s_{pe\_2}=s_{pe\_t+1},m_t.r_{pr}=r_{pr},m_t.r_{pe}=r_{pe}$ \\
+     
+     \Indm
+     \Indp\uIf{$m_{size} \geq len$}{
+    	del $m_0$ \\
+     	$m_{len}=m_t$
+		}
+		\uElse{
+		push $m_t$ on m
+	}\Indm
+	\Indp\uIf{$t\mod l\_freq = 0$}{
+	select a random batch of size b\_size from m\\
+	compute $Q(:,s_t)$ estimation with $\theta_1,\theta_2$\\
+	compute $Q(:,s_{t+1})$ estimation with $\theta_{1\_max},\theta_{2\_max}$\\
+	set $Q(a,s_t) = Q(a,s_t) + \gamma*max(Q(:,s_{t+1}))$\\
+	Fit weights $\theta_1,\theta_2$ with new computations from this batch
+	}\Indm
+	\Indp\uIf{$t\mod update\_nn\_freq = 0$}{
+	set $\theta_{1\_max} = \theta_1,\theta_{2\_max}= \theta_2$
+	}
+			
+    }
+    
+   }
+   \textbf{return} $\theta_1,\theta_2$
+    
+\caption{DQN Training algorithm}
+\end{algorithm}
+\end{center}
+\section{Actions}
+As for the actions, I used the same actions as were already implemented inside of the reinforcement learning algorithm. As we discussed in 3.3.1., the bottleneck of the decomposed analysis is the join. Therefore, our set of actions will be a various set of joins of different precision and performance.\\
+First of all, the cost of the joins depends on the size of the block. Therefore, bounding the the size of the block with a threshold would increase the performance. These four different thresholds are used $threshold \in [5,9],[10,14],[15,19],[20,\infty)$\\
+Once we have decided on the size of a threshold we have to equally decide on what to do if the block has a greater size than the threshold. Their are different possibilities of how to split a large block into smaller ones, but basically, one has to pick a subset of constraints to remove from the block so that all its constraints are no longer dependant and then it can be further partitioned. The following three constraint removals are used:
+\paragraph{Stoer-Wagner min-cut}\mbox{}\\
+This uses the basic idea of removing the minimal amount of constraints in order to be able to split to block into two separate permissible partitions.
+\paragraph{Weighted constraint removal}\mbox{}\\
+The second and third constraint removal techniques are based on the same principal. They associate a certain weight to each constraint  and then remove the constraint with the highest weight. Two different weight distribution techniques are considered. \\
+In the first one, we first compute for each variable $x_i \in X$ the number of constraints it appears in, we can call this $n_i$. Then for each constraint $c_i$ we set its weight to the sum of $n_i$ of all the variables that are in the constraint.\\
+The second method, we first compute for each pair of variables $x_i,x_j\in X$, $n_{ij}$ the number of constraints containing both $x_i$ and $x_j$. The weight of the constraint is then the sum of all the $n_{ij}$ of all the pairs of constraints $x_i,x_j$ contained in the constraint.\\
+The idea of removing the constraint with maximal weight, is that, most likely the variables occurring in the constraint are also bounded by other constraints and therefore will not become unbounded once the constraint is removed.
+\paragraph{Merging blocks}\mbox{}\\
+The next three actions are various block merging strategies. The idea is to select different blocks and merge them together as long as the resulting blocks remain below the threshold in order to increase the precision of the subsequent join. The following three block merging strategies are used:
+\begin{itemize}
+	\item No merge, no blocks are merged
+	\item Merge smallest first, we first merge the smallest two blocks together. We then remove the smallest block and continue as long as the resulting merge remains below the threshold.
+	\item Merge small with large, similar to the previous strategy but this time me merge the smallest block with the largest.
+\end{itemize}
+
+In total we have four different thresholds, three different constraint removal algorithms and three different block merging strategies. We can mix and match these together as we please, which means that in total we have $4\times 3\times 3 =36$ different actions we can pick.
+
+
+\section{Feature selection}
+With regards to the features I decided to use for the q function estimation. As a reminder, the objective of the features is to make possible the estimation of the q function. Therefore, in this particular case, the objective is to find features about the polyhedra that would help in the prediction of the precision and time complexity of their resulting join. The first nine features I used are the same as the reinforcement learning version of my algorithm and they remained unchanged in my version of the algorithm except for a change in their bucketing, to which I will get later. The first seven features of these features are used to characterize the complexity of the join. They are the number of blocks, minimal, maximal and average size of the blocks and the minimal, maximal and average size of the generator set. The last two features are used to characterize the precision of the inputs and they are the number of variables with a finite upper and lower bound, as well as the number of variables with a finite upper or lower bound, in both Polyhedra.\\
+One of the advantages of using deep reinforcement learning over reinforcement learning, is that we can increase the number of features without greatly increasing the complexity of the training. This allowed me to add four new features to the set, in order to further increase the accuracy of the predictions. The selection of these features was done by trial and error, with an experimental observation of an increase, or lack thereof, off accuracy. It is also possible to check whether a particular feature is useful once training it finished by analyzing the neural network and observing the impact a particular feature has on the end result. However, since at the end my network had a total of four layers, this made its analysis somewhat complicated.\\
+At the end I added a total of four new features, three of which are used for modelling the precision and one for the complexity. For the complexity I added the number of constraints. As for the precision I added the number of unconstrained variables, the number of exactly constrained variables and finally total amount of values all the bounded constraints can have (i.e. an approximation of the circumference of the polyhedra). I also tried using some features that would have perhaps modelled the precision more accurately, such as most notably approximating the volume of the polyhedra. Unfortunately, one must also consider the complexity of computing the features. The computation of the volume approximation was far too time complex, which greatly increased the learning time making the feature not viable.\\
+Another advantage of deep reinforcement learning is that the Q function is approximated with a neural network and not a matrix. The problem with the matrix representation is that increasing the number and size of features greatly increases the dimensions of the matrix. Causing quite large constraints on the size of the future vector that one can use. Deep reinforcement learning does not suffer from this. Because of this it was possible for me to remove the very constrictive bucketing method of the reinforcement learning algorithm. I still implemented a version of bucketing in my algorithm for three main reasons. \\
+Firstly, different levels are necessary for different features. For example, for the feature that approximates the circumference of the polyhedra, its total value can be very big and and if it is a million and one or just a million doesn't impact the resulting precision much therefore bucketing makes sense. \\
+The second reason, for the use of bucketing is that it greatly decreases the learning time and helps convergence. \\
+Finally, the last reason is that the decision policy doesn't give more importance to some features simply because they are greater than others. In my total of thirteen different features, they all can have very different values. For example, the number of blocks varies mainly between zero and ten, and the circumference of the polyhedra can go up to $10^9$. This does not mean that the circumference has a greater impact on the overall precision of the polyhedra. Bucketing assures that all features have a similar impact on the decision policy.\\
+In order to decide the values of the bucketing I would use, I ran my algorithm and a big number of benchmarks computing the maximal, minimal and average values the different features could have. Finally, I scaled them so that they would all approximately remain between the bounds of zero and ten. And bucketed in the following fashion:
+\begin{center}
+
+ \Indm\Indm\Indm\begin{tabular}{||c c c c||} 
+ 
+ \hline
+ Feature & Extraction complexity & Approximate range & Scaling \\ [0.5ex] 
+ \hline\hline
+ $|\beta|$ & $O(1)$ & 1-10 & $x/1.$ \\ 
+ \hline
+ $min(|\chi_k|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-50 & $round((x/5),0.5)$ \\
+ \hline
+ $max(|\chi_k|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-50 & $round((x/5),0.5)$ \\
+ \hline
+ $avg(|\chi_k|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-50 & $round((x/5),0.5)$ \\
+ \hline
+ $min(|\bigcup G_{P_{m}}(\chi_k)|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-10000 & $round((x/1000),0.1)$ \\ 
+ \hline
+ $max(|\bigcup G_{P_{m}}(\chi_k)|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-10000 & $round((x/1000),0.1)$ \\ 
+ \hline
+ $avg(|\bigcup G_{P_{m}}(\chi_k)|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-10000 & $round((x/1000),0.1)$ \\ 
+ \hline
+ $\{|x_i \in X: x_i \in (-\infty,\infty)$ in $P_m|\}$ & $O(ng)$ & 1-100 & $round((x/10),0.5)$ \\ 
+ \hline
+ $\{|x_i \in X: x_i \in [l_m,\infty)$ in $P_m|\} + $\\$ \{|x_i \in X: x_i \in (-\infty,u_m]$ in $P_m|\} $ & $O(ng)$ & 1-50 & $round((x/5),0.5)$ \\ 
+  \hline
+ $\{|x_i \in X: x_i \in [l_m,u_m]$ in $P_m|\}$ & $O(ng)$ & 1-50 & $round((x/5),0.5)$ \\ 
+   \hline
+ $\{|x_i \in X: x_i \in [u_m,u_m]$ in $P_m|\}$ & $O(1)$ & 1-200 & $round((x/20),0.2)$ \\ 
+    \hline
+ $|X|$ & $O(ng)$ & 1-50 & $round((x/5),0.5)$ \\ 
+    \hline
+ $\sum (u_m-l_m):u_m,l_m \in\{[l_m,u_m]$ in $P_m \}$ & $O(ng)$ & $2*10^9$ & $round((x/2*10^8),0.01)$ \\ 
+ 
+ 
+ \hline
+\end{tabular}
+\end{center}
+One thing to note is, that as opposed to the reinforcement learning algorithm, my features do not have a maximal possible value. I believe that this increases the precision of the q function estimation, especially for the approximation of the complexity. Certain features can have very large values and I believe when this arrives, it has a major impact on the complexity of the join. However, these very large values were ignored by the bucketing of the reinforcement learning algorithm. 
+\section{Reward Function modelling}
+Due to the nature of my algorithm, the modelling of the reward function was separated into two separate subproblems. Firstly, the modelling of the complexity reward and then the modelling of the precision reward. Modelling the complexity is fairly simple and very straight forward, as it calculating the number of cycles needed for the computer to do the join perfectly models the complexity and is exactly what we want to improve on. One thing to note is that we want this reward to be as small as possible, two simple solutions for this are either to invert it or to negate it. I experimented with both of these and found that negating it produces better results. I assume this is due to the fact that inverting the reward, make it have a nonlinear curve and derivative loses importance the higher the CPU cycles are, which is not something we want. Another thing to note is that modelling the complexity reward in this way give us another advantage over the reinforcement learning version of the algorithm. The reinforcement learning algorithm took the logarithm of 10 of the CPU Cycles in order to have both the complexity and the precision reward to have similar values. I believe that this produces a similar problem as when we inverse the reward. The reward no longer linear and its differences loose importance the higher it gets. However, this is not something that we want to model.\\
+As to the second reward, modelling the precision of the resulting join. This is considerably more difficult than modelling the complexity as there is no trivial element giving us the precision of our polyhedron. In order to choose the reward, I proceeded in intuitively picking a small set of options and verifying them experimentally at the end. I took the first one from the reinforcement learning algorithm, that is, the objective is to maximize the amount of exactly bounded, bounded and half bounded variables. The second is a direct extension of the first but penalizing the number of unbounded variables. The third is a further extension by penalizing the amount of values a bounded variable can have in the resulting Polyhedra. The final, reward function is slightly different. In this one, I penalize the loss of an exactly bounded, bounded or half bounded variable. Reward the loss of a bounded variable and penalize the amount of values a bounded variable can have. I also tried basing a reward function on an approximation of the volume of the resulting Polyhedra, unfortunately, similarly to the case of the features, the complexity of this computation was too high which made it too impractical to use in practice.
+
+\section{Action selection algorithms}
+As discussed before, I separated the Q function estimation into two separate subproblems. As I already mentioned earlier, this allows a certain amount of benefits that would not be possible otherwise. However, it also imposes one major complication. These two problems are not totally separable, as once we have predicted the two q function estimations, we have to somehow merge the information contained in both of these estimations and pick an ideal action accordingly. I tried out a few different action selection algorithms in order to find the one that maximises precision and performance the most. One thing to note is that it is at least partially possible to test out these algorithms post training. That is to say that we do not have to train using these in order to measure their performance afterwards. This only works if we train purely randomly however. As if, if we were to train using one selection algorithm and then test with another, this would surely deteriorate the results. The fact that we are able to test the selection algorithms after random training is still very helpful as the training time is relatively high and having to train for each algorithm would be very time intensive.
+\paragraph{Algorithm 1}\mbox{}\\
+The first selection algorithm I used is perhaps the most intuitive one. First scaling both q function estimations. The performance one between [-1,0] and the precision one between [0,1]. Adding the values together and picking the action with the maximal value. Whilst seeming very fair this type of selection has a couple of fundamental flaws. First of all, reinforcement learning estimates the best action to take in order to maximise the long-term objective, it however has less of a guarantee about the second to best and third to best action. This means that if the network is well trained, the chances that the action with the maximal Q-value prediction is also the best action to take at this point in time should be quite high. However, the guarantee that the action with the second highest Q-value prediction is the second-best action to take is much smaller. Using this selection algorithm tends to quite often not choose the best action but the second best or the third etc... making the probability that they are also good actions also a lot smaller. The second problem with this type of selection algorithm is that scaling the reward function causes a loss of information that could be very important. I will demonstrate this with an example, %TODO fix  '
+let's say we have four joins j1,j2,j3,j4. J1 takes one second, j2 ten seconds, j3 one hour and j4 ten hours. Let's also say that j1 and more precise than j2 and j3 is more precise than j5. This algorithm is going to treat the difference between j1 and j2 the same as the one between j3 and j4, even though the gain in precision might be worth to loss in performance for the case of j1 and j2, whilst this would probably not be case for j3 and j4.
+\paragraph{Pseudo code of algorithm 1}
+\begin{center}
+\begin{algorithm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \textbf{function} \text{select1} $(Q_{pr},Q_{pe})$\;
+    
+    
+    \Indp\Input{\\$Q_{pr}\leftarrow$array of Q-function estimations for precision,\\$Q_{pr}\leftarrow$array of Q-function estimations for performance}\Indm
+    \Indp\Output{\\$a \leftarrow$ action to take} \Indm
+    \Indp
+    $Q_{pr} = Q_{pr}/max(Q_{pr})$\\
+    $Q_{pe} = Q_{pe}/min(Q_{pe})$\\
+    $a = max_{arg}(Q_{pr}+Q_{pe})$
+    
+  
+   \textbf{return} $a$
+
+\caption{Action selection algorithm 1}
+\end{algorithm}
+\end{center}
+\paragraph{Algorithm 2}\mbox{}\\
+The second algorithm used, that directly confront both problems of the previous algorithm proceeds as follows. We set some sort of threshold for the performance. We then look at the action that has the maximal Q-value for precision. If this actions Q-value for performance is above the threshold we take it otherwise we take the second-best action and continue until we find an action that is above the threshold. Again, this algorithm seems quite good at first glance and maybe if it was executed perfectly it would be the best option, but like the one before it has some fundamental problems. First of all, picking a threshold is not a very simple task. The q function estimator is a regression neural network, the activation function of its last layer is linear, this means that the output values are unbounded and they do not have a direct correlation with Realtime CPU cycles. In order to pick a threshold, I had to experimentally try different possible values and observe the resulting precision and adjust accordingly, however this threshold would vary according to the benchmark and therefore choosing an optimal one was a very difficult task on its own. Another problem of this algorithm is that If no action has a q performance estimation above the threshold the algorithm will choose the action with the worst precision, and this one does not even have to have the best performance estimation. 
+\paragraph{Pseudo code of algorithm 2}
+\begin{center}
+	\begin{algorithm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \textbf{function} \text{select2} $(Q_{pr},Q_{pe},PE_{thresh})$\;
+    
+    
+    \Indp\Input{\\$Q_{pr}\leftarrow$array of Q-function estimations for precision,\\$Q_{pr}\leftarrow$array of Q-function estimations for performance,\\ $PE_{thresh}\leftarrow$performance threshold}\Indm
+    \Indp\Output{\\$a \leftarrow$ action to take} \Indm
+    \Indp
+    \While{$max(Q_{pr})\neq 0$}{
+    a = $max_{arg}(Q_{pr})$\\
+    \uIf{$Q_{pe}(a)\geq PE_{thresh}$}{
+    break;
+    }
+    $Q_{pr}(a)=0$
+    }
+    
+   
+  
+   \textbf{return} $a$
+   
+    
+\caption{Action selection algorithm 2}
+\end{algorithm}
+\end{center}
+\paragraph{Algorithm 3}\mbox{}\\
+Another possibility is to slightly modify the previous algorithm in order to minimise some of its short comings. This time we set both some sort of a threshold for the performance and a certain number x. if the action that has the highest precision estimation is under the threshold for performance, we take the x best actions according to their precision and take the one that has the highest performance estimation. The problem of picking an appropriate threshold remains the same and this time we have the further problem of picking a correct value for x. However, the case that all actions are under the threshold is no longer a problem. It is worth noting that this algorithm also has a greater time complexity, however this is still greatly outweighed if the correct action is taken.
+\paragraph{Pseudo code algorithm 3}
+\begin{center}
+	\begin{algorithm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \textbf{function} \text{select3} $(Q_{pr},Q_{pe},PE_{thresh},N_{act})$\;
+    
+    
+    \Indp\Input{\\$Q_{pr}\leftarrow$array of Q-function estimations for precision,\\$Q_{pr}\leftarrow$array of Q-function estimations for performance,\\ $PE_{thresh}\leftarrow$performance threshold, \\$N_{act}\leftarrow$number of actions to consider if below threshold}\Indm
+    \Indp\Output{\\$a \leftarrow$ action to take} \Indm
+    \Indp
+   	$a=max_{arg}(Q_{pr})$\\
+   	\uIf{$Q_{pe}(a)\leq PE_{thresh}$}{
+   		$a_{max}=a$\\
+   		$val_{max}=Q_{pr}(a)$\\
+   		$Q_{pr}(a)=0$\\
+   		\For{$i \in N_{act}$}{
+		   	$a=max_{arg}(Q_{pr})$\\
+		   	\uIf{$Q_{pe}(a)\geq val_{max}$}{
+		   		$a_{max}=a$\\
+		   		$val_{max} = Q_{pe}(a)$
+		   	}
+		   	$Q_{pr}(a) = 0$
+   		}
+   	}
+    
+   
+  
+   \textbf{return} $a_{max}$
+   
+    
+\caption{Action selection algorithm 3}
+\end{algorithm}
+\end{center}
+\paragraph{Algorithm 4}\mbox{}\\
+Finally, the last selection algorithm that I will talk about here is based upon the last one and made in such a way as to reduce the importance of correct parameter choosing. This time we begin by scaling the performance prediction to [-1,0]. We set a threshold to [0,1]. We pick the action that has the highest precision q estimation. If the absolute value of this action's performance estimation minus the maximal performance estimation is below the threshold, then we pick this action otherwise we pick the second-best precision action until we find one that is below the threshold. This time, since we compare to the best performance action we are guaranteed to be below the threshold at some point, in the worst case we will pick the action with the best performance. The threshold is also a lot easier to set since it is bounded. Unfortunately, once again we have the problem caused by the scaling of the performance estimation. However, after some experimental observation, I saw that when the join is fast all the q performance estimations tend to be quite close together, so hopefully this will not be all too much of a problem.
+\paragraph{Pseudo code algorithm 4}
+\begin{center}
+	\begin{algorithm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \textbf{function} \text{select4} $(Q_{pr},Q_{pe},PE_{thresh})$\;
+    
+    
+    \Indp\Input{\\$Q_{pr}\leftarrow$array of Q-function estimations for precision,\\$Q_{pr}\leftarrow$array of Q-function estimations for performance,\\ $PE_{thresh}\leftarrow$performance threshold}\Indm
+    \Indp\Output{\\$a \leftarrow$ action to take} \Indm
+    \Indp
+    $Q_{pr} = Q_{pr}/max(Q_{pr})$\\
+    $Q_{pe} = Q_{pe}/min(Q_{pe})$\\
+	\While{$True$}{
+		$a=max_{arg}(Q_{pr})$\\
+		\uIf{$Q_{pe}(a)+PE_{thresh}\geq max(Q_{pe})$}{
+			break;
+		}
+		$Q_{pr}(a) = 0$
+	}    
+   
+  
+   \textbf{return} $a$
+   
+    
+\caption{Action selection algorithm 4}
+\end{algorithm}
+\end{center}
+\section{Neural network characteristics}
+As for the characteristics of the neural network that I used. I started with a relatively small neural network and the grew it progressively as I expanded the number of vectors and the size that these can have. In the final version I use a fully connected neural network with four hidden layers of two hundred nodes each. They have each thirteen inputs, one for each feature and thirty-six outputs, one for each action. The first three layers use the Relu activation function and the last one uses a linear activation, since the rewards can be either negative or positive. I use stochastic gradient descent for updating the weights of the nodes and I clip its norm to 1. I do this in order to avoid the exploding gradients problem and prevent the predicted values to diverge towards infinity. I use the mean squared error in order to calculate the loss, I as well clip this to [-1,1] in order for the predicted values to not diverge towards infinity. I based the characteristics of my neural networks based on reading as these types of networks seem to be the most widely used ones for deep reinforcement learning. It is worth noting that I have not done much parameter optimization on my neural networks as the training time of the algorithm is quite long which would make the parameter optimization a very tedious task. It is also worth noting that I use the same network models for both performance and precision prediction.
+\section{Training}
+The training of the algorithm was done in multiple stages. During the first stage, only random actions were picked. This was done in order for the algorithm not to get stuck in local maxima but have the most global policy possible. I also did not have any time constraints about the length of training so I could afford to proceed in this way in order to get the best possible results. Throughout the next stages, the training was separated into two. One concentrating on the precision and the other on the performance. All the actions were no longer chosen randomly, but now the action with the highest predicted value was chosen. The probability with which we chose a random action was progressively decreased throughout training. This was done in order to reinforce the choice of the best action and increase convergence speed. Once these stages finished, we would have two separate systems each optimized for their own task. In the final stage, I would then combine both of the systems and do a final training phase with the chosen action selecting algorithm as described above. I did this in order to further optimize the decision policy for the action selection algorithm.\\
+This method of training is quite time intensive. I proceeded in this way since time was not a big factor but the end results were more important. A more efficient training strategy can surely be found if this is needed.
