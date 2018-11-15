@@ -22,50 +22,52 @@
 \BOOKMARK [2][]{subsection.3.4.2}{3.4.2 Existing methods}{section.3.4}% 22
 \BOOKMARK [0][]{chapter.4}{4 Fast polyhedra analysis with deep Q-networks}{}% 23
 \BOOKMARK [1][]{section.4.1}{4.1 Incorporating Neural Networks inside Elina}{chapter.4}% 24
-\BOOKMARK [1][]{section.4.2}{4.2 Training Algorithm}{chapter.4}% 25
-\BOOKMARK [2][]{subsection.4.2.1}{4.2.1 Separating the problem into two}{section.4.2}% 26
-\BOOKMARK [2][]{subsection.4.2.2}{4.2.2 Problems}{section.4.2}% 27
-\BOOKMARK [2][]{subsection.4.2.3}{4.2.3 Action replay memory}{section.4.2}% 28
-\BOOKMARK [2][]{subsection.4.2.4}{4.2.4 Q-estimator separation}{section.4.2}% 29
-\BOOKMARK [1][]{section.4.3}{4.3 Actions}{chapter.4}% 30
-\BOOKMARK [1][]{section.4.4}{4.4 Feature selection}{chapter.4}% 31
-\BOOKMARK [1][]{section.4.5}{4.5 Reward Function modelling}{chapter.4}% 32
-\BOOKMARK [1][]{section.4.6}{4.6 Action selection algorithms}{chapter.4}% 33
-\BOOKMARK [1][]{section.4.7}{4.7 Neural network characteristics}{chapter.4}% 34
-\BOOKMARK [1][]{section.4.8}{4.8 Training}{chapter.4}% 35
-\BOOKMARK [0][]{chapter.5}{5 Implementation}{}% 36
-\BOOKMARK [1][]{section.5.1}{5.1 Software Components}{chapter.5}% 37
-\BOOKMARK [1][]{section.5.2}{5.2 Graphics}{chapter.5}% 38
-\BOOKMARK [1][]{section.5.3}{5.3 Sound Analysis}{chapter.5}% 39
-\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Songs}{section.5.3}% 40
-\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 Notes}{section.5.3}% 41
-\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 Timing}{section.5.3}% 42
-\BOOKMARK [2][]{subsection.5.3.4}{5.3.4 Midi Playback}{section.5.3}% 43
-\BOOKMARK [2][]{subsection.5.3.5}{5.3.5 Noise Detection}{section.5.3}% 44
-\BOOKMARK [1][]{section.5.4}{5.4 Game Controller}{chapter.5}% 45
-\BOOKMARK [2][]{subsection.5.4.1}{5.4.1 Player}{section.5.4}% 46
-\BOOKMARK [2][]{subsection.5.4.2}{5.4.2 Score}{section.5.4}% 47
-\BOOKMARK [1][]{section.5.5}{5.5 User Interface}{chapter.5}% 48
-\BOOKMARK [0][]{chapter.6}{6 Evaluation}{}% 49
-\BOOKMARK [1][]{section.6.1}{6.1 Methodology}{chapter.6}% 50
-\BOOKMARK [1][]{section.6.2}{6.2 Experiment: Comparison of two Prototypes}{chapter.6}% 51
-\BOOKMARK [2][]{subsection.6.2.1}{6.2.1 Setup}{section.6.2}% 52
-\BOOKMARK [2][]{subsection.6.2.2}{6.2.2 Results}{section.6.2}% 53
-\BOOKMARK [1][]{section.6.3}{6.3 Experiment: Cognitive Walkthrough}{chapter.6}% 54
-\BOOKMARK [2][]{subsection.6.3.1}{6.3.1 Setup}{section.6.3}% 55
-\BOOKMARK [2][]{subsection.6.3.2}{6.3.2 Results}{section.6.3}% 56
-\BOOKMARK [1][]{section.6.4}{6.4 Long term study}{chapter.6}% 57
-\BOOKMARK [2][]{subsection.6.4.1}{6.4.1 Setup}{section.6.4}% 58
-\BOOKMARK [2][]{subsection.6.4.2}{6.4.2 Discussion}{section.6.4}% 59
-\BOOKMARK [1][]{section.6.5}{6.5 Limitations}{chapter.6}% 60
-\BOOKMARK [0][]{chapter.7}{7 Conclusion and Future Work}{}% 61
-\BOOKMARK [0][]{appendix.A}{A Appendix}{}% 62
-\BOOKMARK [1][]{section.A.1}{A.1 Controlled Comparison}{appendix.A}% 63
-\BOOKMARK [2][]{subsection.A.1.1}{A.1.1 Guides}{section.A.1}% 64
-\BOOKMARK [2][]{subsection.A.1.2}{A.1.2 Questionnaire}{section.A.1}% 65
-\BOOKMARK [1][]{section.A.2}{A.2 Cognitive Walkthrough}{appendix.A}% 66
-\BOOKMARK [2][]{subsection.A.2.1}{A.2.1 Guides}{section.A.2}% 67
-\BOOKMARK [2][]{subsection.A.2.2}{A.2.2 Questionnaire}{section.A.2}% 68
-\BOOKMARK [1][]{section.A.3}{A.3 Long Term Study}{appendix.A}% 69
-\BOOKMARK [2][]{subsection.A.3.1}{A.3.1 Guides}{section.A.3}% 70
-\BOOKMARK [0][]{section*.32}{Bibliography}{}% 71
+\BOOKMARK [1][]{section.4.2}{4.2 Basic algorithm}{chapter.4}% 25
+\BOOKMARK [2][]{subsection.4.2.1}{4.2.1 Features}{section.4.2}% 26
+\BOOKMARK [1][]{section.4.3}{4.3 Actions}{chapter.4}% 27
+\BOOKMARK [1][]{section.4.4}{4.4 Reward}{chapter.4}% 28
+\BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Experience replay memory}{section.4.4}% 29
+\BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Q-estimator separation}{section.4.4}% 30
+\BOOKMARK [1][]{section.4.5}{4.5 Further optimisations}{chapter.4}% 31
+\BOOKMARK [2][]{subsection.4.5.1}{4.5.1 Separating the problem into two}{section.4.5}% 32
+\BOOKMARK [1][]{section.4.6}{4.6 Feature selection}{chapter.4}% 33
+\BOOKMARK [1][]{section.4.7}{4.7 Reward Function modelling}{chapter.4}% 34
+\BOOKMARK [1][]{section.4.8}{4.8 Action selection algorithms}{chapter.4}% 35
+\BOOKMARK [1][]{section.4.9}{4.9 Neural network characteristics}{chapter.4}% 36
+\BOOKMARK [1][]{section.4.10}{4.10 Training}{chapter.4}% 37
+\BOOKMARK [0][]{chapter.5}{5 Implementation}{}% 38
+\BOOKMARK [1][]{section.5.1}{5.1 Software Components}{chapter.5}% 39
+\BOOKMARK [1][]{section.5.2}{5.2 Graphics}{chapter.5}% 40
+\BOOKMARK [1][]{section.5.3}{5.3 Sound Analysis}{chapter.5}% 41
+\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Songs}{section.5.3}% 42
+\BOOKMARK [2][]{subsection.5.3.2}{5.3.2 Notes}{section.5.3}% 43
+\BOOKMARK [2][]{subsection.5.3.3}{5.3.3 Timing}{section.5.3}% 44
+\BOOKMARK [2][]{subsection.5.3.4}{5.3.4 Midi Playback}{section.5.3}% 45
+\BOOKMARK [2][]{subsection.5.3.5}{5.3.5 Noise Detection}{section.5.3}% 46
+\BOOKMARK [1][]{section.5.4}{5.4 Game Controller}{chapter.5}% 47
+\BOOKMARK [2][]{subsection.5.4.1}{5.4.1 Player}{section.5.4}% 48
+\BOOKMARK [2][]{subsection.5.4.2}{5.4.2 Score}{section.5.4}% 49
+\BOOKMARK [1][]{section.5.5}{5.5 User Interface}{chapter.5}% 50
+\BOOKMARK [0][]{chapter.6}{6 Evaluation}{}% 51
+\BOOKMARK [1][]{section.6.1}{6.1 Methodology}{chapter.6}% 52
+\BOOKMARK [1][]{section.6.2}{6.2 Experiment: Comparison of two Prototypes}{chapter.6}% 53
+\BOOKMARK [2][]{subsection.6.2.1}{6.2.1 Setup}{section.6.2}% 54
+\BOOKMARK [2][]{subsection.6.2.2}{6.2.2 Results}{section.6.2}% 55
+\BOOKMARK [1][]{section.6.3}{6.3 Experiment: Cognitive Walkthrough}{chapter.6}% 56
+\BOOKMARK [2][]{subsection.6.3.1}{6.3.1 Setup}{section.6.3}% 57
+\BOOKMARK [2][]{subsection.6.3.2}{6.3.2 Results}{section.6.3}% 58
+\BOOKMARK [1][]{section.6.4}{6.4 Long term study}{chapter.6}% 59
+\BOOKMARK [2][]{subsection.6.4.1}{6.4.1 Setup}{section.6.4}% 60
+\BOOKMARK [2][]{subsection.6.4.2}{6.4.2 Discussion}{section.6.4}% 61
+\BOOKMARK [1][]{section.6.5}{6.5 Limitations}{chapter.6}% 62
+\BOOKMARK [0][]{chapter.7}{7 Conclusion and Future Work}{}% 63
+\BOOKMARK [0][]{appendix.A}{A Appendix}{}% 64
+\BOOKMARK [1][]{section.A.1}{A.1 Controlled Comparison}{appendix.A}% 65
+\BOOKMARK [2][]{subsection.A.1.1}{A.1.1 Guides}{section.A.1}% 66
+\BOOKMARK [2][]{subsection.A.1.2}{A.1.2 Questionnaire}{section.A.1}% 67
+\BOOKMARK [1][]{section.A.2}{A.2 Cognitive Walkthrough}{appendix.A}% 68
+\BOOKMARK [2][]{subsection.A.2.1}{A.2.1 Guides}{section.A.2}% 69
+\BOOKMARK [2][]{subsection.A.2.2}{A.2.2 Questionnaire}{section.A.2}% 70
+\BOOKMARK [1][]{section.A.3}{A.3 Long Term Study}{appendix.A}% 71
+\BOOKMARK [2][]{subsection.A.3.1}{A.3.1 Guides}{section.A.3}% 72
+\BOOKMARK [0][]{section*.36}{Bibliography}{}% 73
