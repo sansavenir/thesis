@@ -63,39 +63,29 @@
 \contentsline {paragraph}{\nonumberline Pseudo code algorithm 4}{27}{section*.35}
 \contentsline {section}{\numberline {4.9}Neural network characteristics}{28}{section.4.9}
 \contentsline {section}{\numberline {4.10}Training}{28}{section.4.10}
-\contentsline {chapter}{\numberline {5}Implementation}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}Software Components}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Graphics}{31}{section.5.2}
-\contentsline {section}{\numberline {5.3}Sound Analysis}{31}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Songs}{31}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Notes}{31}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Timing}{31}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Midi Playback}{31}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Noise Detection}{32}{subsection.5.3.5}
-\contentsline {section}{\numberline {5.4}Game Controller}{32}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Player}{32}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Score}{32}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}User Interface}{32}{section.5.5}
-\contentsline {chapter}{\numberline {6}Evaluation}{33}{chapter.6}
-\contentsline {section}{\numberline {6.1}Methodology}{33}{section.6.1}
-\contentsline {section}{\numberline {6.2}Experiment: Comparison of two Prototypes}{33}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Setup}{33}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Results}{33}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Experiment: Cognitive Walkthrough}{33}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Setup}{33}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Results}{33}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Long term study}{34}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Setup}{34}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Discussion}{34}{subsection.6.4.2}
-\contentsline {section}{\numberline {6.5}Limitations}{34}{section.6.5}
-\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{35}{chapter.7}
-\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}
-\contentsline {section}{\numberline {A.1}Controlled Comparison}{37}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Guides}{37}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Questionnaire}{37}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}Cognitive Walkthrough}{37}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Guides}{37}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Questionnaire}{37}{subsection.A.2.2}
-\contentsline {section}{\numberline {A.3}Long Term Study}{37}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Guides}{38}{subsection.A.3.1}
-\contentsline {chapter}{Bibliography}{39}{section*.36}
+\contentsline {chapter}{\numberline {5}Results}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Reward function selection}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}Action selection algorithm}{32}{section.5.2}
+\contentsline {chapter}{\numberline {6}Evaluation}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Methodology}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Experiment: Comparison of two Prototypes}{35}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Setup}{35}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Results}{35}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Experiment: Cognitive Walkthrough}{35}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Setup}{35}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Results}{35}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Long term study}{36}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Setup}{36}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Discussion}{36}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}Limitations}{36}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{37}{chapter.7}
+\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}
+\contentsline {section}{\numberline {A.1}Controlled Comparison}{39}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Guides}{39}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Questionnaire}{39}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}Cognitive Walkthrough}{39}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Guides}{39}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Questionnaire}{39}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Long Term Study}{39}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Guides}{40}{subsection.A.3.1}
+\contentsline {chapter}{Bibliography}{41}{section*.36}

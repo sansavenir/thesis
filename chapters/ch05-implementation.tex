@@ -1,54 +1,88 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Implementation}
+\chapter{Results}
+As described in the previous chapter, different strategies were elaborated for the reward function and the action selection algorithm. Training all possible combinations and then observing the end precision would be a viable way of finding the optimal combination of these. However, due to the training time of the algorithm, this would be very time intensive. I used the following techniques in order to find the best algorithms.
+\section{Reward function selection}
+As a reminder, if we view the problem as a decision tree, and the role of reinforcement learning to pick the best path at each node. The reward function can be viewed as the compass of the RL algorithm that should leading the algorithm to the end in such a way as to maximise the global goal.\\
+I decided to measure the effectiveness of each reward function by observing if the direction it steered the algorithm to, was indeed correctly maximising this global goal. To achieve this, I would first train an algorithm with each of the different reward functions. Once this was done, I modified the Q-learning version of the algorithm so that during testing it would measure each of the different reward functions. As a reminder, the Q-learning algorithm was trained with the following reward function:
+\begin{equation}
+	r(s_t,a_t,s_{t+1}) = 3  \cdot n_s + 2 \cdot n_b + n_{hb} - \log_{10}(cyc)
+\end{equation}
+I would then run the Q-learning algorithm and each of the reward function algorithms measuring their reward during the execution. The decision of wether or not the reward function was correct was then made with the following rule:\\
+If the reward of the deep Q-network algorithm was higher than the one of the Q-learning algorithm, but its overall precision was not higher. This would imply that the deep Q-network was correctly learning to maximise the reward, but that this reward was not maximising the overall performance of the algorithm and therefore that it was not a good reward.\\
+As a reminder, the rewards tested are the following:
+ 
+\begin{equation}
+		r_{pr_1}(s_t,a_t,s_{t+1}) = 3  \cdot n_s + 2 \cdot n_b + n_{hb}
+\end{equation}
+\begin{equation}
+		r_{pr_2}(s_t,a_t,s_{t+1}) = 3  \cdot n_s + 2 \cdot n_b + n_{hb} - \log_{10}(|n_b|)
+\end{equation}
+\begin{equation}
+		r_{pr_3}(s_t,a_t,s_{t+1}) = 3  \cdot (n_{s_f} - n_{s_i}) + 2 \cdot (n_{b_f} - n_{b_i}) + (n_{hb_f} - n_{hb_i}) - \log_{10}(|n_b|)
+\end{equation}
+\includegraphics*[height=7cm]{figures/r1}
+\includegraphics*[height=7cm]{figures/r2}
+\begin{center}
+	\includegraphics*[height=7cm]{figures/r3}
+\end{center}
 
-details about implementation. explain key parts of the project in terms of the implementation
 
-\section{Software Components}
+\section{Action selection algorithm}
+The second problem was selection the best action selection algorithm. In section 4.8., four different action selection algorithm were described. In order to select the best one of these four, I proceeded by training an algorithm using each of these four selection algorithms and then comparing the overall precision. Not all the training had to be done separately for the four different action selections. Firstly, we could train estimators from only random actions and then simply specialise each of them with their own action selection algorithm. I then compared the results on a set of seven different benchmarks.
+\begin{center}
+\Indm\begin{tabular}{||c c c c c c||} 
+ 
+ \hline
+ Benchmark & Q-learning & Algorithm 1 & Algorithm 2 & Algorithm 3 & Algorithm 4  \\ [0.5ex] 
+ \hline\hline
+ driver-media & 99.0 & 98.6 & 97.6 & 93.2 & 98.0 \\ 
+ \hline
+ linux-kernel-locking-spinlock & 99.9 & 94.4 & 63.6 & 79.9 & 95.0 \\
+ \hline
+ linux-usb-dev & 58.2 & 51.8 & 60.3 & 56.5 & 51.1\\
+ \hline
+ linux-kernel-locking-mutex & 77.1 & 73.2 & 95.5 & 95.6 & 72.3\\
+ \hline
+ complex-emg-drivers-net & 57.1 & 97.3 & 94.6 & 96.0 & 96.9\\ 
+ \hline
+ complex-emg-drivers-media & 57 & 50.1 & 58.9 & 55.4 & 49.9\\ 
+ \hline
+ complex-emg-linux-alloc-spinlock & 44.9 & 72.2 & 69.9 & 91.8 & 72.0\\ 
+ 
+ \hline
+\end{tabular}
 
-key components
+\end{center}
 
-\section{Graphics}
 
-explain parts of graphics, openGL etc.
 
-\section{Sound Analysis}
 
-implementation of the frequency analysis
 
-\subsection{Songs}
 
-data structure used as song
 
-\subsection{Notes}
 
-data structure used as note (graphical note explained in subsection graphics so only explain normal note)
 
-\subsection{Timing}
 
-in what sense was the timing aspect implemented
 
-\subsection{Midi Playback}
 
-midis generated with jMusic library, offered as an additional help for the user
 
-\subsection{Noise Detection}
 
-thresholding, show graphics about the choice of the constant used to threshold
 
-\section{Game Controller}
 
-aspects related to the controller
 
-\subsection{Player}
 
-data structure used as player
 
-\subsection{Score}
 
-score saved. what is the score
 
-\section{User Interface}
 
-how does the interaction between user and application work.
+
+
+
+
+
+
+
+
+
 
