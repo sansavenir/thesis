@@ -2,18 +2,18 @@
 
 \chapter{Polyhedra Analysis}
  
-Polyhedra analysis is one of the main tools of static analysis. During the execution of a program variables can become bounded, either by numbers or by other variables. Polyhedrons are one of the most expressive ways of modelling all the possible values that variables can have as well as the different dependencies between them. Different alternatives exist for constraint representation instead of polyhedra, but the polyhedra domain is by far the most expressive. Unfortunately, it has worst case exponential space and time complexity meaning that using it on most real-world applications would cause it to either timeout or to run out of memory making it very impractical. Therefore, other domains have been more widely used such as octagon, zone or pentagon, but all of these are less expressive and therefore less precise by design. In the recent years several techniques have been developed that have managed to speed up polyhedra analysis without the loss of precision.
+Polyhedra analysis is one of the main tools of static analysis. During the\\ execution of a program variables can become bounded, either by numbers or by \\other variables. Polyhedrons are one of the most expressive ways of modelling all the\\ possible values that variables can have as well as the different dependencies between them. Different alternatives exist for constraint representation instead of polyhedra, but the polyhedra domain is by far the most expressive. Unfortunately, it has worst case exponential space and time complexity meaning that using it on most real-world applications would cause it to either timeout or to run out of memory making it very impractical. Therefore, other domains have been more widely used such as octagon, zone or pentagon, but all of these are less expressive and therefore less precise by design. In the recent years several techniques have been developed that have managed to speed up polyhedra analysis without the loss of precision.
 
 \section{Polyhedra representation}
 One of these techniques involves separating the way we represent our polyhedra. Polyhedra can be represented with both their constraint representation and their generator representation. To illustrate these different illustrations I will proceed with the following example. Lets assume we have the following set of assertions:
+\paragraph{Example 3.1}\mbox{}\\
 \begin{center}
-%TODO find better example
-	$assert(y\leq1.5)$\\
-	$assert(y\geq 0.5)$\\
-	$assert(x\leq1.5)$\\
-	$assert(x\geq0.5)$
+	$if \; x\geq0.5\wedge x\leq 1.5 \wedge y\geq 0.5 \wedge y \leq1.5: $\\
+	$...\;\;\;\;\;$\\
+	$end \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad$
 \end{center}
-and their respective polyhedron would have the following shape:
+
+Inside of the if statement, the polyhedron would have the following shape:
 
 
 \begin{center}
@@ -43,16 +43,18 @@ and their respective polyhedron would have the following shape:
 We can represent this information in two different possible ways.
 \subsection{Constraint representation}
 In constraint representation we model the polyhedron as the intersection of a finite number of closed half spaces and a finite number of subspace. The resulting polyhedron can be written as:
-\begin{center}
-	$P=\{x\in Q^n |Ax\leq b$ $\wedge$ $Dx=e\}$
-\end{center}
+
+\begin{equation}
+	P=\{x\in Q^n |Ax\leq b \wedge Dx=e\}
+\end{equation}
 where A,D are matrices and b,e are vectors of natural numbers. Therefore, the constraint representation of the above example would be:
-\begin{center}
-	$\{-x \leq -0.5,x\leq 1.5 , -y \leq -0.5 ,y\leq 1.5\}$
-\end{center}
+
+\begin{equation}
+	C = \{-x \leq -0.5,x\leq 1.5 , -y \leq -0.5 ,y\leq 1.5\}
+\end{equation}
 
 \subsection{Generator representation}
-In order to encode a Polyhedron with the generator representation, we shall model it as the convex hull of three items: 
+In order to encode a Polyhedron with the generator representation, we have to model it as the convex hull of three items: 
 
 %TODO finish list with rep 
 \begin{itemize}
@@ -61,7 +63,10 @@ In order to encode a Polyhedron with the generator representation, we shall mode
 	\item set off lines modelling the infinite edges of the polyhedron with both ends unbounded.
 \end{itemize}
 %TODO finish example
-The result of generator representation on the following example would have the following form: 
+The result of generator representation on the previous example would have the following form: 
+\begin{equation}
+	G = \{ V = \{(0.5,0.5),(1.5,0.5),(1.5,1.5),(0.5,1.5)\}, R = \emptyset, Z = \emptyset \}
+\end{equation}
 \section{Polyhedra domain}
 
 Now that we can represent our Polyhedra we can do some interesting calculations with them. The polyhedra abstract domain consists of the polyhedral lattice:
@@ -83,6 +88,7 @@ Now that we can represent our Polyhedra we can do some interesting calculations 
   	\]
 		
 		\end{center}
+
 		where $C'_p=\{c\in C_P |C_Q \vdash c \}$, and\\  $C'_Q=\{c\in C_Q |\exists c' \in C_P,C_P \vdash c $ and $((C_P\c')\bigcup \{c\})\vdash c' \}$
 		where $C\vdash c$, test wether c can be entailed from constraints in C
 		\item Conditional: let $\otimes \in \{\leq,=\},1\leq 1\leq n,\alpha \in Q$ then $\alpha x_i \otimes \delta$ adds the constraint $(\alpha-a_i)x_i \otimes\delta - a_i x_i$ to the constraint set C
@@ -147,20 +153,23 @@ Another technique used increase the efficiency of polyhedra analysis, is that of
 \end{center}
 
  
-\paragraph{Example 2.1} \mbox{}\\
-I'll illustrate online decomposition with the following example.
-
+\paragraph{Example 3.2} \mbox{}\\
+Let's consider the with variables $X = \{x_1,x_2,x_3,x_4\}$ and $C = \{ x_1 + 2 \cdot x_3 \leq 10, x_2 = 1 \}$.\\
+This polyhedron can be partitioned into three blocks $\pi_P = \{\{x_1,x_3\},\{x_2\},\{x_4\}\}$ and its corresponding factors are equal to:\\
+$C_{P_1}\{x_1 + 2\cdot x_3 \leq 10 \} $\qquad$ C_{P_2}\{x_2 = 10 \}$
 % TODO write example
 
 \subsection{Decomposition operators}
 As we change the model of our domains we must equally update the operators inside of these domains. For sake of brevity I will not go into detail about each of them, but I will only talk about the join operator as it plays an important role in the work of this paper.\\
-During the join of $P$ and $Q$, most of the time their factors will not be equal$(\pi_P \neq \pi_Q)$. Therefore, we have to remake their partitions in order for their factors to be equal $\pi = \pi_P\sqcup\pi_Q$. During most joins of a normal execution this will not cause much problem, but during some cases the join can merge all blocks producing the $\top$ partition. Causing all the performance benefits of decomposition to be lost.
-% TODO explain what top partition is and give example
-\paragraph{Example 2.2} \mbox{}\\
+During the join of $P$ and $Q$, most of the time their factors will not be equal$(\pi_P \neq \pi_Q)$. Therefore, we have to remake their partitions in order for their factors to be equal $\pi = \pi_P\sqcup\pi_Q$. During most joins of a normal execution this will not cause much problem, but during some cases the join can merge all blocks producing the $\top$ partition. In order to rebuild the $\top$ partition from all its blocks we use the following formula:
+\begin{equation}
+	P = P_1 \Join P_2 \Join ... \Join P_r = (C_{P_1} \cup C_{P_2} \cup ... \cup C_{P_1}, G_{P_1} \times G_{P_2} \times  ... \times   G_{P_r})
+\end{equation}
+Due to the cartesian product, building the $\top$ partition can blow up the number of generators and therefore cause online decomposition to loose its performance advantage.
 
 \section{Reinforcement Learning for polyhedra analysis}
-Both of the techniques presented in chapters 2.3 and 2.2, manage to achieve considerable performance gain without having to sacrifice any precision. Unfortunately, at some point compromises have to be made. Many different algorithms have been proposed that try their best at minimising the precision loss and maximising the resulting performance gains. \\
-As shown in example 2.2 one bad constraint can significantly decrease the performance of the whole program. The trick is being able to identify this variable at the correct time. One of the potential solutions to this problem that we shall explore in this paper is training a reinforcement learning algorithm in order to decide when to apply abstractions.
+Both of the techniques presented in chapters 3.2 and 3.3, manage to achieve considerable performance gain without having to sacrifice any precision. Unfortunately, at some point compromises have to be made. Many different algorithms have been proposed that try their best at minimising the precision loss and maximising the resulting performance gains. \\
+As explained in 3.3.1. one bad constraint can significantly decrease the performance of the whole program. The trick is being able to identify this variable at the correct time. One of the potential solutions to this problem that we shall explore in this paper is training a reinforcement learning algorithm in order to decide when to apply abstractions.
 
 \subsection{Adapting polyhedra analysis for Reinforcement Learning}
 

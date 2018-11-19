@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  17 NOV 2018 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  19 NOV 2018 19:27
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -917,12 +917,12 @@ Package epstopdf Info: Source file: <figures/eth_logo_kurz_pos.eps>
 (epstopdf)             Command: <epstopdf --outfile=figures/eth_logo_kurz_pos-eps-converted-to.pdf figures/eth_logo_kurz_pos.eps>
 (epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
- <figures/eth_logo_kurz_pos-eps-converted-to.pdf, id=260, 141.52875pt x 23.08624pt>
+ <figures/eth_logo_kurz_pos-eps-converted-to.pdf, id=183, 141.52875pt x 23.08624pt>
 File: figures/eth_logo_kurz_pos-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/eth_logo_kurz_pos-eps-converted-to.pdf>
 Package pdftex.def Info: figures/eth_logo_kurz_pos-eps-converted-to.pdf used on input line 142.
 (pdftex.def)             Requested size: 139.54376pt x 22.76228pt.
- <figures/logo-ait.png, id=262, 323.2075pt x 56.21pt>
+ <figures/logo-ait.png, id=185, 323.2075pt x 56.21pt>
 File: figures/logo-ait.png Graphic file (type png)
  <use figures/logo-ait.png>
 Package pdftex.def Info: figures/logo-ait.png used on input line 143.
@@ -953,32 +953,31 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [5
 
 
-] [6])
+])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
- [7] [8
-
-] (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.lof)
+ [6] (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [9
+ [7
 
-] [10
+
+] [8
 
 ] (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- [11
+ [9
 
-] [12
+] [10
 
 ] (./chapters/ch01-introduction.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 10.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 11.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <100> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 26.
 
@@ -993,7 +992,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.26 C
-      hapter 3 addresses Polyhedra analysis and some of the methods used to ... [1
+      hapter 4 Will address the algorithm designed and how the two previous ... [1
 
 ]) (./chapters/ch02-background.texpdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
@@ -1001,7 +1000,7 @@ l.26 C
 l.6 \chapter
             {Reinforcement Learning} [2]
 Chapter 2.
-<figures/rl_broad.png, id=409, 250.9375pt x 242.9075pt>
+<figures/rl_broad.png, id=309, 250.9375pt x 242.9075pt>
 File: figures/rl_broad.png Graphic file (type png)
  <use figures/rl_broad.png>
 Package pdftex.def Info: figures/rl_broad.png used on input line 10.
@@ -1028,6 +1027,11 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
  [5]) (./chapters/ch03-related-work.tex [6]
 Chapter 3.
 
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
 Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 []|[] []
  []
@@ -1037,21 +1041,16 @@ Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
  [7
 
-]
+] [8]
 
-LaTeX Warning: Command \c invalid in math mode on input line 86.
+LaTeX Warning: Command \c invalid in math mode on input line 92.
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
 
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
 
  []
 
-[10]) (./chapters/ch04-technical-aspects.tex [11] [12
+[9] [10]) (./chapters/ch04-technical-aspects.tex [11] [12
 
 ]
 Chapter 4.
@@ -1069,7 +1068,7 @@ Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
  [13]
-Overfull \hbox (34.959pt too wide) in paragraph at lines 20--45
+Overfull \hbox (52.97969pt too wide) in paragraph at lines 20--45
  [] 
  []
 
@@ -1109,39 +1108,48 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]) (./chapters/ch05-implementation.tex [28] [29] [30
+ [27] [28]) (./chapters/ch05-implementation.tex [29] [30
 
 ]
 Chapter 5.
-<figures/r1.png, id=684, 462.528pt x 346.896pt>
+<figures/r1.png, id=587, 462.528pt x 346.896pt>
 File: figures/r1.png Graphic file (type png)
  <use figures/r1.png>
-Package pdftex.def Info: figures/r1.png used on input line 24.
-(pdftex.def)             Requested size: 265.55629pt x 199.16928pt.
+Package pdftex.def Info: figures/r1.png used on input line 27.
+(pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
 
+Overfull \hbox (53.46957pt too wide) in paragraph at lines 27--28
+[][] 
+ []
 
-./chapters/ch05-implementation.tex:25: Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 \caption
-             {kdsjlksdf}
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<figures/r2.png, id=686, 462.528pt x 346.896pt>
+LaTeX Font Info:    Font shape `T1/ptm/bx/sl' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/sl' tried instead on input line 28.
+<figures/r2.png, id=588, 462.528pt x 346.896pt>
 File: figures/r2.png Graphic file (type png)
  <use figures/r2.png>
-Package pdftex.def Info: figures/r2.png used on input line 26.
-(pdftex.def)             Requested size: 265.55629pt x 199.16928pt.
+Package pdftex.def Info: figures/r2.png used on input line 31.
+(pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
 
-Overfull \hbox (80.37143pt too wide) in paragraph at lines 23--27
-[]  [] 
+Overfull \hbox (53.46957pt too wide) in paragraph at lines 31--32
+[][] 
+ []
+
+<figures/r3.png, id=589, 462.528pt x 346.896pt>
+File: figures/r3.png Graphic file (type png)
+ <use figures/r3.png>
+Package pdftex.def Info: figures/r3.png used on input line 35.
+(pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
+
+Overfull \hbox (53.46957pt too wide) in paragraph at lines 35--36
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
  []
 
 
@@ -1152,33 +1160,18 @@ Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 
 Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
- [31] <figures/r3.png, id=696, 462.528pt x 346.896pt>
-File: figures/r3.png Graphic file (type png)
- <use figures/r3.png>
-Package pdftex.def Info: figures/r3.png used on input line 28.
-(pdftex.def)             Requested size: 265.55629pt x 199.16928pt.
-
-Overfull \hbox (57.13751pt too wide) in paragraph at lines 35--56
+ [31]
+Overfull \hbox (21.09613pt too wide) in paragraph at lines 49--70
  [] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 8189) has occurred while \output is active []
 
- [32 <./figures/r1.png> <./figures/r2.png> <./figures/r3.png>]) (./chapters/ch06-evaluation.tex [33] [34
+ [32 <./figures/r1.png> <./figures/r2.png> <./figures/r3.png>]) (./chapters/ch06-evaluation.tex) (./chapters/ch07-conclusion.tex [33] [34
 
 ]
 Chapter 6.
-
-Overfull \hbox (2.28004pt too wide) has occurred while \output is active
-[]|[] []
- []
-
-
-Overfull \vbox (459.06232pt too high) has occurred while \output is active []
-
- [35]) (./chapters/ch07-conclusion.tex [36]
-Chapter 7.
 )
 Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 []|[] []
@@ -1187,9 +1180,7 @@ Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 
 Overfull \vbox (431.27501pt too high) has occurred while \output is active []
 
- [37
-
-] (./chapters/appendix.tex [38
+ [35] (./chapters/appendix.tex [36
 
 
 ]
@@ -1202,7 +1193,10 @@ Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 
 Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
- [39] [40] (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.bbl
+ [37] [38
+
+
+] (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.bbl
 
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 3.
@@ -1222,10 +1216,7 @@ Class scrbook Warning: Usage of deprecated font command `\sl'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sl'
 (scrbook)              by `\normalfont \slshape ' on input line 214.
 
-[41
-
-
-]
+[39]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
  (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.aux)
@@ -1235,18 +1226,18 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 28270 strings out of 493089
- 567510 string characters out of 6134842
+ 28247 strings out of 493089
+ 567177 string characters out of 6134842
  743338 words of memory out of 5000000
- 30944 multiletter control sequences out of 15000+600000
- 63503 words of font info for 70 fonts, out of 8000000 for 9000
+ 30936 multiletter control sequences out of 15000+600000
+ 70805 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,29n,73p,1756b,1061s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (55 pages, 616093 bytes).
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (51 pages, 625378 bytes).
 PDF statistics:
- 864 PDF objects out of 1000 (max. 8388607)
- 765 compressed objects within 8 object streams
- 266 named destinations out of 1000 (max. 500000)
- 583 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 753 PDF objects out of 1000 (max. 8388607)
+ 661 compressed objects within 7 object streams
+ 248 named destinations out of 1000 (max. 500000)
+ 413 words of extra memory for PDF output out of 10000 (max. 10000000)
 

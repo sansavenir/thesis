@@ -1,5 +1,5 @@
-\contentsline {chapter}{List of Figures}{ix}{section*.4}
-\contentsline {chapter}{List of Tables}{xi}{section*.6}
+\contentsline {chapter}{List of Figures}{vii}{section*.4}
+\contentsline {chapter}{List of Tables}{ix}{section*.6}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Problem Statement}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Goals}{1}{section.1.2}
@@ -16,16 +16,16 @@
 \contentsline {subsection}{\numberline {2.3.2}Deep Q-networks}{5}{subsection.2.3.2}
 \contentsline {chapter}{\numberline {3}Polyhedra Analysis}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Polyhedra representation}{7}{section.3.1}
+\contentsline {paragraph}{\nonumberline Example 3.1}{7}{section*.12}
 \contentsline {subsection}{\numberline {3.1.1}Constraint representation}{8}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Generator representation}{8}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Polyhedra domain}{8}{section.3.2}
-\contentsline {paragraph}{\nonumberline Chernikova's Algorithm}{9}{section*.12}
+\contentsline {paragraph}{\nonumberline Chernikova's Algorithm}{9}{section*.13}
 \contentsline {section}{\numberline {3.3}Polyhedra Decomposition}{9}{section.3.3}
-\contentsline {paragraph}{\nonumberline Table 2}{10}{section*.13}
-\contentsline {paragraph}{\nonumberline Example 2.1}{10}{section*.14}
+\contentsline {paragraph}{\nonumberline Table 2}{10}{section*.14}
+\contentsline {paragraph}{\nonumberline Example 3.2}{10}{section*.15}
 \contentsline {subsection}{\numberline {3.3.1}Decomposition operators}{10}{subsection.3.3.1}
-\contentsline {paragraph}{\nonumberline Example 2.2}{10}{section*.15}
-\contentsline {section}{\numberline {3.4}Reinforcement Learning for polyhedra analysis}{10}{section.3.4}
+\contentsline {section}{\numberline {3.4}Reinforcement Learning for polyhedra analysis}{11}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Adapting polyhedra analysis for Reinforcement Learning}{11}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Existing methods}{11}{subsection.3.4.2}
 \contentsline {chapter}{\numberline {4}Fast polyhedra analysis with deep Q-networks}{13}{chapter.4}
@@ -41,7 +41,7 @@
 \contentsline {paragraph}{\nonumberline Divergence of decision policy}{16}{section*.20}
 \contentsline {paragraph}{\nonumberline Divergence of the action value prediction}{16}{section*.21}
 \contentsline {subsection}{\numberline {4.4.1}Experience replay memory}{16}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Q-estimator separation}{17}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Separating target from max Q estimators}{17}{subsection.4.4.2}
 \contentsline {paragraph}{\nonumberline Pseudo code of basic learning algorithm}{17}{section*.22}
 \contentsline {section}{\numberline {4.5}Further optimisations}{18}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Separating the problem into two}{19}{subsection.4.5.1}
@@ -66,26 +66,7 @@
 \contentsline {chapter}{\numberline {5}Results}{31}{chapter.5}
 \contentsline {section}{\numberline {5.1}Reward function selection}{31}{section.5.1}
 \contentsline {section}{\numberline {5.2}Action selection algorithm}{32}{section.5.2}
-\contentsline {chapter}{\numberline {6}Evaluation}{35}{chapter.6}
-\contentsline {section}{\numberline {6.1}Methodology}{35}{section.6.1}
-\contentsline {section}{\numberline {6.2}Experiment: Comparison of two Prototypes}{35}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Setup}{35}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Results}{35}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Experiment: Cognitive Walkthrough}{35}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Setup}{35}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Results}{35}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Long term study}{36}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Setup}{36}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Discussion}{36}{subsection.6.4.2}
-\contentsline {section}{\numberline {6.5}Limitations}{36}{section.6.5}
-\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{37}{chapter.7}
-\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}
-\contentsline {section}{\numberline {A.1}Controlled Comparison}{39}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Guides}{39}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Questionnaire}{39}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}Cognitive Walkthrough}{39}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Guides}{39}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Questionnaire}{39}{subsection.A.2.2}
-\contentsline {section}{\numberline {A.3}Long Term Study}{39}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Guides}{40}{subsection.A.3.1}
-\contentsline {chapter}{Bibliography}{41}{section*.36}
+\contentsline {section}{\numberline {5.3}Final algorithm}{33}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{35}{chapter.6}
+\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}
+\contentsline {chapter}{Bibliography}{39}{section*.37}

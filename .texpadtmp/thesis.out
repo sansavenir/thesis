@@ -27,7 +27,7 @@
 \BOOKMARK [1][]{section.4.3}{4.3 Actions}{chapter.4}% 27
 \BOOKMARK [1][]{section.4.4}{4.4 Reward}{chapter.4}% 28
 \BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Experience replay memory}{section.4.4}% 29
-\BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Q-estimator separation}{section.4.4}% 30
+\BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Separating target from max Q estimators}{section.4.4}% 30
 \BOOKMARK [1][]{section.4.5}{4.5 Further optimisations}{chapter.4}% 31
 \BOOKMARK [2][]{subsection.4.5.1}{4.5.1 Separating the problem into two}{section.4.5}% 32
 \BOOKMARK [1][]{section.4.6}{4.6 Feature selection}{chapter.4}% 33
@@ -38,26 +38,7 @@
 \BOOKMARK [0][]{chapter.5}{5 Results}{}% 38
 \BOOKMARK [1][]{section.5.1}{5.1 Reward function selection}{chapter.5}% 39
 \BOOKMARK [1][]{section.5.2}{5.2 Action selection algorithm}{chapter.5}% 40
-\BOOKMARK [0][]{chapter.6}{6 Evaluation}{}% 41
-\BOOKMARK [1][]{section.6.1}{6.1 Methodology}{chapter.6}% 42
-\BOOKMARK [1][]{section.6.2}{6.2 Experiment: Comparison of two Prototypes}{chapter.6}% 43
-\BOOKMARK [2][]{subsection.6.2.1}{6.2.1 Setup}{section.6.2}% 44
-\BOOKMARK [2][]{subsection.6.2.2}{6.2.2 Results}{section.6.2}% 45
-\BOOKMARK [1][]{section.6.3}{6.3 Experiment: Cognitive Walkthrough}{chapter.6}% 46
-\BOOKMARK [2][]{subsection.6.3.1}{6.3.1 Setup}{section.6.3}% 47
-\BOOKMARK [2][]{subsection.6.3.2}{6.3.2 Results}{section.6.3}% 48
-\BOOKMARK [1][]{section.6.4}{6.4 Long term study}{chapter.6}% 49
-\BOOKMARK [2][]{subsection.6.4.1}{6.4.1 Setup}{section.6.4}% 50
-\BOOKMARK [2][]{subsection.6.4.2}{6.4.2 Discussion}{section.6.4}% 51
-\BOOKMARK [1][]{section.6.5}{6.5 Limitations}{chapter.6}% 52
-\BOOKMARK [0][]{chapter.7}{7 Conclusion and Future Work}{}% 53
-\BOOKMARK [0][]{appendix.A}{A Appendix}{}% 54
-\BOOKMARK [1][]{section.A.1}{A.1 Controlled Comparison}{appendix.A}% 55
-\BOOKMARK [2][]{subsection.A.1.1}{A.1.1 Guides}{section.A.1}% 56
-\BOOKMARK [2][]{subsection.A.1.2}{A.1.2 Questionnaire}{section.A.1}% 57
-\BOOKMARK [1][]{section.A.2}{A.2 Cognitive Walkthrough}{appendix.A}% 58
-\BOOKMARK [2][]{subsection.A.2.1}{A.2.1 Guides}{section.A.2}% 59
-\BOOKMARK [2][]{subsection.A.2.2}{A.2.2 Questionnaire}{section.A.2}% 60
-\BOOKMARK [1][]{section.A.3}{A.3 Long Term Study}{appendix.A}% 61
-\BOOKMARK [2][]{subsection.A.3.1}{A.3.1 Guides}{section.A.3}% 62
-\BOOKMARK [0][]{section*.36}{Bibliography}{}% 63
+\BOOKMARK [1][]{section.5.3}{5.3 Final algorithm}{chapter.5}% 41
+\BOOKMARK [0][]{chapter.6}{6 Conclusion and Future Work}{}% 42
+\BOOKMARK [0][]{appendix.A}{A Appendix}{}% 43
+\BOOKMARK [0][]{section*.37}{Bibliography}{}% 44

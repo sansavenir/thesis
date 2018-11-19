@@ -17,7 +17,7 @@ Luckily, since reinforcement learning methods have already been used for polyhed
 In the Reinforcement learning method the following nine features was used.
 \begin{center}
 
- \Indm\Indm\begin{tabular}{||c c c c||} 
+ \Indm\begin{tabular}{||c c c c||} 
  
  \hline
  Feature & Extraction complexity & Approximate range & Scaling \\ [0.5ex] 
@@ -88,7 +88,7 @@ Experience replay memory is a biologically inspired mechanism. That gives the es
 \\
 The objective of the memory is to homogenise the training data. It comes from the observation that during the execution of a program, often a particular strategy would be optimal during a certain period of time and afterwards another one would be the new optimal. This caused two major problems. First of all, it is not very time efficient as we do not gain much information by learning from the same data. Secondly, as there was low diversity in the training data and the decision strategy would frequently abruptly change it. This either led to the neural network getting stuck in local minima or simply to diverge and not obtain a policy. \\
 Picking a random subsample from memory helps increase the variance amongst the training data allowing the network to learn a more global policy. 
-\subsection{Q-estimator separation}
+\subsection{Separating target from max Q estimators}
 The other method used to reduce the divergence of the predicted Q values towards infinity, was to reduce the correlation between the training and the prediction data. This was done because, since the networks were being fitted based on the maximum Q value estimation, diverging towards infinity reduced their error and therefore was a valid strategy that they would use. In order to reduce this correlation, the networks predicting the maximum Q value and the ones predicting the Q value were separated. The weights of the maximum Q-value estimators were then updated every n steps in order for them to remain up to date.\\
 \mbox{}\\
 Further modifications were also made on the neural network level in order to reduce these problems. I will get into these in part.\\
@@ -416,10 +416,26 @@ Finally, the last selection algorithm that I will talk about here is based upon 
 \section{Neural network characteristics}
 As for the characteristics of the neural network that I used. I started with a relatively small neural network and the grew it progressively as I expanded the number of vectors and the size that these can have. In the final version I use a fully connected neural network with four hidden layers of two hundred nodes each. They have each thirteen inputs, one for each feature and thirty-six outputs, one for each action. The first three layers use the Relu activation function and the last one uses a linear activation, since the rewards can be either negative or positive. I use stochastic gradient descent for updating the weights of the nodes and I clip its norm to 1. I do this in order to avoid the exploding gradients problem and prevent the predicted values to diverge towards infinity. I use the mean squared error in order to calculate the loss. I based the characteristics of my neural networks based on reading as these types of networks seem to be the most widely used ones for deep reinforcement learning. It is worth noting that I have not done much parameter optimisation on my neural networks as the training time of the algorithm is quite long which would make the parameter optimisation a very tedious task. It is also worth noting that I use the same network models for both performance and precision prediction.
 \section{Training}
-\begin{itemize}
-	\item getting stuck with random training
-	\item one bad action would destroy the results
-	\item 
-\end{itemize}
-The training of the algorithm was done in multiple stages. During the first stage, only random actions were picked. This was done in order for the algorithm not to get stuck in local maxima but have the most global policy possible. I also did not have any time constraints about the length of training so I could afford to proceed in this way in order to get the best possible results. Throughout the next stages, the training was separated into two. One concentrating on the precision and the other on the performance. All the actions were no longer chosen randomly, but now the action with the highest predicted value was chosen. The probability with which we chose a random action was progressively decreased throughout training. This was done in order to reinforce the choice of the best action and increase convergence speed. Once these stages finished, we would have two separate systems each optimized for their own task. In the final stage, I would then combine both of the systems and do a final training phase with the chosen action selecting algorithm as described above. I did this in order to further optimize the decision policy for the action selection algorithm.\\
+
+The training of the algorithm was done in multiple stages. During the first stage, only random actions were picked. This was done in order for the algorithm not to get stuck in local maxima but have the most global policy possible. I also did not have any time constraints about the length of training so I could afford to proceed in this way in order to get the best possible results. Throughout the next stages, the training was separated into two. One concentrating on the precision and the other on the performance. All the actions were no longer chosen randomly, but now the action with the highest predicted value was chosen. The probability with which we chose a random action was progressively decreased throughout training. This was done in order to reinforce the choice of the best action and increase convergence speed. Once these stages finished, we would have two separate systems each optimised for their own task. In the final stage, I would then combine both of the systems and do a final training phase with the chosen action selecting algorithm as described above. I did this in order to further optimise the decision policy for the action selection algorithm.\\
+There were two major complications that came up during training that had to be dealt with. The first of these was that, especially during random training the likelihood of getting stuck on some join and not finishing the analysis of a benchmark was quite high. To confront this I set a timeout of thirty minutes on each benchmark. The goal of this is to find a compromise between having enough time to get to interesting benchmarks and not wasting too much time in case the analysis gets stuck on a certain join. The other problem was that the analysis is very sensitive. That is to say, that one bad action can have severe consequences on the end precision of the analysis. This means that training with a low probability of picking random actions was very important for the estimators and had to be given enough time.\\
 This method of training is quite time intensive. I proceeded in this way since time was not a big factor but the end results were more important. A more efficient training strategy can surely be found if this is needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
