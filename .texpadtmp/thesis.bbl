@@ -1,3 +1,175 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{\protect\citename{Yogeswaran and Ponnambalam }2012}
+
+\bibitem[\protect\citename{Chernikova }1968]{chernikova1968algorithm}
+{\sc Chernikova, N.}
+\newblock 1968.
+\newblock
+  {\href{http://www.google.com/search?q=Algorithm+for+discovering+the+set+of+all+the+solutions+of+a+linear+programming+problem}{Algorithm
+  for discovering the set of all the solutions of a linear programming
+  problem}}.
+\newblock {\em Zhurnal Vychislitel'noi Matematiki i Matematicheskoi Fiziki 8},
+  6, 1387--1395.
+
+\bibitem[\protect\citename{Cousot and Cousot }1977]{cousot1977abstract}
+{\sc Cousot, P., and Cousot, R.}
+\newblock 1977.
+\newblock
+  {\href{http://www.google.com/search?q=Abstract+interpretation:+a+unified+lattice+model+for+static+analysis+of+programs+by+construction+or+approximation+of+fixpoints}{Abstract
+  interpretation: a unified lattice model for static analysis of programs by
+  construction or approximation of fixpoints}}.
+\newblock In {\em Proceedings of the 4th ACM SIGACT-SIGPLAN symposium on
+  Principles of programming languages}, ACM, 238--252.
+
+\bibitem[\protect\citename{ELINA }]{elina}
+{\sc ELINA}.
+\newblock
+  {\href{http://www.google.com/search?q=Eth+library+for+numerical+analysis}{Eth
+  library for numerical analysis}}.
+
+\bibitem[\protect\citename{Gange et~al\mbox{.} }2016]{gange2016exploiting}
+{\sc Gange, G., Navas, J.~A., Schachte, P., S{\o}ndergaard, H., and Stuckey,
+  P.~J.}
+\newblock 2016.
+\newblock
+  {\href{http://www.google.com/search?q=Exploiting+sparsity+in+difference-bound+matrices}{Exploiting
+  sparsity in difference-bound matrices}}.
+\newblock In {\em International Static Analysis Symposium}, Springer, 189--211.
+
+\bibitem[\protect\citename{Jourdan }2017]{jourdan2017sparsity}
+{\sc Jourdan, J.-H.}
+\newblock 2017.
+\newblock
+  {\href{http://www.google.com/search?q=Sparsity+preserving+algorithms+for+octagons}{Sparsity
+  preserving algorithms for octagons}}.
+\newblock {\em Electronic Notes in Theoretical Computer Science 331\/}, 57--70.
+
+\bibitem[\protect\citename{Kaelbling et~al\mbox{.}
+  }1996]{kaelbling1996reinforcement}
+{\sc Kaelbling, L.~P., Littman, M.~L., and Moore, A.~W.}
+\newblock 1996.
+\newblock
+  {\href{http://www.google.com/search?q=Reinforcement+learning:+A+survey}{Reinforcement
+  learning: A survey}}.
+\newblock {\em Journal of artificial intelligence research 4\/}, 237--285.
+
+\bibitem[\protect\citename{Logozzo and F{\"a}hndrich
+  }2010]{logozzo2010pentagons}
+{\sc Logozzo, F., and F{\"a}hndrich, M.}
+\newblock 2010.
+\newblock
+  {\href{http://www.google.com/search?q=Pentagons:+a+weakly+relational+abstract+domain+for+the+efficient+validation+of+array+accesses}{Pentagons:
+  a weakly relational abstract domain for the efficient validation of array
+  accesses}}.
+\newblock {\em Science of Computer Programming 75}, 9, 796--807.
+
+\bibitem[\protect\citename{Mar{\'e}chal and P{\'e}rin
+  }2017]{marechal2017efficient}
+{\sc Mar{\'e}chal, A., and P{\'e}rin, M.}
+\newblock 2017.
+\newblock
+  {\href{http://www.google.com/search?q=Efficient+elimination+of+redundancies+in+polyhedra+by+raytracing}{Efficient
+  elimination of redundancies in polyhedra by raytracing}}.
+\newblock In {\em International Conference on Verification, Model Checking, and
+  Abstract Interpretation}, Springer, 367--385.
+
+\bibitem[\protect\citename{Min{\'e} }2001]{mine2001new}
+{\sc Min{\'e}, A.}
+\newblock 2001.
+\newblock
+  {\href{http://www.google.com/search?q=A+new+numerical+abstract+domain+based+on+difference-bound+matrices}{A
+  new numerical abstract domain based on difference-bound matrices}}.
+\newblock In {\em Programs as Data Objects}. Springer, 155--172.
+
+\bibitem[\protect\citename{Min{\'e} }2006]{mine2006octagon}
+{\sc Min{\'e}, A.}
+\newblock 2006.
+\newblock
+  {\href{http://www.google.com/search?q=The+octagon+abstract+domain}{The
+  octagon abstract domain}}.
+\newblock {\em Higher-order and symbolic computation 19}, 1, 31--100.
+
+\bibitem[\protect\citename{Mnih et~al\mbox{.} }2013]{mnih2013playing}
+{\sc Mnih, V., Kavukcuoglu, K., Silver, D., Graves, A., Antonoglou, I.,
+  Wierstra, D., and Riedmiller, M.}
+\newblock 2013.
+\newblock
+  {\href{http://www.google.com/search?q=Playing+atari+with+deep+reinforcement+learning}{Playing
+  atari with deep reinforcement learning}}.
+\newblock {\em arXiv preprint arXiv:1312.5602\/}.
+
+\bibitem[\protect\citename{Mnih et~al\mbox{.} }2015]{Mnih2015}
+{\sc Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A.~A., Veness, J., Bellemare,
+  M.~G., Graves, A., Riedmiller, M., Fidjeland, A.~K., Ostrovski, G., Petersen,
+  S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra,
+  D., Legg, S., and Hassabis, D.}
+\newblock 2015.
+\newblock
+  {\href{http://www.google.com/search?q=Human-level+control+through+deep+reinforcement+learning}{Human-level
+  control through deep reinforcement learning}}.
+\newblock {\em Nature 518\/} (Feb), 529 EP --.
+
+\bibitem[\protect\citename{Motzkin }1953]{motzkin1953double}
+{\sc Motzkin, T.~S.}
+\newblock 1953.
+\newblock
+  {\href{http://www.google.com/search?q=The+double+description+method,+in+contributions+to+the+theory+of+games+ii}{The
+  double description method, in contributions to the theory of games ii}}.
+\newblock {\em Annals of Mathematics Study 28\/}.
+
+\bibitem[\protect\citename{Riedmiller }2005]{riedmiller2005neural}
+{\sc Riedmiller, M.}
+\newblock 2005.
+\newblock
+  {\href{http://www.google.com/search?q=Neural+fitted+q+iteration--first+experiences+with+a+data+efficient+neural+reinforcement+learning+method}{Neural
+  fitted q iteration--first experiences with a data efficient neural
+  reinforcement learning method}}.
+\newblock In {\em European Conference on Machine Learning}, Springer, 317--328.
+
+\bibitem[\protect\citename{Singh et~al\mbox{.} }2015]{singh2015making}
+{\sc Singh, G., P{\"u}schel, M., and Vechev, M.}
+\newblock 2015.
+\newblock
+  {\href{http://www.google.com/search?q=Making+numerical+program+analysis+fast}{Making
+  numerical program analysis fast}}.
+\newblock In {\em ACM SIGPLAN Notices}, vol.~50, ACM, 303--313.
+
+\bibitem[\protect\citename{Singh et~al\mbox{.} }2017]{singh2017fast}
+{\sc Singh, G., P{\"u}schel, M., and Vechev, M.}
+\newblock 2017.
+\newblock
+  {\href{http://www.google.com/search?q=Fast+polyhedra+abstract+domain}{Fast
+  polyhedra abstract domain}}.
+\newblock In {\em ACM SIGPLAN Notices}, vol.~52, ACM, 46--59.
+
+\bibitem[\protect\citename{Singh et~al\mbox{.} }2018]{singh2018fast}
+{\sc Singh, G., P{\"u}schel, M., and Vechev, M.}
+\newblock 2018.
+\newblock
+  {\href{http://www.google.com/search?q=Fast+numerical+program+analysis+with+reinforcement+learning}{Fast
+  numerical program analysis with reinforcement learning}}.
+\newblock In {\em International Conference on Computer Aided Verification},
+  Springer, 211--229.
+
+\bibitem[\protect\citename{Stoer and Wagner }1997]{stoer1997simple}
+{\sc Stoer, M., and Wagner, F.}
+\newblock 1997.
+\newblock {\href{http://www.google.com/search?q=A+simple+min-cut+algorithm}{A
+  simple min-cut algorithm}}.
+\newblock {\em Journal of the ACM (JACM) 44}, 4, 585--591.
+
+\bibitem[\protect\citename{Watkins and Dayan }1992]{watkins1992q}
+{\sc Watkins, C.~J., and Dayan, P.}
+\newblock 1992.
+\newblock {\href{http://www.google.com/search?q=Q-learning}{Q-learning}}.
+\newblock {\em Machine learning 8}, 3-4, 279--292.
+
+\bibitem[\protect\citename{Yogeswaran and Ponnambalam
+  }2012]{yogeswaran2012reinforcement}
+{\sc Yogeswaran, M., and Ponnambalam, S.}
+\newblock 2012.
+\newblock
+  {\href{http://www.google.com/search?q=Reinforcement+learning:+exploration--exploitation+dilemma+in+multi-agent+foraging+task}{Reinforcement
+  learning: exploration--exploitation dilemma in multi-agent foraging task}}.
+\newblock {\em Opsearch 49}, 3, 223--236.
 
 \end{thebibliography}

@@ -2,47 +2,50 @@ This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.aux
 The style file: ../acmsiggraph.bst
-I found no \citation commands---while reading file /Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.aux
-Database file #1: ../graphics.bib
-You've used 0 entries,
+Database file #1: ../bibli.bib
+Warning--entry type for "elina" isn't style-file defined
+--line 169 of file ../bibli.bib
+Warning--can't use both volume and number fields in singh2015making
+Warning--can't use both volume and number fields in singh2017fast
+You've used 20 entries,
             2873 wiz_defined-function locations,
-            615 strings with 4628 characters,
-and the built_in function-call counts, 24 in all, are:
-= -- 0
-> -- 0
+            744 strings with 8290 characters,
+and the built_in function-call counts, 51170 in all, are:
+= -- 5536
+> -- 389
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 10
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 2
++ -- 264
+- -- 143
+* -- 5378
+:= -- 6397
+add.period$ -- 79
+call.type$ -- 20
+change.case$ -- 142
+chr.to.int$ -- 20
+cite$ -- 22
+duplicate$ -- 479
+empty$ -- 5328
+format.name$ -- 156
+if$ -- 11060
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 19
+newline$ -- 121
+num.names$ -- 60
+pop$ -- 202
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 122
 quote$ -- 0
-skip$ -- 2
+skip$ -- 186
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 14209
+swap$ -- 122
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+type$ -- 160
+warning$ -- 2
+while$ -- 246
+width$ -- 21
+write$ -- 285
+(There were 3 warnings)

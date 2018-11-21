@@ -2,9 +2,10 @@
 
 \chapter{Fast polyhedra analysis with deep Q-networks}
 \mbox{}\\
-The goal of my work was to build upon the existing solutions, used to make polyhedra analysis more efficient and use deep Q-networks to further improve the performance. Specifically, my goal was to extend the Elina Framework, the version of it that used reinforcement learning for polyhedra analysis, in order to use deep Q networks for the Q function estimation. The work I have done can be separated into three major subtasks. First of all, I had to figure out a way of calling a deep neural network form Elina, so that I could use it for the Q function estimation. Secondly, In order to test out the validity of deep Q-networks on polyhedra analysis and to have a baseline for further optimisation. I implemented the basic deep Q-network training algorithm. Finally, I attempted to further optimise this problem with some task specific knowledge.
+The goal of my work was to build upon the existing solutions, used to make polyhedra analysis more efficient and use deep Q-networks to further improve the performance. Specifically, my goal was to extend the Elina Framework, the version of it that used reinforcement learning for polyhedra analysis, in order to use deep Q networks for the Q function estimation. The work I have done can be separated into three major subtasks. First of all, I had to figure out a way of calling a deep neural network form Elina \cite{elina}, so that I could use it for the Q function estimation. Secondly, In order to test out the validity of deep Q-networks on polyhedra analysis and to have a baseline for further optimisation. I implemented the basic deep Q-network training algorithm. Finally, I attempted to further optimise this problem with some task specific knowledge.
 \section{Incorporating Neural Networks inside Elina}
-The first part, whilst definitely being the least interesting was probably the most laborious and a very key part of the whole work. The problem was that for my Q value estimation I wanted to use neural network regression from Keras in Python. I decided to use this framework as it is very widely used for this type of problem, is relatively easy and intuitive to use whilst remaining very powerful. However, Elina being written in C, I somehow had to make the link between my Python code and the C code of Elina. I finally achieved this by using the Python/C API and embedding the python code into the Elina framework. Initialising all the python code as well as importing all the necessary libraries such as Keras, is done in the $op\_pk\_manager\_alloc()$ function so that it doesn't have to be done every time we call the join function. Inside the join function we simply have to call the learning or prediction algorithms.
+The first part, whilst definitely being the least interesting was probably the most laborious and a very key part of the whole work. The problem was that for my Q value estimation I wanted to use neural network regression from Keras in Python. I decided to use this framework as it is very widely used for this type of problem, is relatively easy and intuitive to use whilst remaining very powerful. However, Elina being written in C, I somehow had to make the link between my Python code and the C code of Elina. I finally achieved this by using the Python/C API and embedding the python code into the Elina framework. Initialising all the python code as well as importing all the necessary libraries such as Keras, is done in the $op\_pk\_manager\_alloc()$ function so that it doesn't have to be done every time we call the join function. Inside the join function we simply have to call the learning or prediction algorithms.\\
+One advantage of such a modification to the framework, is that we can now learn online. In comparison to \cite{singh2018fast} which did its training offline. Online training allows the algorithm to pick the best action according to the current decision policy. This is a very important feature for deep Q-networks, as it allows us to set an exploration rate and to reinforce the already learned policy, this is vital to prevent divergence.
 \section{Basic algorithm}
 In order to get the basic training algorithm working, first the domain of polyhedra analysis has to be made compatible with the domain of reinforcement learning. Therefore the following list of items have to be initialised inside of the polyhedra domain:
 \begin{itemize}
@@ -12,44 +13,24 @@ In order to get the basic training algorithm working, first the domain of polyhe
 	\item A set of actions $A$
 	\item A reward function $r$
 \end{itemize}
-Luckily, since reinforcement learning methods have already been used for polyhedra analysis we can simply reuse what has already been developed for our baseline algorithm.\\
+Luckily, since a reinforcement learning method \cite{singh2018fast} has already been used for polyhedra analysis we can simply reuse what has already been developed for our baseline algorithm.\\
 \subsection{Features}
-In the Reinforcement learning method the following nine features was used.
-\begin{center}
+The reinforcement learning method used a set of nine different features.
+\begin{itemize}
+	\item The number of blocks.
+	\item The minimal, maximal and average size of a block.
+	\item The minimal, maximal and average size of the generator set off the union of input factors corresponding to a block.
+	\item The number of variables with finite upper and lower bound.
+	\item The number of variables with one finite and one infinite bound.
+\end{itemize}
+We will reuse the same features for the baseline algorithm. However we will modify their bucketing, since, due to the nature of the Q-learning method, it is very restrictive. The new bucketing will be discussed in section 4.3.2.
 
- \Indm\begin{tabular}{||c c c c||} 
- 
- \hline
- Feature & Extraction complexity & Approximate range & Scaling \\ [0.5ex] 
- \hline\hline
- $|\beta|$ & $O(1)$ & 1-10 & $x/1.$ \\ 
- \hline
- $min(|\chi_k|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-50 & $round((x/5),0.5)$ \\
- \hline
- $max(|\chi_k|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-50 & $round((x/5),0.5)$ \\
- \hline
- $avg(|\chi_k|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-50 & $round((x/5),0.5)$ \\
- \hline
- $min(|\bigcup G_{P_{m}}(\chi_k)|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-10000 & $round((x/1000),0.1)$ \\ 
- \hline
- $max(|\bigcup G_{P_{m}}(\chi_k)|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-10000 & $round((x/1000),0.1)$ \\ 
- \hline
- $avg(|\bigcup G_{P_{m}}(\chi_k)|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-10000 & $round((x/1000),0.1)$ \\ 
- \hline
- $\{|x_i \in X: x_i \in [l_m,\infty)$ in $P_m|\} + $\\$ \{|x_i \in X: x_i \in (-\infty,u_m]$ in $P_m|\} $ & $O(ng)$ & 1-50 & $round((x/5),0.5)$ \\ 
-  \hline
- $\{|x_i \in X: x_i \in [l_m,u_m]$ in $P_m|\}$ & $O(ng)$ & 1-50 & $round((x/5),0.5)$ \\ 
- 
- \hline
-\end{tabular}
-\end{center}
-
-\section{Actions}
+\subsection{Actions}
 As we discussed in 3.3.1., the bottleneck of the decomposed analysis is the join. Therefore, the set of actions will be a various set of joins of different precision and performance.\\
 First of all, the cost of the joins depends on the size of the block. Therefore, bounding the the size of the block with a threshold would increase the performance. These four different thresholds are used $threshold \in [5,9],[10,14],[15,19],[20,\infty)$\\
 Once we have decided on the size of a threshold we have to equally decide on what to do if the block has a greater size than the threshold. Their are different possibilities of how to split a large block into smaller ones, but basically, one has to pick a subset of constraints to remove from the block so that all its constraints are no longer dependant and then it can be further partitioned. The following three constraint removals are used:
 \paragraph{Stoer-Wagner min-cut}\mbox{}\\
-This uses the basic idea of removing the minimal amount of constraints in order to be able to split to block into two separate permissible partitions.
+This algorithm is based on the simple idea of removing the minimal amount of constraints in order to be able to split to block into two separate permissible partitions \cite{stoer1997simple}.
 \paragraph{Weighted constraint removal}\mbox{}\\
 The second and third constraint removal techniques are based on the same principal. They associate a certain weight to each constraint  and then remove the constraint with the highest weight. Two different weight distribution techniques are considered. \\
 In the first one, we first compute for each variable $x_i \in X$ the number of constraints it appears in, we can call this $n_i$. Then for each constraint $c_i$ we set its weight to the sum of $n_i$ of all the variables that are in the constraint.\\
@@ -68,13 +49,13 @@ In total we have four different thresholds, three different constraint removal a
 
 
 Once this has been done, I could finally proceed to the more interesting part of writing the training algorithm. Under its most basic form, the training algorithm could simply be the following. Pick a random reward or maximal action, observe the reward and then retrain the network with the observed plus the discounted  future reward on the given action. This very basic algorithm however did not get me very far as I ran into two main problems.
-\section{Reward}
+\subsection{Reward}
 As a reminder, the objective of the reward is to guide our learning policy. Rewarding it when it takes actions towards our global goal and penalising it when it does otherwise. Therefore, the reward developed by the Q-learning method was the following:
 \begin{equation}
 	r(s_t,a_t,s_{t+1}) = 3  \cdot n_s + 2 \cdot n_b + n_{hb} - \log_{10}(cyc)
 \end{equation}
 Where $n_s$ is the number of exactly defined variables of the resulting polyhedron after the join. $n_b$ is the number of bounded variables and $n_{hb}$ the number of semi-bounded variables of the resulting polyhedron. $cyc$ is the number of cycles required to perform the join.
-\paragraph{Back to deep Q-networks}\mbox{}\\
+\subsection{Back to deep Q-networks}
 As we have finally initialised polyhedra analysis for the use with reinforcement learning. We can finally proceed to the more interesting part of designing the training algorithm. Under its most basic form, the training algorithm could simply be the following. Pick a random reward or maximal action, observe the reward and then retrain the network with the observed plus the discounted  future reward on the given action. This very basic algorithm however did not get me very far as I ran into two main problems.
 
 \paragraph{Divergence of decision policy}\mbox{}\\
@@ -84,12 +65,12 @@ The second problem was that the predictions of my estimator would diverge toward
 \mbox{}\\
 These problems are not new and are a fundamental problem of trying to use non-linear functions for the Q-function approximation. Several techniques exist to combat these problem. Many of which reduce the complexity of the network and or the problem in general. However, some new methods have been developed recently that would allow the training of the estimators whilst retaining the problems original complexity. I decided the use the following two concepts inside of my algorithm.
 \subsection{Experience replay memory}
-Experience replay memory is a biologically inspired mechanism. That gives the estimator a very basic concept of a memory and instead of directly learning from the current events happening. The agent learns from a random subset of its memroy. More formally, during training, an array of a certain size filled with the past memory objects is kept. Each memory item contains the following items: $mem(s_t, a_t, r_t, s_{t+1})$. The current state, the action taken at this state, the observed reward and the next state. For training we then simply pick a random subsample from the memory array and train from these examples.
+Experience replay memory \cite{Mnih2015} is a biologically inspired mechanism. That gives the estimator a very basic concept of a memory and instead of directly learning from the current events happening. The agent learns from a random subset of its memroy. More formally, during training, an array of a certain size filled with the past memory objects is kept. Each memory item contains the following items: $mem(s_t, a_t, r_t, s_{t+1})$. The current state, the action taken at this state, the observed reward and the next state. For training we then simply pick a random subsample from the memory array and train from these examples.
 \\
 The objective of the memory is to homogenise the training data. It comes from the observation that during the execution of a program, often a particular strategy would be optimal during a certain period of time and afterwards another one would be the new optimal. This caused two major problems. First of all, it is not very time efficient as we do not gain much information by learning from the same data. Secondly, as there was low diversity in the training data and the decision strategy would frequently abruptly change it. This either led to the neural network getting stuck in local minima or simply to diverge and not obtain a policy. \\
 Picking a random subsample from memory helps increase the variance amongst the training data allowing the network to learn a more global policy. 
 \subsection{Separating target from max Q estimators}
-The other method used to reduce the divergence of the predicted Q values towards infinity, was to reduce the correlation between the training and the prediction data. This was done because, since the networks were being fitted based on the maximum Q value estimation, diverging towards infinity reduced their error and therefore was a valid strategy that they would use. In order to reduce this correlation, the networks predicting the maximum Q value and the ones predicting the Q value were separated. The weights of the maximum Q-value estimators were then updated every n steps in order for them to remain up to date.\\
+The other method used to reduce the divergence of the predicted Q values towards infinity, was to reduce the correlation between the training and the prediction data \cite{Mnih2015}. This was done because, since the networks were being fitted based on the maximum Q value estimation, diverging towards infinity reduced their error and therefore was a valid strategy that they would use. In order to reduce this correlation, the networks predicting the maximum Q value and the ones predicting the Q value were separated. The weights of the maximum Q-value estimators were then updated every n steps in order for them to remain up to date.\\
 \mbox{}\\
 Further modifications were also made on the neural network level in order to reduce these problems. I will get into these in part.\\
 %TODO add part
@@ -148,8 +129,14 @@ Once these modifications have been made the basic training algorithm has the fol
 \caption{DQN Training algorithm}
 \end{algorithm}
 \end{center}
+\mbox{}\\
+\mbox{}\\
+\mbox{}\\
+
 \section{Further optimisations}
-The results of this algorithm will be discussed in the results section. I will now go into more details about further optimisations and different strategies that I tried in order to further improve the efficiency of the algorithm. I will now go into more detail about these modifications.
+Once the basic version of the deep Q-network algorithm was designed we were able to train it, test it and obtain our first set of results. The discussion of these will be done in chapter 5. These results can from now on be used as a benchmark and we can try to further improve our results.\\
+In the search of a more efficient algorithm, we decided to incorporate some problem specific knowledge to the deep Q-network algorithm. As well as further optimisations to the feature vector and reward functions. The modifications made will be discussed in the rest of this section.
+
 
 \subsection{Separating the problem into two}
 The first problem specific modification I made, was subdividing the problem into two independent subproblems. The objective of Polyhedra Analysis is to obtain the most precise result in the quickest way possible. These are two independent objectives. My goal was therefore to separate these two tasks and create two independent subsystems, one focusing on making the results as precise as possible, and the other on the time complexity of getting there.\\
@@ -231,7 +218,7 @@ Finally, the last reason is that the decision policy doesn't give more importanc
 In order to decide the values of the bucketing I would use, I ran my algorithm on a big number of benchmarks computing the maximal, minimal and average values the different features could have. Finally, I scaled them so that they would all approximately remain between the bounds of zero and ten. I then bucketed them in the following fashion:
 \begin{center}
 
- \Indm\Indm\Indm\begin{tabular}{||c c c c||} 
+\Indm\Indm\begin{tabular}{||c c c c||} 
  
  \hline
  Feature & Extraction complexity & Approximate range & Scaling \\ [0.5ex] 
@@ -251,9 +238,10 @@ In order to decide the values of the bucketing I would use, I ran my algorithm o
  $avg(|\bigcup G_{P_{m}}(\chi_k)|:\chi_k \in \beta)$ & $O(|\beta|)$ & 1-10000 & $round((x/1000),0.1)$ \\ 
  \hline
  $\{|x_i \in X: x_i \in (-\infty,\infty)$ in $P_m|\}$ & $O(ng)$ & 1-100 & $round((x/10),0.5)$ \\ 
- \hline
- $\{|x_i \in X: x_i \in [l_m,\infty)$ in $P_m|\} + $\\$ \{|x_i \in X: x_i \in (-\infty,u_m]$ in $P_m|\} $ & $O(ng)$ & 1-50 & $round((x/5),0.5)$ \\ 
   \hline
+ $\{|x_i \in X: x_i \in [l_m,\infty)$ in $P_m|\} + $ & $O(ng)$ & 1-50 & $round((x/5),0.5)$ \\ 
+ $ \{|x_i \in X: x_i \in (-\infty,u_m]$ in $P_m|\} $ & & & \\
+ \hline 
  $\{|x_i \in X: x_i \in [l_m,u_m]$ in $P_m|\}$ & $O(ng)$ & 1-50 & $round((x/5),0.5)$ \\ 
    \hline
  $\{|x_i \in X: x_i \in [u_m,u_m]$ in $P_m|\}$ & $O(1)$ & 1-200 & $round((x/20),0.2)$ \\ 
@@ -273,7 +261,7 @@ Due to the nature of the new algorithm, the modelling of the reward function was
 \paragraph{Performance reward}\mbox{}\\
 Firstly, the reward for the precision estimator and then the reward for the performance estimator. Modelling the complexity is fairly simple and very straight forward, as simply counting the number of cycles needed for the computer to execute the join perfectly models the complexity and is exactly what we want to optimise. One thing to note is that we want this reward to be as small as possible, two simple solutions for this are either to invert it or to negate it. I experimented with both of these and found that negating it produces better results. I assume this is due to the fact that inverting the reward, makes it have a nonlinear curve and its derivative looses importance the higher the CPU cycles are, which is not something we want. Another thing to note is that modelling the complexity reward in this way give us another advantage over the reinforcement learning version of the algorithm. The reinforcement learning algorithm took the $\log_{10}$ off the CPU Cycles in order for the complexity and the precision reward to have similar values. I believe that this produces a similar problem as inverting the reward. The reward is no longer linear and its differences loose importance the higher it gets. Once again, this is not something that we want to model. The final rewards has the following form:
 \begin{equation}
-	r_{pr_1}(s_t,a_t,s_{t+1}) = -1 \cdot cyc
+	r_{pe}(s_t,a_t,s_{t+1}) = -1 \cdot cyc
 \end{equation}
 Where $cyc$ is the number of CPU cycles.
 \paragraph{Precision reward}\mbox{}\\

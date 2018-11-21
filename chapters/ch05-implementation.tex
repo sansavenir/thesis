@@ -1,6 +1,9 @@
 % !TEX root = ../thesis.tex
 
 \chapter{Results}
+\mbox{}\\
+\mbox{}\\
+\mbox{}\\
 As described in the previous chapter, different strategies were elaborated for the reward function and the action selection algorithm. Training all possible combinations and then observing the end precision would be a viable way of finding the optimal combination of these. However, due to the training time of the algorithm, this would be very time intensive. I used the following techniques in order to find the best algorithms.
 \section{Reward function selection}
 As a reminder, if we view the problem as a decision tree, and the role of reinforcement learning to pick the best path at each node. The reward function can be viewed as the compass of the RL algorithm that should leading the algorithm to the end in such a way as to maximise the global goal.\\
@@ -38,7 +41,6 @@ As a reminder, the rewards tested are the following:
 \end{figure}
 \mbox{}\\ \mbox{}\\
 
-%TODO fix image align
 These are the graphs of the evolution of the precision reward according to the number of joins. The orange line represents the measured reward whilst running the Q-learning algorithm and the blue line the measured reward of the deep Q-network algorithm trained with this reward as well. The overall precision of the end polyhedra are the following: For Figure 5.1. 99\% for Q-learning and 96\% for DQN. For figure 5.2. 99\% for Q-learning and 94\% for DQN. For figure 5.3. 97\% for Q-learning and 90\% for DQN. Whilst these graphs behave as expected in the first two scenarios, that is that the reward is lower for the algorithm with lower end precision as well. In the last graph we can see something unexpected. Whilst the DQN algorithm has a higher reward throughout most of the execution of the program having an average of 9 versus -8 for the Q-learning algorithm. This tells us that whilst the DQN has learned a correct strategy for maximising the reward, this reward does not guide us to the overall goal of maximising the end precision and therefore reward three is not an optimal reward function. These experiments do not give us much information on the differences between reward one and two as they both behave as normally. This is to be expected as reward one and two are similar.\\
 It is worth noting that whilst these experiments do give us some interesting information about the optimality of the different reward function, the results are heavily dependant of the benchmark we run them on and therefore the results cannot be fully trusted. However, with the information gathered by these experiments as well as some overall testing I decided to use the second reward function in further experiments.
 
