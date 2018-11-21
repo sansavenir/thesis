@@ -4,38 +4,36 @@
 \setcounter{chapter}{0}
 
 \chapter{Introduction}
-%TODO insert examples of bugs
-As technology becomes ever more present in the modern age and tasks become more and more optimised, the more the structures in our lives become controlled by programs. From simple things as automatic doors, too self-driving metros, trains and even cars, to medical software, aviation software and even nuclear weapon software. The more we wish to automise and simplify our lives the bigger will be the power that we will put into the hands of computers and the programs that run on them. As these programs get bigger, writing them becomes more complicated they become longer and the risk of them containing errors increases. However, the safety and invulnerability of some of these systems is critical and needs to be verifiable. Static analysis is a sub-branch of computer science tasked with the analysis of computer programs without actually executing them. It has seen a growing commercial use in the past years in some of these safety-critical domains.\\
-Until artificial intelligence manages to write our software for us, we can at least use it to verify the programs that we write.
-
+\mbox{}\\
+\mbox{}\\
+\mbox{}\\
+The number of domains controlled by computers has grown exponentially in the recent years. As the complexity of the structures surrounding us grows, the need for their automatision grows with it. And so, more and more the systems surrounding us, become controlled by computers. From simple things such as automatic doors to vastly more complex and important systems such as self-driving cars, medical software or nuclear weapons software. In some of these applications, a program bug could only be a slight nuisance, but in others its existence could have major implications. A few infamous examples of these exist where buffer overflows, rounding errors or division by zeros have caused space craft crashes or lethal radiation overdoses. As such, the importance of some of these devices demands their invulnerability and its verifiability. Unfortunately, as the complexity of these programs increases the need for complete and formal verification methods becomes critical.\\
+Static analysis is a sub-branch of computer science. Its task is to analyse a program without its execution, its goal is to discover weaknesses inside of the code that could lead to vulnerabilities. As such, it should help with debugging and provide a better notion of safety about the code. Static analysis has seen a growing commercial use in the recent years mostly in safety-critical domains. Recent advances in this field use clever mathematical properties in order to increase the capabilities of such methods. Other techniques, leverage the domain of artificial intelligence to increase the fields capacities. For, until ai is capable of writing invulnerable software for us, we can at least use it verify ours.
 \section{Problem Statement}
-
-Unfortunately, the complexity and size of the programs being used today has grown drastically and the design of a static analyser that can keep up with this growth is not a simple task. Many techniques exist that exploit specifics about the analyses that mange to increase its performance. There are also different types of techniques that try to leverage precision loss against performance gain. However, finding the right balance between these two is not an easy task.
- 
+The main focus of static analysis is observing the effects that program expressions and statements have on the variables inside of the program. In order for these methods to work, a numerical abstract domain is needed that can capture the relationships between the variables. An important attribute of a domain is its expressivity, that is to say, how complex are the constraints between variables that the domain can represent. The more expressive a domain is the more complicated relationships it can represent. The most expressive domain is the polyhedra domain, representing the constraints with different polyhedra. However, its expressivity comes at a cost. It is notoriously time and space complex, having worst case exponential complexities in both. Other domains also exits that do not suffer from these problems. Unfortunately, to achieve this, they loose their expressivity. Modifications to the polyhedra domain are also possible, some of these modifications try to leverage precision loss against performance gain. However, finding the right balance between these two is not an easy task.
 
 \section{Goals}
-The goal of this thesis is to use some of the recent development in new areas of reinforcement learning. To adapt and optimise these novel methods in order to to use them with polyhedra analysis. The goal is then to optimise these methods in order to render the analysis more efficient and outperform other methods.
+The goal of this thesis is to use some of the recent developments in new areas of reinforcement learning. To adapt and optimise these novel methods in order to to use them with polyhedra analysis. The goal is then to optimise these methods with some problem specific knowledge from polyhedra analysis, in order to render the analysis more efficient and outperform other methods.
 
 
 \section{Structure of this Document}
 
-Chapter 2 will describe reinforcement learning and talk about the recent advances in this field. I will as well describe deep Q-networks and some of areas that they have been used.
+\paragraph{Chapter 2}briefly introduces reinforcement learning, explaining the important concepts and its main goals. It will also describe some of the recent advances inside of the field and the achievements of these methods.
 
-Chapter 3 addresses Polyhedra analysis and some of the methods used to make it more efficient. 
+\paragraph{Chapter 3}addresses Polyhedra analysis. It will explain its usefulness inside of static analysers and how it works. It will also introduce some of the modifications made to the domain, in order to reduce some of its shortcomings.
 
-Chapter 4 Will address the algorithm designed and how the two previous chapters were combined, in order to achieve polyhedra analysis with deep Q-networks.
+\paragraph{Chapter 4}addresses the work done throughout this thesis. It will first address how the two previous chapters were combined and the basic algorithm was designed. It will also show the different methods tested to further optimise the algorithm.
 
-Chapter 5 Will discuss some experiments we ran in order to optimise the different parts of our final algorithm. It will also present the results we were able to obtain with our finalised and trained algorithm.
+\paragraph{Chapter 5}discussed the different experiments that were run to find the optimal combination of the different parts of the algorithm. It will also present the results of the execution of the finalised algorithm on different benchmarks.
+
+\paragraph{Chapter 6}will be a final discussion of the work achieved throughout this thesis.
 
 %TODO finish chapters results etc...
 
-%\section{Conventions}
-%
-%Throughout this document, we will adhere the following conventions:
-%
-%\begin{itemize}
-%\item To reduce redundancy and increase readability, we will refer to 'the user' (or other third parties) as a male person. We do not intend to discriminate anybody.
-%\item 
-%\item 
-%\end{itemize}
+
+
+
+
+
+
 

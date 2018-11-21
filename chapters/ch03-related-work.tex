@@ -1,8 +1,10 @@
 % !TEX root = ../thesis.tex
 
 \chapter{Polyhedra Analysis}
- 
-Polyhedra analysis is one of the main tools of static analysis. During the\\ execution of a program variables can become bounded, either by numbers or by \\other variables. Polyhedrons are one of the most expressive ways of modelling all the\\ possible values that variables can have as well as the different dependencies between them. Different alternatives exist for constraint representation instead of polyhedra, but the polyhedra domain is by far the most expressive. Unfortunately, it has worst case exponential space and time complexity meaning that using it on most real-world applications would cause it to either timeout or to run out of memory making it very impractical. Therefore, other domains have been more widely used such as octagon, zone or pentagon, but all of these are less expressive and therefore less precise by design. In the recent years several techniques have been developed that have managed to speed up polyhedra analysis without the loss of precision.
+\mbox{}\\
+\mbox{}\\
+\mbox{}\\
+Polyhedra analysis is one of the main tools of static analysis. During the execution of a program variables can become bounded, either by numbers or by other variables. Polyhedrons are one of the most expressive ways of modelling all the possible values that variables can have as well as the different dependencies between them. Different alternatives exist for constraint representation instead of polyhedra, but the polyhedra domain is by far the most expressive. Unfortunately, it has worst case exponential space and time complexity meaning that using it on most real-world applications would cause it to either timeout or to run out of memory making it very impractical. Therefore, other domains have been more widely used such as octagon, zone or pentagon, but all of these are less expressive and therefore less precise by design. In the recent years several techniques have been developed that have managed to speed up polyhedra analysis without the loss of precision.
 
 \section{Polyhedra representation}
 One of these techniques involves separating the way we represent our polyhedra. Polyhedra can be represented with both their constraint representation and their generator representation. To illustrate these different illustrations I will proceed with the following example. Lets assume we have the following set of assertions:
@@ -155,8 +157,11 @@ Another technique used increase the efficiency of polyhedra analysis, is that of
  
 \paragraph{Example 3.2} \mbox{}\\
 Let's consider the with variables $X = \{x_1,x_2,x_3,x_4\}$ and $C = \{ x_1 + 2 \cdot x_3 \leq 10, x_2 = 1 \}$.\\
-This polyhedron can be partitioned into three blocks $\pi_P = \{\{x_1,x_3\},\{x_2\},\{x_4\}\}$ and its corresponding factors are equal to:\\
-$C_{P_1}\{x_1 + 2\cdot x_3 \leq 10 \} $\qquad$ C_{P_2}\{x_2 = 10 \}$
+This polyhedron can be partitioned into three blocks $\pi_P = \{\{x_1,x_3\},\{x_2\},\{x_4\}\}$ and its corresponding factors are equal to:
+\begin{center}
+	$C_{P_1}\{x_1 + 2\cdot x_3 \leq 10 \} , C_{P_2}\{x_2 = 10 \}$
+\end{center}
+
 % TODO write example
 
 \subsection{Decomposition operators}
