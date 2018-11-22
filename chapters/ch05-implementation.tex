@@ -4,6 +4,7 @@
 \mbox{}\\
 \mbox{}\\
 \mbox{}\\
+%TODO add explenation of preciison 
 As described in the previous chapter, different strategies were elaborated for the reward function and the action selection algorithm. Training all possible combinations and then observing the end precision would be a viable way of finding the optimal combination of these. However, due to the training time of the algorithm, this would be very time intensive. I used the following techniques in order to find the best algorithms.
 \section{Reward function selection}
 As a reminder, if we view the problem as a decision tree, and the role of reinforcement learning to pick the best path at each node. The reward function can be viewed as the compass of the RL algorithm that should leading the algorithm to the end in such a way as to maximise the global goal.\\
@@ -69,12 +70,43 @@ The second problem was selection the best action selection algorithm. In section
  
  \hline
 \end{tabular}
-
 \end{center}
+
 As to the choice of benchmarks for this experiment. I had several criteria. First, I picked benchmarks where achieving a high level of accuracy was not too easy in order to have more informative results. Second, I picked benchmarks that were fast to compute so that the testing time would be fast. I also picked fast benchmarks because my goal was to find an algorithm that maximised the precision as each of these algorithms can be then optimised with its own parameters in order to ameliorate performance and in this way I only had to concentrate on precision.\\
 As to the results of these experiments. Unfortunately there is not overall best algorithm. As discussed in section 4.8., each of these algorithms has its advantages and shortcomings. However, the main objective I was looking for from these experiments was finding an algorithm that would be stable. We can see that algorithms two and three can obtain very good on some benchmarks. Unfortunately, they also perform very bad on others. This is due to the fact that both of these are threshold based and picking an optimal threshold that would work well for all benchmarks is very difficult, making both of these algorithms not practical. Afterwards, between the first and fourth algorithm, the last one outperforms the first on average and therefore is the one I will use from here on. Whilst the last algorithm does not have the best precision on some benchmarks its stability over all benchmarks made it the preferred candidate.
+
+
 \section{Final algorithm}
-Once both of these decisions had been made. The architecture of the final separated algorithm was fully decided and could be further trained and optimised.
+Once both of these decisions had been made. The architecture of the final separated algorithm was fully decided and could be further trained and optimised.\\
+For the testing of the different algorithm, we decided to run them on a large set of benchmarks. In this way, we could see if we managed to learn a global policy or simply find a local minima. In the end we settled on a set of 81 different benchmarks of varying sizes on complexities. Due to the relatively large amount of benchmarks, we set the timeout to be quite short to thirty minutes. This was done so that the experiments could be run in a reasonable amount of time. For each benchmark, we saved the resulting invariants of the analysis and the runtime.\\
+\mbox{}\\
+We test on the benchmarks with four different analyses:
+\begin{itemize}
+	\item Using the decomposed Polyhedra domain.
+	\item Rl trained with Q-learning
+	\item Basic deep Q-network algorithm
+	\item Deep Q-network with separated estimators
+\end{itemize}
+
+The following table shows the results of the experiments. It shows the average of the precision percentages as compared to the decomposed analysis. The total runtime on all benchmarks, the number of benchmarks that the analysis timed out on. Finally, for the reinforcement learning algorithms, the number of benchmarks where they outperform the other RL algorithms with regards to precision.
+
+\begin{center}
+\begin{tabular}{||c c c c c||}
+ 
+ \hline
+ Results & Elina & Q-learning & DQN & Separated DQN \\ [0.5ex] 
+ \hline\hline
+ Avg. prec. (\%) & 100 & 87.1 & 94.9 & 91.6\\
+ Runtime (hr.) & 18:28 & 14:05 & 15:35 & 11:21\\
+ $n^{\circ}$ timeouts & 33 & 23 & 23 & 17\\
+ $n^{\circ}$ bench. most precise &  & 1 & 36 & 2\\
+ 
+ \hline
+\end{tabular}
+\end{center}
+
+\paragraph{Result discussion}\mbox{}\\
+We can see that we are able of outperforming the Q-learning method with both the deep Q-network and the separated deep Q-network algorithms. What is interesting to note, is that the regular DQN outperforms the separated one in terms of precision. This is most likely due to the action selection algorithm. Even though, in 5.2., we attempted to pick an algorithm that would be as stable as possible and be able to maintain good results over all benchmarks. If we observe the concrete results, on a few benchmarks the separated DQN performs very poorly which makes it drop its overall precision. However, it is worth noting that the separated DQN outperforms all the other algorithms in terms of speed, as it manages to finish the analysis of all the benchmarks quite a lot faster than the others, most notably, it is faster than the Q-learning algorithm whilst remaining more precise as well. The separated DQN also has the least timeouts out of all the analysis. In terms of precision however, the normal DQN algorithm is the most precise on average on all the benchmarks. It is also more precise on 36 of the 81 benchmarks and is only beaten by the other algorithms on one benchmark by Q-learning and on two by the separated DQN, the precision is the same for the rest.
 
 
 

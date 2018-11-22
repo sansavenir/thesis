@@ -72,6 +72,6 @@
 \contentsline {section}{\numberline {5.1}Reward function selection}{31}{section.5.1}
 \contentsline {section}{\numberline {5.2}Action selection algorithm}{32}{section.5.2}
 \contentsline {section}{\numberline {5.3}Final algorithm}{33}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{35}{chapter.6}
-\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}
-\contentsline {chapter}{Bibliography}{39}{section*.38}
+\contentsline {paragraph}{\nonumberline Result discussion}{34}{section*.38}
+\contentsline {chapter}{\numberline {6}Conclusion}{35}{chapter.6}
+\contentsline {chapter}{Bibliography}{37}{section*.39}
