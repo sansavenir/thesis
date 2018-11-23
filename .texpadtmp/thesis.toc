@@ -3,77 +3,78 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Problem Statement}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Goals}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Structure of this Document}{2}{section.1.3}
+\contentsline {section}{\numberline {1.3}Related work}{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}Structure of this Document}{2}{section.1.4}
 \contentsline {paragraph}{\nonumberline Chapter 2}{2}{section*.5}
 \contentsline {paragraph}{\nonumberline Chapter 3}{2}{section*.6}
 \contentsline {paragraph}{\nonumberline Chapter 4}{2}{section*.7}
-\contentsline {paragraph}{\nonumberline Chapter 5}{2}{section*.8}
-\contentsline {paragraph}{\nonumberline Chapter 6}{2}{section*.9}
-\contentsline {chapter}{\numberline {2}Reinforcement Learning}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Concepts}{3}{section.2.1}
-\contentsline {paragraph}{\nonumberline Example 2.1}{4}{section*.10}
-\contentsline {section}{\numberline {2.2}Q-function}{4}{section.2.2}
-\contentsline {section}{\numberline {2.3}Q-function approximation}{4}{section.2.3}
-\contentsline {paragraph}{\nonumberline Exploration-exploitation}{5}{section*.11}
-\contentsline {paragraph}{\nonumberline Learning rate}{5}{section*.12}
-\contentsline {paragraph}{\nonumberline Discount factor}{5}{section*.13}
-\contentsline {subsection}{\numberline {2.3.1}Q-learning}{5}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Deep Q-networks}{5}{subsection.2.3.2}
-\contentsline {chapter}{\numberline {3}Polyhedra Analysis}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Polyhedra representation}{7}{section.3.1}
-\contentsline {paragraph}{\nonumberline Example 3.1}{7}{section*.14}
-\contentsline {subsection}{\numberline {3.1.1}Constraint representation}{8}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Generator representation}{8}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Polyhedra domain}{8}{subsection.3.1.3}
-\contentsline {paragraph}{\nonumberline Chernikova's Algorithm}{9}{section*.15}
-\contentsline {section}{\numberline {3.2}Polyhedra Decomposition}{10}{section.3.2}
-\contentsline {paragraph}{\nonumberline Table 2}{10}{section*.16}
-\contentsline {paragraph}{\nonumberline Example 3.2}{10}{section*.17}
-\contentsline {subsection}{\numberline {3.2.1}Decomposition operators}{10}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Reinforcement Learning for polyhedra analysis}{11}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Adapting polyhedra analysis for Reinforcement Learning}{11}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Linear function approximation methods}{12}{subsection.3.3.2}
-\contentsline {chapter}{\numberline {4}Fast polyhedra analysis with deep Q-networks}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Incorporating Neural Networks inside Elina}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Basic algorithm}{14}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Features}{14}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Actions}{14}{subsection.4.2.2}
-\contentsline {paragraph}{\nonumberline Stoer-Wagner min-cut}{15}{section*.18}
-\contentsline {paragraph}{\nonumberline Weighted constraint removal}{15}{section*.19}
-\contentsline {paragraph}{\nonumberline Merging blocks}{15}{section*.20}
-\contentsline {subsection}{\numberline {4.2.3}Reward}{15}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Back to deep Q-networks}{16}{subsection.4.2.4}
-\contentsline {paragraph}{\nonumberline Divergence of decision policy}{16}{section*.21}
-\contentsline {paragraph}{\nonumberline Divergence of the action value prediction}{16}{section*.22}
-\contentsline {subsection}{\numberline {4.2.5}Experience replay memory}{16}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}Separating target from max Q estimators}{17}{subsection.4.2.6}
-\contentsline {paragraph}{\nonumberline Pseudo code of basic learning algorithm}{17}{section*.23}
-\contentsline {section}{\numberline {4.3}Further optimisations}{19}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Separating the problem into two}{19}{subsection.4.3.1}
-\contentsline {paragraph}{\nonumberline Pseudo code of the separated training algorithm}{19}{section*.24}
-\contentsline {subsection}{\numberline {4.3.2}Feature selection}{21}{subsection.4.3.2}
-\contentsline {paragraph}{\nonumberline Adding new features}{21}{section*.25}
-\contentsline {paragraph}{\nonumberline Bucketing}{21}{section*.26}
-\contentsline {subsection}{\numberline {4.3.3}Reward Function modelling}{23}{subsection.4.3.3}
-\contentsline {paragraph}{\nonumberline Performance reward}{23}{section*.27}
-\contentsline {paragraph}{\nonumberline Precision reward}{23}{section*.28}
-\contentsline {subsection}{\numberline {4.3.4}Action selection algorithms}{24}{subsection.4.3.4}
-\contentsline {paragraph}{\nonumberline Algorithm 1}{24}{section*.29}
-\contentsline {paragraph}{\nonumberline Pseudo code of algorithm 1}{25}{section*.30}
-\contentsline {paragraph}{\nonumberline Algorithm 2}{25}{section*.31}
-\contentsline {paragraph}{\nonumberline Pseudo code of algorithm 2}{25}{section*.32}
-\contentsline {paragraph}{\nonumberline Algorithm 3}{26}{section*.33}
-\contentsline {paragraph}{\nonumberline Pseudo code algorithm 3}{26}{section*.34}
-\contentsline {paragraph}{\nonumberline Algorithm 4}{27}{section*.35}
-\contentsline {paragraph}{\nonumberline Pseudo code algorithm 4}{27}{section*.36}
-\contentsline {section}{\numberline {4.4}Neural network characteristics}{28}{section.4.4}
-\contentsline {section}{\numberline {4.5}Training}{28}{section.4.5}
-\contentsline {chapter}{\numberline {5}Experimental Results}{31}{chapter.5}
-\contentsline {paragraph}{\nonumberline Precision measuring}{31}{section*.37}
-\contentsline {paragraph}{\nonumberline Training/Testing set}{31}{section*.38}
-\contentsline {section}{\numberline {5.1}Reward function selection}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Action selection algorithm}{33}{section.5.2}
-\contentsline {section}{\numberline {5.3}Final algorithm}{34}{section.5.3}
-\contentsline {paragraph}{\nonumberline Result discussion}{34}{section*.40}
-\contentsline {chapter}{\numberline {6}Conclusion}{37}{chapter.6}
-\contentsline {chapter}{Bibliography}{39}{section*.41}
+\contentsline {paragraph}{\nonumberline Chapter 5}{3}{section*.8}
+\contentsline {paragraph}{\nonumberline Chapter 6}{3}{section*.9}
+\contentsline {chapter}{\numberline {2}Reinforcement Learning}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Concepts}{5}{section.2.1}
+\contentsline {paragraph}{\nonumberline Example 2.1}{6}{section*.10}
+\contentsline {section}{\numberline {2.2}Q-function}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Q-function approximation}{6}{section.2.3}
+\contentsline {paragraph}{\nonumberline Exploration-exploitation}{7}{section*.11}
+\contentsline {paragraph}{\nonumberline Learning rate}{7}{section*.12}
+\contentsline {paragraph}{\nonumberline Discount factor}{7}{section*.13}
+\contentsline {subsection}{\numberline {2.3.1}Q-learning}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Deep Q-networks}{7}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}Polyhedra Analysis}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Polyhedra representation}{9}{section.3.1}
+\contentsline {paragraph}{\nonumberline Example 3.1}{9}{section*.14}
+\contentsline {subsection}{\numberline {3.1.1}Constraint representation}{10}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Generator representation}{10}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Polyhedra domain}{10}{subsection.3.1.3}
+\contentsline {paragraph}{\nonumberline Chernikova's Algorithm}{11}{section*.15}
+\contentsline {section}{\numberline {3.2}Polyhedra Decomposition}{12}{section.3.2}
+\contentsline {paragraph}{\nonumberline Table 2}{12}{section*.16}
+\contentsline {paragraph}{\nonumberline Example 3.2}{12}{section*.17}
+\contentsline {subsection}{\numberline {3.2.1}Decomposition operators}{12}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Reinforcement Learning for polyhedra analysis}{13}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Adapting polyhedra analysis for Reinforcement Learning}{13}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Linear function approximation methods}{14}{subsection.3.3.2}
+\contentsline {chapter}{\numberline {4}Fast polyhedra analysis with deep Q-networks}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Incorporating Neural Networks inside Elina}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}Basic algorithm}{15}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Features}{16}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Actions}{16}{subsection.4.2.2}
+\contentsline {paragraph}{\nonumberline Stoer-Wagner min-cut}{16}{section*.18}
+\contentsline {paragraph}{\nonumberline Weighted constraint removal}{17}{section*.19}
+\contentsline {paragraph}{\nonumberline Merging blocks}{17}{section*.20}
+\contentsline {subsection}{\numberline {4.2.3}Reward}{17}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Back to deep Q-networks}{18}{subsection.4.2.4}
+\contentsline {paragraph}{\nonumberline Divergence of decision policy}{18}{section*.21}
+\contentsline {paragraph}{\nonumberline Divergence of the action value prediction}{18}{section*.22}
+\contentsline {subsection}{\numberline {4.2.5}Experience replay memory}{18}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Separating target from max Q estimators}{19}{subsection.4.2.6}
+\contentsline {paragraph}{\nonumberline Pseudo code of basic learning algorithm}{19}{section*.23}
+\contentsline {section}{\numberline {4.3}Further optimisations}{21}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Separating the problem into two}{21}{subsection.4.3.1}
+\contentsline {paragraph}{\nonumberline Pseudo code of the separated training algorithm}{21}{section*.24}
+\contentsline {subsection}{\numberline {4.3.2}Feature selection}{23}{subsection.4.3.2}
+\contentsline {paragraph}{\nonumberline Adding new features}{23}{section*.25}
+\contentsline {paragraph}{\nonumberline Bucketing}{24}{section*.26}
+\contentsline {subsection}{\numberline {4.3.3}Reward Function modelling}{25}{subsection.4.3.3}
+\contentsline {paragraph}{\nonumberline Performance reward}{25}{section*.27}
+\contentsline {paragraph}{\nonumberline Precision reward}{25}{section*.28}
+\contentsline {subsection}{\numberline {4.3.4}Action selection algorithms}{26}{subsection.4.3.4}
+\contentsline {paragraph}{\nonumberline Algorithm 1}{26}{section*.29}
+\contentsline {paragraph}{\nonumberline Pseudo code of algorithm 1}{27}{section*.30}
+\contentsline {paragraph}{\nonumberline Algorithm 2}{27}{section*.31}
+\contentsline {paragraph}{\nonumberline Pseudo code of algorithm 2}{27}{section*.32}
+\contentsline {paragraph}{\nonumberline Algorithm 3}{28}{section*.33}
+\contentsline {paragraph}{\nonumberline Pseudo code algorithm 3}{28}{section*.34}
+\contentsline {paragraph}{\nonumberline Algorithm 4}{29}{section*.35}
+\contentsline {paragraph}{\nonumberline Pseudo code algorithm 4}{29}{section*.36}
+\contentsline {section}{\numberline {4.4}Neural network characteristics}{30}{section.4.4}
+\contentsline {section}{\numberline {4.5}Training}{30}{section.4.5}
+\contentsline {chapter}{\numberline {5}Experimental Results}{33}{chapter.5}
+\contentsline {paragraph}{\nonumberline Precision measuring}{33}{section*.37}
+\contentsline {paragraph}{\nonumberline Training/Testing set}{33}{section*.38}
+\contentsline {section}{\numberline {5.1}Reward function selection}{33}{section.5.1}
+\contentsline {section}{\numberline {5.2}Action selection algorithm}{35}{section.5.2}
+\contentsline {section}{\numberline {5.3}Final algorithm}{36}{section.5.3}
+\contentsline {paragraph}{\nonumberline Result discussion}{36}{section*.40}
+\contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.6}
+\contentsline {chapter}{Bibliography}{41}{section*.41}

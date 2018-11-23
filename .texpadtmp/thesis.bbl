@@ -1,5 +1,14 @@
 \begin{thebibliography}{\protect\citename{Yogeswaran and Ponnambalam }2012}
 
+\bibitem[\protect\citename{Chen et~al\mbox{.} }2008]{chen2008sound}
+{\sc Chen, L., Min{\'e}, A., and Cousot, P.}
+\newblock 2008.
+\newblock
+  {\href{http://www.google.com/search?q=A+sound+floating-point+polyhedra+abstract+domain}{A
+  sound floating-point polyhedra abstract domain}}.
+\newblock In {\em Asian Symposium on Programming Languages and Systems},
+  Springer, 3--18.
+
 \bibitem[\protect\citename{Chernikova }1968]{chernikova1968algorithm}
 {\sc Chernikova, N.}
 \newblock 1968.
@@ -19,6 +28,15 @@
   construction or approximation of fixpoints}}.
 \newblock In {\em Proceedings of the 4th ACM SIGACT-SIGPLAN symposium on
   Principles of programming languages}, ACM, 238--252.
+
+\bibitem[\protect\citename{Dyer et~al\mbox{.} }1991]{dyer1991random}
+{\sc Dyer, M., Frieze, A., and Kannan, R.}
+\newblock 1991.
+\newblock
+  {\href{http://www.google.com/search?q=A+random+polynomial-time+algorithm+for+approximating+the+volume+of+convex+bodies}{A
+  random polynomial-time algorithm for approximating the volume of convex
+  bodies}}.
+\newblock {\em Journal of the ACM (JACM) 38}, 1, 1--17.
 
 \bibitem[\protect\citename{ELINA }]{elina}
 {\sc ELINA}.
@@ -60,6 +78,14 @@
   {\href{http://www.google.com/search?q=Reinforcement+learning:+A+survey}{Reinforcement
   learning: A survey}}.
 \newblock {\em Journal of artificial intelligence research 4\/}, 237--285.
+
+\bibitem[\protect\citename{Kim et~al\mbox{.} }2004]{kim2004fast}
+{\sc Kim, Y.~J., Varadhan, G., Lin, M.~C., and Manocha, D.}
+\newblock 2004.
+\newblock
+  {\href{http://www.google.com/search?q=Fast+swept+volume+approximation+of+complex+polyhedral+models}{Fast
+  swept volume approximation of complex polyhedral models}}.
+\newblock {\em Computer-Aided Design 36}, 11, 1013--1027.
 
 \bibitem[\protect\citename{Liang et~al\mbox{.} }2011]{liang2011learning}
 {\sc Liang, P., Tripp, O., and Naik, M.}
@@ -132,6 +158,14 @@
   {\href{http://www.google.com/search?q=The+double+description+method,+in+contributions+to+the+theory+of+games+ii}{The
   double description method, in contributions to the theory of games ii}}.
 \newblock {\em Annals of Mathematics Study 28\/}.
+
+\bibitem[\protect\citename{Oh et~al\mbox{.} }2014]{oh2014selective}
+{\sc Oh, H., Lee, W., Heo, K., Yang, H., and Yi, K.}
+\newblock 2014.
+\newblock
+  {\href{http://www.google.com/search?q=Selective+context-sensitivity+guided+by+impact+pre-analysis}{Selective
+  context-sensitivity guided by impact pre-analysis}}.
+\newblock {\em ACM SIGPLAN Notices 49}, 6, 475--484.
 
 \bibitem[\protect\citename{Oh et~al\mbox{.} }2015]{oh2015learning}
 {\sc Oh, H., Yang, H., and Yi, K.}
