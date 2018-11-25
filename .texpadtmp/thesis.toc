@@ -57,16 +57,16 @@
 \contentsline {paragraph}{\nonumberline Bucketing}{24}{section*.26}
 \contentsline {subsection}{\numberline {4.3.3}Reward Function modelling}{25}{subsection.4.3.3}
 \contentsline {paragraph}{\nonumberline Performance reward}{25}{section*.27}
-\contentsline {paragraph}{\nonumberline Precision reward}{25}{section*.28}
+\contentsline {paragraph}{\nonumberline Precision reward}{26}{section*.28}
 \contentsline {subsection}{\numberline {4.3.4}Action selection algorithms}{26}{subsection.4.3.4}
-\contentsline {paragraph}{\nonumberline Algorithm 1}{26}{section*.29}
+\contentsline {paragraph}{\nonumberline Algorithm 1}{27}{section*.29}
 \contentsline {paragraph}{\nonumberline Pseudo code of algorithm 1}{27}{section*.30}
-\contentsline {paragraph}{\nonumberline Algorithm 2}{27}{section*.31}
-\contentsline {paragraph}{\nonumberline Pseudo code of algorithm 2}{27}{section*.32}
+\contentsline {paragraph}{\nonumberline Algorithm 2}{28}{section*.31}
+\contentsline {paragraph}{\nonumberline Pseudo code of algorithm 2}{28}{section*.32}
 \contentsline {paragraph}{\nonumberline Algorithm 3}{28}{section*.33}
-\contentsline {paragraph}{\nonumberline Pseudo code algorithm 3}{28}{section*.34}
+\contentsline {paragraph}{\nonumberline Pseudo code algorithm 3}{29}{section*.34}
 \contentsline {paragraph}{\nonumberline Algorithm 4}{29}{section*.35}
-\contentsline {paragraph}{\nonumberline Pseudo code algorithm 4}{29}{section*.36}
+\contentsline {paragraph}{\nonumberline Pseudo code algorithm 4}{30}{section*.36}
 \contentsline {section}{\numberline {4.4}Neural network characteristics}{30}{section.4.4}
 \contentsline {section}{\numberline {4.5}Training}{30}{section.4.5}
 \contentsline {chapter}{\numberline {5}Experimental Results}{33}{chapter.5}
