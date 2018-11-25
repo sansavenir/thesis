@@ -5,16 +5,16 @@
 The goal of this work was to build upon the existing solutions used to make polyhedra analysis more efficient and use deep Q-networks to further improve the performance. Specifically, the goal was to extend the Elina Framework \cite{elina}, the version of it that uses reinforcement learning for polyhedra analysis, in order to replace the Q-learning method with deep Q-networks for the Q-function estimation. Our work can be separated into three major subtasks. First of all, it was necessary to figure out a way of calling a deep neural network from Elina, so that it could be used for the Q-function estimation. Secondly, In order to test out the validity of deep Q-networks on polyhedra analysis and to have a baseline for further optimisation, we implemented the basic deep Q-network training algorithm. Finally, we attempted to further optimise this problem with some task specific knowledge.
 
 \section{Incorporating Neural Networks inside Elina}
-The first part, whilst definitely being the least interesting was probably the most laborious and a very key part of the whole work. The problem was that for the Q-value estimation we wanted to use neural network regression from the Keras framework in Python. We decided to use this framework as it is very widely used for this type of problem, is relatively easy and intuitive to use whilst remaining very powerful. However, Elina being written in C, the link between the python and C code had to be made. This was finally achieved  by using the Python/C API and embedding the python code into the Elina framework.\\
+The first part, whilst definitely being the least interesting was possibly the most laborious and a very key part of the whole work. The problem was that for the Q-value estimation we wanted to use neural network regression from the Keras framework in Python. We decided to use this framework as it is very widely used for this type of problem, is relatively easy and intuitive to use whilst remaining very powerful. However, Elina being written in C, the link between the python and C code had to be made. This was finally achieved  by using the Python/C API and embedding the python code into the Elina framework.\\
 One advantage of such a modification to the framework, is that we can now learn online. In comparison to \cite{singh2018fast} where the training was done offline. Online training allows the algorithm to pick the best action according to the current decision policy. This is a very important feature for deep Q-networks, as it allows us to set an exploration rate and to reinforce the already learned policy, this is vital to prevent divergence.
 \section{Basic algorithm}
-In order to get the basic training algorithm working, first the domain of polyhedra analysis had to be made compatible with the domain of reinforcement learning. As we have discussed in chapter 2. in order for reinforcement learning to work the following list of items have to be initialised inside of the polyhedra domain:
+In order to get the basic training algorithm working, first the domain of polyhedra analysis had to be made compatible with the domain of reinforcement learning. As we have discussed in chapter 3.3.1. in order for reinforcement learning to work the following list of items have to be initialised inside of the polyhedra domain:
 \begin{itemize}
 	\item A set of features describing the polyhedra, to use as states $S$
 	\item A set of actions $A$
 	\item A reward function $r$
 \end{itemize}
-Luckily, since a reinforcement learning method \cite{singh2018fast} has already been used for polyhedra analysis we can simply reuse what has already been developed for our baseline algorithm.\\
+Luckily, since a reinforcement learning method \cite{singh2018fast} has already been used for polyhedra analysis we could simply reuse what has already been developed for our baseline algorithm.\\
 \subsection{Features}
 The reinforcement learning method uses a set of nine different features.
 \begin{itemize}
@@ -27,8 +27,8 @@ The reinforcement learning method uses a set of nine different features.
 We will start off by reusing the same features. However we will modify their bucketing, since, due to the nature of the Q-learning method, it is very restrictive. The new bucketing will be discussed in section 4.3.2.
 
 \subsection{Actions}
-As we discussed in 3.3.1., the bottleneck of the decomposed analysis is the join. Therefore, the set of actions will be composed of various joins of different precision and performance.\\
-First of all, the cost of the joins depends on the size of the block. Therefore, bounding the the size of the block with a threshold would increase the performance. These four different thresholds are used $threshold \in [5,9],[10,14],[15,19],[20,\infty)$\\
+As we discussed in 3.2.1., the bottleneck of the decomposed analysis is the join. Therefore, the set of actions will be composed of various joins of different precision and performance.\\
+First of all, the cost of the joins depends on the size of the blocks. Therefore, bounding the this size with a threshold would increase the performance. These four different thresholds are used $threshold \in [5,9],[10,14],[15,19],[20,\infty)$\\
 Once we have decided on the size of a threshold we have to equally decide on what to do if the block has a greater size than the threshold. Their are different possibilities of how to split a large block into smaller ones, but basically, one has to pick a subset of constraints to remove from the block so as to make some of its variables no longer dependant and then it can be further partitioned. The following three constraint removals are used:
 \paragraph{Stoer-Wagner min-cut}\mbox{}\\
 This algorithm is based on the simple idea of removing the minimal amount of constraints in order to be able to split the block into two separate permissible partitions \cite{stoer1997simple}.
@@ -38,14 +38,14 @@ In the first one, we compute for each variable $x_i \in X$ the number of constra
 The second method, we first compute for each pair of variables $x_i,x_j\in X$, $n_{ij}$ the number of constraints containing both $x_i$ and $x_j$. The weight of the constraint is then the sum of all the $n_{ij}$ of all the pairs of variables $x_i,x_j$ contained in the constraint.\\
 The idea behind removing the constraint with maximal weight, is that, most likely the variables with a large weight also occur in other constraints and therefore will not become unbounded once the constraint is removed. In this way we retain precision.
 \paragraph{Merging blocks}\mbox{}\\
-The next three actions are various block merging strategies. The idea is to select different blocks and merge them together as long as the resulting blocks remain below the upper threshold in order to increase the precision of the subsequent join. The following three block merging strategies are used:
+The next three actions are various block merging strategies. The idea is to select different blocks and merge them together as long as the resulting blocks remain below the upper threshold, in order to increase the precision of the subsequent join. The following three block merging strategies are used:
 \begin{itemize}
 	\item No merge, no blocks are merged
 	\item Merge smallest first, we first merge the smallest two blocks together. We then remove the smallest block and continue as long as the resulting merge remains below the threshold.
 	\item Merge small with large, similar to the previous strategy but this time me merge the smallest block with the largest.
 \end{itemize}
 
-In total we have four different thresholds, three different constraint removal algorithms and three different block merging strategies. We can mix and match these together as we please, which means that in total we have $4\cdot 3\cdot 3 =36$ different actions we can pick.
+In total we have four different thresholds, three different constraint removal algorithms and three different block merging strategies. We can mix and match these together as we please, which means that in total we have $4\cdot 3\cdot 3 =36$ different actions we can pick from.
 
 \subsection{Reward}
 As a reminder, the objective of the reward is to guide our learning policy, rewarding it when it takes actions towards our global goal and penalising it when it does otherwise. Therefore, the reward developed by the Q-learning method was the following:
@@ -57,15 +57,15 @@ Where $n_s$ is the number of exactly defined variables of the resulting polyhedr
 As we have finally initialised polyhedra analysis for the use with reinforcement learning. We can finally proceed to the design of the training algorithm. Under its most basic form, the training algorithm could simply be the following. Pick a random action or the action with the maximal predicted Q-function, observe the reward and then retrain the network with the observed reward plus the discounted future reward on the given action. This very basic algorithm however does not work very well as it runs into two major complications.
 
 \paragraph{Divergence of decision policy}\mbox{}\\
-The first of which is the divergence of the action selection strategy. Meaning that the neural networks were not capable of creating a consistent strategy but would be picking different actions almost randomly most of the time.
+The first of which is the divergence of the action selection strategy. Meaning that the neural networks were not capable of creating a consistent strategy, but rather pick different actions almost randomly most of the time.
 \paragraph{Divergence of the action value prediction}\mbox{}\\
 The second problem was that the values of the predictions from the estimators would diverge towards infinity. This is also known as the exploding gradient problem.\\
 \mbox{}\\
-These problems are not new and are a fundamental problem of trying to use nonlinear functions for the Q-function approximation. Several techniques exist to combat these problems. Many of which reduce the complexity of the network and/or the problem in general. However, some new methods have been developed recently that would allow the training of the estimators whilst retaining the problems original complexity. We decided the use the following two concepts inside of the algorithm.
+These problems are not new and are a fundamental problem of trying to use nonlinear functions for the Q-function approximation. Several techniques exist to combat these problems. Many of which reduce the complexity of the network and/or the problem in general. However, some new methods have been developed recently that allow the training of the estimators whilst retaining the problems original complexity. We decided the use the following two concepts inside of our algorithm.
 \subsection{Experience replay memory}
 Experience replay memory \cite{Mnih2015} is a biologically inspired mechanism. Its goal is to give the estimator a very basic concept of a memory and instead of directly learning from the current events happening, the agent learns from a random subset of its memory. More formally, during training, an array of a certain size filled with the past memory objects is kept. Each memory item contains the following objects: $mem(s_t, a_t, r_t, s_{t+1})$. The current state, the action taken at this state, the observed reward and the next state. For training we then simply pick a random subsample from the memory array and train from this data.
 \\
-The objective of the memory is to homogenise the training data. It comes from the observation that during the execution of a program, often a particular strategy would be optimal for a certain period of time and afterwards another one would be the new optimal. This causes two major problems. First of all, it is not very time efficient as we do not gain much information by learning from the same data. Secondly, as there is low diversity in the training data and the decision strategy would frequently abruptly change. This either leads to the neural network getting stuck in local minima or simply to diverge and not obtain a policy. \\
+The objective of the memory is to homogenise the training data. It comes from the observation that during the execution of a program, often a particular strategy would be optimal for a certain period of time and afterwards another one would be the new optimal. This causes two major problems. First of all, it is not very time efficient as we do not gain much information by learning from the same data. Secondly, as there is low diversity in the training data the decision strategy would frequently abruptly change. This either leads to the neural network getting stuck in local minima or simply to diverge and not obtain a policy. \\
 Picking a random subsample from memory helps increase the variance amongst the training data allowing the network to learn a more global policy. 
 
 \subsection{Separating target from max Q estimators}

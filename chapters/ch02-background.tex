@@ -7,7 +7,7 @@
 \mbox{}\\
 \mbox{}\\
 \mbox{}\\
-Reinforcement Learning\cite{kaelbling1996reinforcement} is a very general problem of machine learning studied in a multitude of different fields, such as game theory, information theory or statistics. It is a very broad concept and the foundations are the following. An agent interacts with a given environment, at its disposal, it has a set of various different actions. When an action is performed it receives a reward. The goal of the agent is to devise an action selection strategy that should maximise the cumulative reward of the actions.
+Reinforcement Learning\cite{kaelbling1996reinforcement} is a very general problem of machine learning studied in a multitude of different fields, such as game theory, information theory or statistics. It is a very broad concept and the foundations are the following. An agent interacts with a given environment, at its disposal, it has a set of various actions. When an action is performed it receives a reward. The goal of the agent is to devise an action selection strategy that should maximise the cumulative reward of the actions.
 
 \begin{center}
 	\includegraphics*[height=5cm]{figures/rl_broad.png}
@@ -39,14 +39,14 @@ Let's assume we have an episode with two time-steps and an action set with only 
         node[bag] {$s_1$}        
             child {
                 node[end, label=right:
-                    {$s_3,5$}] {}
+                    {$s_3,-5 + 10 = 5$}] {}
                 edge from parent
                 node[above] {$a_1$}
                 node[below]  {$10$}
             }
             child {
                 node[end, label=right:
-                    {$s_4,25$}] {}
+                    {$s_4,-5 + 30 = 25$}] {}
                 edge from parent
                 node[above] {$a_0$}
                 node[below]  {$30$}
@@ -59,14 +59,14 @@ Let's assume we have an episode with two time-steps and an action set with only 
         node[bag] {$s_2$}        
         child {
                 node[end, label=right:
-                    {$s_5,18$}] {}
+                    {$s_5,20 -2 = 18$}] {}
                 edge from parent
                 node[above] {$a_1$}
                 node[below]  {$-2$}
             }
             child {
                 node[end, label=right:
-                    {$s_6,23$}] {}
+                    {$s_6, 20 + 3 = 23$}] {}
                 edge from parent
                 node[above] {$a_0$}
                 node[below]  {$3$}
@@ -79,13 +79,13 @@ Let's assume we have an episode with two time-steps and an action set with only 
 \end{center}
 The cumulative reward, is the summed reward of all the actions taken during an episode. This is shown at the end of the leaf nodes in the example above. Therefore, an ideal decision policy would choose the actions $\{a_1,a_0\}$ in that order for the above episode.
  \section{Q-function}
- We call Q-function or quality function, a mapping $Q:S \times A \rightarrow \mathbb{R}$ that specifies the cumulative reward of picking an action $a_t$ in state $s_t$. If this function was known the reinforcement learning problem would become quite trivial, as it would simply suffice to pick, at every time step, the action with the highest Q-function value.\\
+ We call Q-function or quality function, a mapping $Q:S \times A \rightarrow \mathbb{R}$ that specifies the cumulative reward of picking an action $a_t$ in state $s_t$. If this function was known, the reinforcement learning problem would become quite trivial, as it would simply suffice to pick, at every time step, the action with the highest Q-function value.\\
  Unfortunately, as in most real world cases the state space is very large or even infinite. Computing the Q-function exactly is infeasible in most practical cases.
  \section{Q-function approximation} 
 The goal of reinforcement learning is to obtain the best possible Q-function approximation. To achieve this, the agent is allowed to interact freely inside of the environment, picking actions randomly or with the till now learned policy. It observes the different rewards it obtains and updates its policy accordingly. We call the episodes during which this is being done the training.\\ 
 We shall now briefly introduce a few concepts used during training.
 \paragraph{Exploration-exploitation} \mbox{}\\
-As mentioned above, during training we either pick the best action with the till-now learned policy or we just pick a random action. The trick is in finding a correct balance between the both of these as each has its own particular advantage. This is called the exploration-exploitation dilemma\cite{yogeswaran2012reinforcement}. If we always pick the best action we will converge quickly but the risk of getting stuck in a local minima is fairly high. On the other hand, if we only pick random actions, the convergence will be very slow and we might simply diverge and not be able to find a strategy at all. Most training algorithms start with a high probability of exploration and then as training progresses increase the exploitation probability as to solidify the learned policy.
+As mentioned above, during training we either pick the best action with the till-now learned policy or we just pick a random action. The trick is in finding a correct balance between the both of these as each has its own particular advantage. This is called the exploration-exploitation dilemma\cite{yogeswaran2012reinforcement}. If we always pick the best action we will converge quickly but the risk of getting stuck in a local minima is fairly high. On the other hand, if we only pick random actions, the convergence will be very slow and we might simply diverge and not be able to learn a strategy at all. Most training algorithms start with a high probability of exploration and then as training progresses increase the exploitation probability as to solidify the learned policy.
 \paragraph{Learning rate}\mbox{}\\
 The learning rate is also part of the exploration-exploitation dilemma. With this ratio we can modify the importance that we give to newly acquired information. The lower it is the harder it will be to overwrite an already learned policy. With a high learning rate we will adapt easier to new problems, but the risk of overfitting will also be higher.
 
@@ -96,11 +96,11 @@ In reinforcement learning, we mostly approximate the Q-function with the followi
 \end{equation}
 
 where $\pi$ is the learned policy.\\
-We call $\gamma$ the discount factor. It represents the importance that we give to the feature reward. If $\gamma = 0$ then only the immediate reward will be considered and if $\gamma \approx 1$ then we will look for a policy that will give the same importance to the future rewards as to the immediate reward. The same as before one has to choose between a faster convergence and a higher risk of getting stuck in local minima and not learning a global policy.
+We call $\gamma$ the discount factor. It represents the importance that we give to the future reward. If $\gamma = 0$ then only the immediate reward will be considered and if $\gamma \approx 1$ then we will learn a policy that will give the same importance to the future rewards as to the immediate reward. The same as before one has to choose between a faster convergence and a higher risk of getting stuck in local minima and not learning a global policy.
 
  
 \subsection{Q-learning}
-Q-learning\cite{watkins1992q} is one of the main algorithms used in reinforcement learning for the Q-function approximation. It models the Q-function as a set of basis function where each basis function assigns a value to a (state,action) pair and each feature has its own basis function. Q-learning offers several advantages, it is efficient, converges relatively quickly and the learned policy can be quite easily interpreted. By definition, Q-learning uses a linear function approximation. In most cases this should not cause much of a problem. But, in the case where the ideal decision policy is non-linear, Q-learning will never achieve optimal results.
+Q-learning\cite{watkins1992q} is one of the main algorithms used in reinforcement learning for the Q-function approximation. It models the Q-function as a set of basis function where each basis function assigns a value to a $(s_t \in S,a_t \in A)$ pair and each feature has its own basis function. Q-learning offers several advantages, it is efficient, converges relatively quickly and the learned policy can be quite easily interpreted. By definition, Q-learning uses a linear function approximation. In most cases this should not cause much of a problem. But, in the case where the ideal decision policy is non-linear, Q-learning will never achieve optimal results.
 \subsection{Deep Q-networks}
 
 Deep Q-networks\cite{mnih2013playing} are a novel method used for reinforcement learning that has gained a lot of attention in the recent years. The reason why it has gained so much notice lately, is due to the ability of a single algorithm achieving very good results on a broad array of tasks without the need of any specialised knowledge about the task beforehand, leading some to call it as the first major steps towards general artificial intelligence.\\
