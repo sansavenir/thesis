@@ -4,7 +4,7 @@
 \mbox{}\\
 \mbox{}\\
 \mbox{}\\
-Polyhedra analysis is one of the main tools of static analysis\cite{cousot1977abstract}. During the execution of a program, its statements and expressions can create relationships between the different variables of the program. Polyhedra are the most expressive ways of modelling all the different relations that can appear between a set of variables. Different alternatives exist for constraint representation instead of polyhedra, but none are as expressive. Unfortunately, this domain has worst case exponential space and time complexity meaning that using it on most real-world sized applications would very often cause it to either timeout or to run out of memory making it very impractical. Therefore, other domains have been more widely used such as octagon \cite{mine2006octagon}, zone \cite{mine2001new} or pentagon \cite{logozzo2010pentagons} , but all of these are less expressive and therefore less precise by design. In the recent years several techniques have been developed that have managed to speed up polyhedra analysis without causing it to loose precision \cite{gange2016exploiting,jourdan2017sparsity,marechal2017efficient}. We shall now briefly present some of these methods that are useful for this work.
+Polyhedra analysis is one of the main tools of static analysis\cite{cousot1977abstract}. During the execution of a program, its statements and expressions can create relationships between the different variables of the program. Polyhedra are the most expressive ways of modelling all the different relations that can appear between a set of variables. Even though alternative domains exist for constraint representation instead of polyhedra, but none are as expressive. Unfortunately, this domain has worst case exponential space and time complexity meaning that using it on most real-world sized applications would very often cause it to either timeout or to run out of memory making it very impractical. Therefore, other domains have been more widely used such as octagon \cite{mine2006octagon}, zone \cite{mine2001new} or pentagon \cite{logozzo2010pentagons} , but all of these are less expressive and therefore less precise by design. In the recent years several techniques have been developed that have managed to speed up polyhedra analysis without causing it to loose precision \cite{gange2016exploiting,jourdan2017sparsity,marechal2017efficient}. We shall now briefly present some of these methods that are relevant for this work.
 
 \section{Polyhedra representation}
 One of the technique used to increase the performance of static analysis involves the way in which we represent our domain\cite{singh2015making}. Polyhedra, for example, can be represented with both their constraint representation and their generator representation\cite{motzkin1953double} . To illustrate these different representations I will proceed with the following example. Lets assume we have the following statement:
@@ -42,7 +42,7 @@ Inside of the if statement, the polyhedron would have the following shape:
 
 \end{tikzpicture}
 \end{center}
-We can represent this information in two different possible ways.
+There are two ways for us to represent this information.
 \subsection{Constraint representation}
 In constraint representation we model the polyhedron as the intersection of a finite number of closed half spaces and a finite number of subspaces. The resulting polyhedron can be written as:
 
@@ -70,8 +70,7 @@ The result of generator representation on the previous example would have the fo
 	G = \{ V = \{(0.5,0.5),(1.5,0.5),(1.5,1.5),(0.5,1.5)\}, R = \emptyset, Z = \emptyset \}
 \end{equation}
 \subsection{Polyhedra domain}
-
-Now that we can represent our Polyhedra we can do some interesting calculations with them. The polyhedra abstract domain consists of the polyhedral lattice:
+Once we can represent our polyhedra, to make them useful, a set of operators has to be defined as well. The polyhedra abstract domain consists of the polyhedral lattice:
 	$(P,\sqsubseteq,\sqcup,\sqcap,\perp,\top)$, and a set of operators that we can apply on them. The different operators are the following:
 	\begin{itemize}
 		\item Inclusion test: $P \sqsubseteq Q$
@@ -127,7 +126,7 @@ As we can see no representation is less complex than the other, as some of the o
  The first optimisation that one can do is to keep both representations of the the polyhedron and for each operator pick the representation that minimises the time complexity. A conversion between the two representations is possible thanks to Chernikova's algorithm\cite{chernikova1968algorithm}. 
  
  \section{Polyhedra Decomposition}
-Another technique used to increase the efficiency of polyhedra analysis, is the use of online decomposition \cite{singh2017fast}. It is based on the observation that during the execution of a program, not all it's variables are dependent on one another. Using this observation, we can separate the set of all variables into smaller, independent sets. Therefore, instead of having to represent the whole set of variables with one large polyhedron we can instead represent it with various smaller ones.\\ Let's assume we have a set of variables $\chi$ in a Polyhedron $P$. The set $\chi$ can be partitioned as $\pi_P=\{ \chi_1,\chi_2,..,\chi_r\}$, $\chi_i\subseteq\chi $. We call the partitioning of the set permissible iff $ \chi_i \cap \chi_j = \emptyset$, $ \forall i \neq j$. We call the $\top$ partition, a partition where all the variables are in one block, i.e no partitioning is done. Similarly, the $\perp$ partition, is a partition where each variable has its own block, i.e all variables are independent of one another. Once the decomposition has been done in this way, during the execution of an operator, it only has to be executed on the subset of blocks that contain it. This allows for a very large performance gain in both space and time, giving us the following time complexity for the various operators.
+Another technique used to increase the efficiency of polyhedra analysis, is the use of online decomposition \cite{singh2017fast}. It is based on the observation that during the execution of a program, not all it's variables are dependent on one another. Using this observation, we can separate the set of all variables into smaller, independent sets. Therefore, instead of representing the whole set of variables with one large polyhedron we can instead represent it with various smaller ones.\\ Let's assume we have a set of variables $\chi$ in a Polyhedron $P$. The set $\chi$ can be partitioned as $\pi_P=\{ \chi_1,\chi_2,..,\chi_r\}$, $\chi_i\subseteq\chi $. We call the partitioning of the set permissible iff $ \chi_i \cap \chi_j = \emptyset$, $ \forall i \neq j$. We call the $\top$ partition, a partition where all the variables are in one block, i.e no partitioning is done. Similarly, the $\perp$ partition, is a partition where each variable has its own block, i.e all variables are independent of one another. Once the decomposition has been done in this way, during the execution of an operator, it only has to be executed on the subset of blocks that contain it. This allows for a very large performance gain in both space and time, giving us the following time complexity for the various operators.
 
 \paragraph{Table 2} Asymptotic time complexity of Polyhedra domain operators with decomposition
 
@@ -165,7 +164,7 @@ This polyhedron can be partitioned into three blocks $\pi_P = \{\{x_1,x_3\},\{x_
 % TODO write example
 
 \subsection{Decomposition operators}
-As we change the model of our domain we must equally update the operators inside of this domain. For sake of brevity I will not go into detail about each of them, but I will talk about the join operator as it plays an important role for this paper.\\
+As we change the model of our domain we must also update the operators inside of this domain. For sake of brevity I will not go into detail about each of them, but I will concentrate on the join operator as it plays an important role for this paper.\\
 During the join of $P$ and $Q$, most of the time their factors will not be equal$(\pi_P \neq \pi_Q)$. Unfortunately, in order to be able to perform the join these must be equal. 
  Therefore, we have to remake their partitions so that $\pi = \pi_P\sqcup\pi_Q$. During most joins of a normal execution this will not cause much problem, but during some cases the join can merge all blocks $(\pi_P\sqcup\pi_Q = \top)$ producing the $\top$ partition. In order to rebuild the $\top$ partition from the factors we use the following formula:
 \begin{equation}
@@ -174,12 +173,12 @@ During the join of $P$ and $Q$, most of the time their factors will not be equal
 Due to the cartesian product, building the $\top$ partition can blow up the number of generators and cause the join to be a serious bottleneck of online decomposition.
 
 \section{Reinforcement Learning for polyhedra analysis}
-Both of the techniques presented in chapters 3.2 and 3.3, manage to achieve considerable performance gain without having to sacrifice any precision. Unfortunately, at some point compromises have to be made. Analysers that tune the precision and cost based on the program they are analysing are called parametric program analysers. Several such approaches already exist. \cite{oh2015learning,liang2011learning,heo2016learning}.
+Both of the techniques presented in chapters 3.2 and 3.3, achieve considerable performance gain without having to sacrifice any precision. Unfortunately, at some point compromises have to be made. Analysers that tune the precision and cost based on the program they are analysing are called parametric program analysers. Several such approaches already exist. \cite{oh2015learning,liang2011learning,heo2016learning}.
 As explained in 3.3.1. one bad constraint can significantly decrease the performance of the whole program. The trick is being able to identify this constraint at the correct time. One of the explored solutions to this problem that we shall explore, is training a reinforcement learning algorithm  that will make the decisions of when and how to apply some abstractions\cite{singh2018fast}.\\
-Intuitively, using reinforcement learning for polyhedra analysis seems quite straight forward. Let's imagine that for the join operator that we have presented above, we have two different versions $J_{pr}$ and $J_{pe}$. One of these is a slower and more precise join and the other, using some sort of abstraction, is faster but not as precise. The goal of the reinforcement learning method would then simply be to select the correct operator at the right time, so that we get the most precise result in as little time as possible. Before this can be done, it is first necessary to initialise polyhedra analysis for reinforcement learning.
+Intuitively, using reinforcement learning for polyhedra analysis seems quite straight forward. Let's imagine that for the join operator that we have presented above, we have two different versions $J_{pr}$ and $J_{pe}$. One of these is a slower and more precise join and the other, using some sort of abstraction, is faster but not as precise. The goal of the reinforcement learning method would then simply be to select the correct operator at the right time, thus enabling us to obtain the most precise result in a minimal time. Before this can be done, it is first necessary to initialise polyhedra analysis for reinforcement learning.
 
 \subsection{Adapting polyhedra analysis for Reinforcement Learning}
-As explained in 2.1., reinforcement learning uses a defined set of concepts. In some way, these concepts have to be translated into the domain of polyhedra analysis. A possible mapping can be done in the following way.
+As explained in section 2.1., reinforcement learning uses a defined set of concepts. In some way, these concepts have to be translated into the domain of polyhedra analysis. A possible mapping can be done in the following way.
 \begin{center}
 \begin{tabular}{||c c||} 
  \hline
@@ -201,8 +200,9 @@ As explained in 2.1., reinforcement learning uses a defined set of concepts. In 
 A more concrete explanation of the initialisation of these concepts will come in the following chapter.
 
 \subsection{Linear function approximation methods}
-Existing methods already exploit this idea \cite{singh2018fast}. Using techniques such as Q-learning in order to learn their decision making policies. Q-learning is a common linear Q-function approximation technique that has shown some very good results when applied to the polyhedra domain.\\
-However, recently, new reinforcement learning methods seem to be more focused on the use of nonlinear Q-function approximators, as they seem to give very good results on some  complex tasks. When the Q-function of the particular problem is nonlinear, Q-learning will never be able to learn the ideal policy. In these cases, deep Q-networks have a very real opportunity of exceeding the performance of the Q-learning based methods.\\
+
+Existing methods already exploit this idea \cite{singh2018fast}. Using techniques such as Q- learning in order to learn their decision making policies. Q-learning is a common linear Q- function approximation technique and has shown some very good results when applied to the polyhedra domain.\\
+However, as explained in chapter 2., new reinforcement learning methods seem to be more focused on the use of neural networks for the Q-function approximation, as they offer some advantages that Q-learning cannot. For example, if the Q-function of the particular problem were to be nonlinear, Q-learning will never be able to learn the ideal policy. In these cases, deep Q-networks have a very real opportunity of exceeding the performance of the Q-learning based methods.\\
 The use of nonlinear approximators has not yet been tested on the domain of static analysis. In the following chapters we shall explore the idea of using such methods in order to construct a new decision policy based on neural networks.
 
 

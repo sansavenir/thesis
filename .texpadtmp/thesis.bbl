@@ -222,6 +222,13 @@
 \newblock {\href{http://www.google.com/search?q=Q-learning}{Q-learning}}.
 \newblock {\em Machine learning 8}, 3-4, 279--292.
 
+\bibitem[\protect\citename{{Wikipedia contributors} }2018]{wiki:rl}
+{\sc {Wikipedia contributors}}, 2018.
+\newblock
+  {\href{http://www.google.com/search?q=Reinforcement+learning+---+Wikipedia,+the+free+encyclopedia}{Reinforcement
+  learning --- {Wikipedia}{,} the free encyclopedia}}.
+\newblock [Online; accessed 28-November-2018].
+
 \bibitem[\protect\citename{Yogeswaran and Ponnambalam
   }2012]{yogeswaran2012reinforcement}
 {\sc Yogeswaran, M., and Ponnambalam, S.}
