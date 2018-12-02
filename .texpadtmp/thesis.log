@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  29 NOV 2018 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  2 DEC 2018 14:08
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -457,6 +457,8 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count142
 \algocf@algoframe=\box42
 \algocf@algobox=\box43
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks29
 \pgfutil@tempdima=\dimen148
@@ -517,8 +519,8 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 \pgfmath@toks=\toks36
 \pgfmath@stack@operand=\toks37
 \pgfmath@stack@operation=\toks38
-) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count150
 )) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
@@ -576,10 +578,10 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
  (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box49
-)) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
-)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
@@ -655,10 +657,10 @@ File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
 File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
  (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.0 (rcs-revision 1.1)
-)) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
 File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+ (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
 File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.0 (rcs-revision 1.5)
 )) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
 File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
@@ -741,7 +743,8 @@ File: pgflibraryarrows.meta.code.tex 2013/12/13 v3.0.0 (rcs-revision 1.12)
 \pgfarrowlinewidth=\dimen208
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.0 (rcs-revision 1.2)
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/siunitx/siunitx.sty (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/siunitx/siunitx.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2015/03/01 v5547 L3 programming layer (loader) 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2015/03/01 v5547 L3 programming layer (code) 
@@ -848,8 +851,7 @@ Normal \dimen register pool exhausted, switching to extended pool.
 \l__coffin_top_corner_dim=\dimen259
 \l__coffin_scaled_total_height_dim=\dimen260
 \l__coffin_scaled_width_dim=\dimen261
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def
 File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
@@ -1141,21 +1143,21 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ) (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 100.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -1184,7 +1186,7 @@ Dictionary: translator-basic-dictionary, Language: English
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2015/01/21 v2.6e siunitx: Abbreviated units
 )
-Package hyperref Info: Link coloring ON on input line 98.
+Package hyperref Info: Link coloring ON on input line 100.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1192,34 +1194,34 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count282
 )
-LaTeX Info: Redefining \ref on input line 98.
-LaTeX Info: Redefining \pageref on input line 98.
-LaTeX Info: Redefining \nameref on input line 98.
+LaTeX Info: Redefining \ref on input line 100.
+LaTeX Info: Redefining \pageref on input line 100.
+LaTeX Info: Redefining \nameref on input line 100.
  (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.out) (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
 \c__siunitx_mathsf_int=\count283
-LaTeX Font Info:    Try loading font information for U+msa on input line 98.
+LaTeX Font Info:    Try loading font information for U+msa on input line 100.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 98.
+LaTeX Font Info:    Try loading font information for U+msb on input line 100.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c__siunitx_mathtt_int=\count284
  (./chapters/studchapter.tex)
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 130.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 130.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 132.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 132.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 130.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 141.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 143.
 Package epstopdf Info: Source file: <figures/eth_logo_kurz_pos.eps>
 (epstopdf)                    date: 2014-02-24 12:52:50
 (epstopdf)                    size: 402954 bytes
@@ -1227,12 +1229,12 @@ Package epstopdf Info: Source file: <figures/eth_logo_kurz_pos.eps>
 (epstopdf)                    date: 2014-02-24 12:52:50
 (epstopdf)                    size: 13480 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/eth_logo_kurz_pos-eps-converted-to.pdf figures/eth_logo_kurz_pos.eps>
-(epstopdf)             \includegraphics on input line 147.
+(epstopdf)             \includegraphics on input line 149.
 Package epstopdf Info: Output file is already uptodate.
- <figures/eth_logo_kurz_pos-eps-converted-to.pdf, id=191, 141.52875pt x 23.08624pt>
+ <figures/eth_logo_kurz_pos-eps-converted-to.pdf, id=183, 141.52875pt x 23.08624pt>
 File: figures/eth_logo_kurz_pos-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/eth_logo_kurz_pos-eps-converted-to.pdf>
-Package pdftex.def Info: figures/eth_logo_kurz_pos-eps-converted-to.pdf used on input line 147.
+Package pdftex.def Info: figures/eth_logo_kurz_pos-eps-converted-to.pdf used on input line 149.
 (pdftex.def)             Requested size: 139.54376pt x 22.76228pt.
  [1
 
@@ -1271,8 +1273,8 @@ Overfull \vbox (459.92477pt too high) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.15 
-      [1
+l.15 \section
+             {Goals} [1
 
 
 
@@ -1280,12 +1282,12 @@ l.15
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 \paragraph
-               {Chapter 5}discusses the different experiments that were run ... [2]) (./chapters/ch02-background.tex [3] [4
+l.31 
+      [2]) (./chapters/ch02-background.tex [3] [4
 
 ]
 Chapter 2.
-<figures/rl_broad.png, id=312, 250.9375pt x 242.9075pt>
+<figures/rl_broad.png, id=308, 250.9375pt x 242.9075pt>
 File: figures/rl_broad.png Graphic file (type png)
  <use figures/rl_broad.png>
 Package pdftex.def Info: figures/rl_broad.png used on input line 14.
@@ -1309,12 +1311,7 @@ Overfull \vbox (459.92477pt too high) has occurred while \output is active []
  [5 <./figures/rl_broad.png>] [6]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 105.
-
-Overfull \hbox (0.10667pt too wide) in paragraph at lines 106--107
-\T1/ptm/m/n/12 Q-learning[[]] is one of the main al-go-rithms used in re-in-force-ment learn-
- []
-
-[7] [8]) (./chapters/ch03-related-work.tex [9] [10
+ [7] [8]) (./chapters/ch03-related-work.tex [9] [10
 
 ]
 Chapter 3.
@@ -1341,7 +1338,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--125
  []
 
 [13] [14]
-Underfull \vbox (badness 1158) has occurred while \output is active []
+Underfull \vbox (badness 1527) has occurred while \output is active []
 
  [15]) (./chapters/ch04-technical-aspects.tex [16]
 Chapter 4.
@@ -1361,44 +1358,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
  []
 
 [18]
-Underfull \vbox (badness 3826) has occurred while \output is active []
+Underfull \vbox (badness 5726) has occurred while \output is active []
 
  [19] [20]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 80.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 83.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 132.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
-Underfull \hbox (badness 10000) in paragraph at lines 130--133
-
+Overfull \hbox (3.0pt too wide) in paragraph at lines 132--133
+ [] 
  []
 
-
+[21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24]
 Underfull \hbox (badness 10000) in paragraph at lines 209--213
 
  []
 
-[25]
+[24]
 Overfull \hbox (47.49547pt too wide) in paragraph at lines 222--257
  [] 
  []
 
-
+[25] [26] [27]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26] [27] [28] [29] [30] [31] [32]) (./chapters/ch05-implementation.tex [33] [34
+ [28] [29] [30]) (./chapters/ch05-implementation.tex [31] [32
 
 ]
 Chapter 5.
@@ -1410,7 +1401,7 @@ Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 
 Overfull \vbox (460.54948pt too high) has occurred while \output is active []
 
- [35] <figures/r1.png, id=661, 462.528pt x 346.896pt>
+ [33] <figures/r1.png, id=637, 462.528pt x 346.896pt>
 File: figures/r1.png Graphic file (type png)
  <use figures/r1.png>
 Package pdftex.def Info: figures/r1.png used on input line 38.
@@ -1420,7 +1411,7 @@ Overfull \hbox (53.46957pt too wide) in paragraph at lines 38--39
 [][] 
  []
 
-<figures/r2.png, id=662, 462.528pt x 346.896pt>
+<figures/r2.png, id=638, 462.528pt x 346.896pt>
 File: figures/r2.png Graphic file (type png)
  <use figures/r2.png>
 Package pdftex.def Info: figures/r2.png used on input line 42.
@@ -1430,7 +1421,7 @@ Overfull \hbox (53.46957pt too wide) in paragraph at lines 42--43
 [][] 
  []
 
-<figures/r3.png, id=663, 462.528pt x 346.896pt>
+<figures/r3.png, id=639, 462.528pt x 346.896pt>
 File: figures/r3.png Graphic file (type png)
  <use figures/r3.png>
 Package pdftex.def Info: figures/r3.png used on input line 46.
@@ -1440,15 +1431,15 @@ Overfull \hbox (53.46957pt too wide) in paragraph at lines 46--47
 [][] 
  []
 
-[36 <./figures/r1.png> <./figures/r2.png> <./figures/r3.png>]
+[34 <./figures/r1.png> <./figures/r2.png> <./figures/r3.png>]
 Overfull \hbox (22.6961pt too wide) in paragraph at lines 58--79
  [] 
  []
 
-
+[35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37] [38]) (./chapters/ch06-evaluation.tex) (./chapters/ch07-conclusion.tex [39] [40
+ [36]) (./chapters/ch06-evaluation.tex) (./chapters/ch07-conclusion.tex [37] [38
 
 ]
 Chapter 6.
@@ -1460,7 +1451,7 @@ Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 
 Overfull \vbox (432.13747pt too high) has occurred while \output is active []
 
- [41] (./chapters/appendix.tex) [42
+ [39] (./chapters/appendix.tex) [40
 
 
 
@@ -1547,7 +1538,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 48.
+(scrbook)              by `\normalfont \scshape ' on input line 51.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1561,7 +1552,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 57.
+(scrbook)              by `\normalfont \scshape ' on input line 60.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1575,7 +1566,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 66.
+(scrbook)              by `\normalfont \scshape ' on input line 69.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1589,7 +1580,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 75.
+(scrbook)              by `\normalfont \scshape ' on input line 77.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1603,7 +1594,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 83.
+(scrbook)              by `\normalfont \scshape ' on input line 85.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1617,7 +1608,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 91.
+(scrbook)              by `\normalfont \scshape ' on input line 94.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1631,7 +1622,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 100.
+(scrbook)              by `\normalfont \scshape ' on input line 104.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1645,7 +1636,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 110.
+(scrbook)              by `\normalfont \scshape ' on input line 113.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1659,7 +1650,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 119.
+(scrbook)              by `\normalfont \scshape ' on input line 121.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1673,7 +1664,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 127.
+(scrbook)              by `\normalfont \scshape ' on input line 129.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1687,11 +1678,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 135.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(scrbook)              by `\normalfont \scshape ' on input line 138.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sl'!
@@ -1705,23 +1692,9 @@ Class scrbook Warning: Usage of deprecated font command `\sl'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sl' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sl'
-(scrbook)              by `\normalfont \slshape ' on input line 142.
+(scrbook)              by `\normalfont \slshape ' on input line 147.
 
-[43]
-
-Class scrbook Warning: Usage of deprecated font command `\sc'!
-(scrbook)              You should note, that in 1994 font command `\sc' has
-(scrbook)              been defined for compatiblitiy to Script 2.0 only.
-(scrbook)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrbook)              shouldn't use such commands any longer and within
-(scrbook)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrbook)              See `fntguide.pdf' for more information about
-(scrbook)              recommended font commands.
-(scrbook)              Note also, that KOMA-Script will remove the definition
-(scrbook)              of `\sc' anytime until release of about version 3.20.
-(scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 144.
-
+[41]
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              You should note, that in 1994 font command `\sc' has
@@ -1734,7 +1707,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 155.
+(scrbook)              by `\normalfont \scshape ' on input line 149.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1748,7 +1721,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 163.
+(scrbook)              by `\normalfont \scshape ' on input line 157.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1762,7 +1735,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 171.
+(scrbook)              by `\normalfont \scshape ' on input line 165.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1776,7 +1749,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 179.
+(scrbook)              by `\normalfont \scshape ' on input line 173.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1790,7 +1763,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 188.
+(scrbook)              by `\normalfont \scshape ' on input line 182.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1804,7 +1777,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 196.
+(scrbook)              by `\normalfont \scshape ' on input line 190.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1818,7 +1791,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 204.
+(scrbook)              by `\normalfont \scshape ' on input line 198.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1832,7 +1805,21 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 213.
+(scrbook)              by `\normalfont \scshape ' on input line 207.
+
+
+Class scrbook Warning: Usage of deprecated font command `\sc'!
+(scrbook)              You should note, that in 1994 font command `\sc' has
+(scrbook)              been defined for compatiblitiy to Script 2.0 only.
+(scrbook)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrbook)              shouldn't use such commands any longer and within
+(scrbook)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrbook)              See `fntguide.pdf' for more information about
+(scrbook)              recommended font commands.
+(scrbook)              Note also, that KOMA-Script will remove the definition
+(scrbook)              of `\sc' anytime until release of about version 3.20.
+(scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrbook)              by `\normalfont \scshape ' on input line 214.
 
 
 Class scrbook Warning: Usage of deprecated font command `\sc'!
@@ -1860,21 +1847,7 @@ Class scrbook Warning: Usage of deprecated font command `\sc'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sc' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 226.
-
-
-Class scrbook Warning: Usage of deprecated font command `\sc'!
-(scrbook)              You should note, that in 1994 font command `\sc' has
-(scrbook)              been defined for compatiblitiy to Script 2.0 only.
-(scrbook)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrbook)              shouldn't use such commands any longer and within
-(scrbook)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrbook)              See `fntguide.pdf' for more information about
-(scrbook)              recommended font commands.
-(scrbook)              Note also, that KOMA-Script will remove the definition
-(scrbook)              of `\sc' anytime until release of about version 3.20.
-(scrbook)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrbook)              by `\normalfont \scshape ' on input line 234.
+(scrbook)              by `\normalfont \scshape ' on input line 228.
 
 )
 
@@ -1889,30 +1862,30 @@ Class scrbook Warning: Usage of deprecated font command `\sl'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\sl' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\sl'
-(scrbook)              by `\normalfont \slshape ' on input line 223.
+(scrbook)              by `\normalfont \slshape ' on input line 225.
 
-[44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
+[42]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
  (/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36661 strings out of 493089
- 767800 string characters out of 6134842
- 888390 words of memory out of 5000000
- 39268 multiletter control sequences out of 15000+600000
+ 36681 strings out of 493089
+ 768275 string characters out of 6134842
+ 890630 words of memory out of 5000000
+ 39294 multiletter control sequences out of 15000+600000
  77433 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,28n,73p,10373b,1251s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,29n,73p,10373b,1251s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (50 pages, 656136 bytes).
+Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (48 pages, 655278 bytes).
 PDF statistics:
- 883 PDF objects out of 1000 (max. 8388607)
- 793 compressed objects within 8 object streams
- 285 named destinations out of 1000 (max. 500000)
- 418 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 857 PDF objects out of 1000 (max. 8388607)
+ 769 compressed objects within 8 object streams
+ 275 named destinations out of 1000 (max. 500000)
+ 402 words of extra memory for PDF output out of 10000 (max. 10000000)
 

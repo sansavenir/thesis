@@ -3,51 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: /Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.aux
 The style file: ../acmsiggraph.bst
 Database file #1: ../bibli.bib
-Warning--entry type for "elina" isn't style-file defined
---line 169 of file ../bibli.bib
 Warning--can't use both volume and number fields in liang2011learning
 Warning--can't use both volume and number fields in oh2015learning
 Warning--can't use both volume and number fields in singh2015making
 Warning--can't use both volume and number fields in singh2017fast
-You've used 28 entries,
+You've used 27 entries,
             2873 wiz_defined-function locations,
-            788 strings with 9508 characters,
-and the built_in function-call counts, 73632 in all, are:
-= -- 7972
-> -- 539
+            785 strings with 9464 characters,
+and the built_in function-call counts, 72080 in all, are:
+= -- 7810
+> -- 530
 < -- 0
-+ -- 378
-- -- 194
-* -- 7757
-:= -- 9164
-add.period$ -- 110
-call.type$ -- 28
-change.case$ -- 199
-chr.to.int$ -- 28
-cite$ -- 32
-duplicate$ -- 672
-empty$ -- 7689
-format.name$ -- 214
-if$ -- 15934
++ -- 372
+- -- 191
+* -- 7603
+:= -- 8968
+add.period$ -- 108
+call.type$ -- 27
+change.case$ -- 194
+chr.to.int$ -- 27
+cite$ -- 31
+duplicate$ -- 651
+empty$ -- 7521
+format.name$ -- 211
+if$ -- 15599
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 26
-newline$ -- 168
-num.names$ -- 84
-pop$ -- 287
+newline$ -- 164
+num.names$ -- 81
+pop$ -- 273
 preamble$ -- 1
-purify$ -- 171
+purify$ -- 167
 quote$ -- 0
-skip$ -- 261
+skip$ -- 249
 stack$ -- 0
-substring$ -- 20552
-swap$ -- 172
+substring$ -- 20139
+swap$ -- 166
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 224
+type$ -- 216
 warning$ -- 4
-while$ -- 341
-width$ -- 29
-write$ -- 401
-(There were 5 warnings)
+while$ -- 330
+width$ -- 28
+write$ -- 392
+(There were 4 warnings)

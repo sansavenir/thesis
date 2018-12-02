@@ -10,37 +10,35 @@
 \BOOKMARK [1][]{section.2.2}{2.2 Q-function}{chapter.2}% 10
 \BOOKMARK [1][]{section.2.3}{2.3 Learning the Q-function}{chapter.2}% 11
 \BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Q-learning}{section.2.3}% 12
-\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Linear function approximation}{section.2.3}% 13
-\BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Deep Q-networks}{section.2.3}% 14
-\BOOKMARK [0][]{chapter.3}{3 Polyhedra Analysis}{}% 15
-\BOOKMARK [1][]{section.3.1}{3.1 Polyhedra representation}{chapter.3}% 16
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Constraint representation}{section.3.1}% 17
-\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Generator representation}{section.3.1}% 18
-\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Polyhedra domain}{section.3.1}% 19
-\BOOKMARK [1][]{section.3.2}{3.2 Polyhedra Decomposition}{chapter.3}% 20
-\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Decomposition operators}{section.3.2}% 21
-\BOOKMARK [1][]{section.3.3}{3.3 Reinforcement Learning for polyhedra analysis}{chapter.3}% 22
-\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Adapting polyhedra analysis for Reinforcement Learning}{section.3.3}% 23
-\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Linear function approximation methods}{section.3.3}% 24
-\BOOKMARK [0][]{chapter.4}{4 Fast polyhedra analysis with deep Q-networks}{}% 25
-\BOOKMARK [1][]{section.4.1}{4.1 Incorporating Neural Networks inside Elina}{chapter.4}% 26
-\BOOKMARK [1][]{section.4.2}{4.2 Basic algorithm}{chapter.4}% 27
-\BOOKMARK [2][]{subsection.4.2.1}{4.2.1 Features}{section.4.2}% 28
-\BOOKMARK [2][]{subsection.4.2.2}{4.2.2 Actions}{section.4.2}% 29
-\BOOKMARK [2][]{subsection.4.2.3}{4.2.3 Reward}{section.4.2}% 30
-\BOOKMARK [2][]{subsection.4.2.4}{4.2.4 Back to deep Q-networks}{section.4.2}% 31
-\BOOKMARK [2][]{subsection.4.2.5}{4.2.5 Experience replay memory}{section.4.2}% 32
-\BOOKMARK [2][]{subsection.4.2.6}{4.2.6 Separating target from max Q estimators}{section.4.2}% 33
-\BOOKMARK [1][]{section.4.3}{4.3 Further optimisations}{chapter.4}% 34
-\BOOKMARK [2][]{subsection.4.3.1}{4.3.1 Separating the problem into two}{section.4.3}% 35
-\BOOKMARK [2][]{subsection.4.3.2}{4.3.2 Feature selection}{section.4.3}% 36
-\BOOKMARK [2][]{subsection.4.3.3}{4.3.3 Reward Function modelling}{section.4.3}% 37
-\BOOKMARK [2][]{subsection.4.3.4}{4.3.4 Action selection algorithms}{section.4.3}% 38
-\BOOKMARK [1][]{section.4.4}{4.4 Neural network characteristics}{chapter.4}% 39
-\BOOKMARK [1][]{section.4.5}{4.5 Training}{chapter.4}% 40
-\BOOKMARK [0][]{chapter.5}{5 Experimental Results}{}% 41
-\BOOKMARK [1][]{section.5.1}{5.1 Reward function selection}{chapter.5}% 42
-\BOOKMARK [1][]{section.5.2}{5.2 Action selection algorithm}{chapter.5}% 43
-\BOOKMARK [1][]{section.5.3}{5.3 Final algorithm}{chapter.5}% 44
-\BOOKMARK [0][]{chapter.6}{6 Conclusion}{}% 45
-\BOOKMARK [0][]{section*.44}{Bibliography}{}% 46
+\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Generalisation}{section.2.3}% 13
+\BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Linear function approximation}{section.2.3}% 14
+\BOOKMARK [2][]{subsection.2.3.4}{2.3.4 Deep Q-networks}{section.2.3}% 15
+\BOOKMARK [0][]{chapter.3}{3 Polyhedra Analysis}{}% 16
+\BOOKMARK [1][]{section.3.1}{3.1 Polyhedra representation}{chapter.3}% 17
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Constraint representation}{section.3.1}% 18
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Generator representation}{section.3.1}% 19
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Polyhedra domain}{section.3.1}% 20
+\BOOKMARK [1][]{section.3.2}{3.2 Polyhedra Decomposition}{chapter.3}% 21
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Reinforcement Learning for polyhedra analysis}{section.3.2}% 22
+\BOOKMARK [0][]{chapter.4}{4 Fast polyhedra analysis with deep Q-networks}{}% 23
+\BOOKMARK [1][]{section.4.1}{4.1 Incorporating Neural Networks inside Elina}{chapter.4}% 24
+\BOOKMARK [1][]{section.4.2}{4.2 Basic algorithm}{chapter.4}% 25
+\BOOKMARK [2][]{subsection.4.2.1}{4.2.1 Features}{section.4.2}% 26
+\BOOKMARK [2][]{subsection.4.2.2}{4.2.2 Actions}{section.4.2}% 27
+\BOOKMARK [2][]{subsection.4.2.3}{4.2.3 Reward}{section.4.2}% 28
+\BOOKMARK [2][]{subsection.4.2.4}{4.2.4 Back to deep Q-networks}{section.4.2}% 29
+\BOOKMARK [2][]{subsection.4.2.5}{4.2.5 Experience replay memory}{section.4.2}% 30
+\BOOKMARK [2][]{subsection.4.2.6}{4.2.6 Separating target from max Q estimators}{section.4.2}% 31
+\BOOKMARK [1][]{section.4.3}{4.3 Further optimisations}{chapter.4}% 32
+\BOOKMARK [2][]{subsection.4.3.1}{4.3.1 Separating the problem into two}{section.4.3}% 33
+\BOOKMARK [2][]{subsection.4.3.2}{4.3.2 Feature selection}{section.4.3}% 34
+\BOOKMARK [2][]{subsection.4.3.3}{4.3.3 Reward Function modelling}{section.4.3}% 35
+\BOOKMARK [2][]{subsection.4.3.4}{4.3.4 Action selection algorithms}{section.4.3}% 36
+\BOOKMARK [1][]{section.4.4}{4.4 Neural network characteristics}{chapter.4}% 37
+\BOOKMARK [1][]{section.4.5}{4.5 Training}{chapter.4}% 38
+\BOOKMARK [0][]{chapter.5}{5 Experimental Results}{}% 39
+\BOOKMARK [1][]{section.5.1}{5.1 Reward function selection}{chapter.5}% 40
+\BOOKMARK [1][]{section.5.2}{5.2 Action selection algorithm}{chapter.5}% 41
+\BOOKMARK [1][]{section.5.3}{5.3 Final algorithm}{chapter.5}% 42
+\BOOKMARK [0][]{chapter.6}{6 Conclusion}{}% 43
+\BOOKMARK [0][]{section*.40}{Bibliography}{}% 44
