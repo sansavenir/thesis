@@ -10,38 +10,33 @@ Polyhedra analysis is one of the main tools of static analysis \cite{cousot1977a
 One of the technique used to increase the performance of static analysis involves the way in which we represent our domain \cite{singh2015making}. Polyhedra, for example, can be represented with both the constraint representation and the generator representation \cite{motzkin1953double} . To illustrate these different representations I will proceed with the following example. Lets assume we have the following statement:
 \paragraph{Example 3.1}\mbox{}\\
 \begin{center}
-	$if \; x\geq0.5\wedge x\leq 1.5 \wedge y\geq 0.5 \wedge y \leq1.5: $\\
+	$if \; x\geq1\wedge y \geq 1 \wedge x - y \leq 0: $\\ 
 	$...\;\;\;\;\;$\\
-	$end \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad$
+	$end \qquad\qquad\qquad\qquad$
 \end{center}
 
 Inside of the if statement, the polyhedron would have the following shape:
 
-
 \begin{center}
-\begin{tikzpicture}
-    \draw [thin, gray, ->] (0,-1) -- (0,2)      % draw y-axis line
+	\begin{tikzpicture}
+    \draw [thin, gray, ->] (0,-2) -- (0,4)      % draw y-axis line
         node [above, black] {$y$};              % add label for y-axis
 
-    \draw [thin, gray, ->] (-1,0) -- (3,0)      % draw x-axis line
-        node [right, black] {$x$};              % add label for x-axis
+    \draw [thin, gray, ->] (-2,0) -- (4,0)      % draw x-axis line
+        node [right, black] {$x$};             % add label for x-axis
 
-    \draw [draw=blue,thick] (0.5,0.5) -- (0.5,1.5)% draw the graph
-   	 	node [left, black, scale =0.5] {$(0.5,1.5)$};
-    \draw [draw=blue,thick] (0.5,1.5) -- (1.5,1.5)
-    	node [right, black, scale =0.5] {$(1.5,1.5)$};
-    \draw [draw=blue,thick] (1.5,1.5) -- (1.5,0.5)
-    	node [right, black, scale =0.5] {$(1.5,0.5)$};
-    \draw [draw=blue,thick] (1.5,0.5) -- (0.5,0.5)
-    	node [left, black, scale =0.5] {$(0.5,0.5)$};
-    	
-    \draw [fill=blue!30,blue!30] (0.5,0.5) rectangle (1.5,1.5); 
+    \draw [draw=black,thick] (4.2,4.2) -- (1,1)% draw the graph
+   	 	node [left, black, scale =0.5] {$(1,1)$};
+    \draw [draw=black,thick] (1,1) -- (4.2,1) 
+    	node [right, black, scale =0.5] {};
+    \fill[fill=blue!20] (1,1)--(4.2,4.2)--(4.2,1);
 
 
 
 
 \end{tikzpicture}
 \end{center}
+
 There are two ways for us to represent this information.
 \subsection{Constraint representation}
 In constraint representation we model the polyhedron as the intersection of a finite number of closed half spaces and a finite number of subspaces. The resulting polyhedron can be written as:
@@ -52,7 +47,7 @@ In constraint representation we model the polyhedron as the intersection of a fi
 where A,D are matrices and b,e are vectors of natural numbers. Therefore, the constraint representation of the above example would be:
 
 \begin{equation}
-	C = \{-x \leq -0.5,x\leq 1.5 , -y \leq -0.5 ,y\leq 1.5\}
+	C = \{-x \leq -1, -y \leq -1, x\leq y \} 
 \end{equation}
 
 \subsection{Generator representation}
@@ -67,7 +62,7 @@ In order to encode a Polyhedron with the generator representation, we have to mo
 %TODO finish example
 The result of generator representation on the previous example would have the following form: 
 \begin{equation}
-	G = \{ V = \{(0.5,0.5),(1.5,0.5),(1.5,1.5),(0.5,1.5)\}, R = \emptyset, Z = \emptyset \}
+	G = \{ V = \{(1,1)\}, R = \{(1,1),(1,0) \}, Z = \emptyset \}
 \end{equation}
 \subsection{Polyhedra domain}
 Once we can represent our polyhedra, to make them useful, a set of operators has to be defined as well. The polyhedra abstract domain consists of the polyhedral lattice:
@@ -122,7 +117,7 @@ Once we can represent our polyhedra, to make them useful, a set of operators has
 \end{center}
 $m=|C|,g=|G|,LP(m,n)$ is the complexity of solving a linear program with m constraints and n variables\\
 As we can see no representation is less complex than the other, as some of the operators are faster in one but others in the other. But, as we can see in the last table, when both representations are available all the operators have a polynomial complexity.\\
-\paragraph{Chernikova's Algorithm} \mbox{}\\
+\subsubsection{Chernikova's Algorithm}
  The first optimisation that one can do is to keep both representations of the the polyhedron and for each operator pick the representation that minimises the time complexity. A conversion between the two representations is possible thanks to Chernikova's algorithm \cite{chernikova1968algorithm}. However, Chernikova's algorithm still has worst case exponential complexity and it becomes the new bottleneck for the double representation.
  
  \section{Polyhedra Decomposition}
