@@ -50,7 +50,7 @@
 \contentsline {paragraph}{\nonumberline Divergence of the action value prediction}{20}{section*.28}
 \contentsline {subsection}{\numberline {4.2.5}Experience replay memory}{20}{subsection.4.2.5}
 \contentsline {subsection}{\numberline {4.2.6}Separating target from max Q estimators}{21}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}Q-networks for faster Polyhedra analysis}{22}{section.4.3}
+\contentsline {section}{\numberline {4.3}Deep Q-networks for faster Polyhedra analysis}{22}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Separating the problem into two}{22}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Feature selection}{24}{subsection.4.3.2}
 \contentsline {subsubsection}{\nonumberline Adding new features}{24}{section*.29}

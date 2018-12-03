@@ -29,7 +29,7 @@
 \BOOKMARK [2][]{subsection.4.2.4}{4.2.4 Back to deep Q-networks}{section.4.2}% 29
 \BOOKMARK [2][]{subsection.4.2.5}{4.2.5 Experience replay memory}{section.4.2}% 30
 \BOOKMARK [2][]{subsection.4.2.6}{4.2.6 Separating target from max Q estimators}{section.4.2}% 31
-\BOOKMARK [1][]{section.4.3}{4.3 Q-networks for faster Polyhedra analysis}{chapter.4}% 32
+\BOOKMARK [1][]{section.4.3}{4.3 Deep Q-networks for faster Polyhedra analysis}{chapter.4}% 32
 \BOOKMARK [2][]{subsection.4.3.1}{4.3.1 Separating the problem into two}{section.4.3}% 33
 \BOOKMARK [2][]{subsection.4.3.2}{4.3.2 Feature selection}{section.4.3}% 34
 \BOOKMARK [2][]{subsection.4.3.3}{4.3.3 Reward Function modelling}{section.4.3}% 35
