@@ -4,14 +4,14 @@
 \mbox{}\\
 \mbox{}\\
 \mbox{}\\
-Polyhedra analysis is one of the main tools of static analysis \cite{cousot1977abstract}. During the execution of a program, its statements and expressions can create relationships between the different variables of the program. Polyhedra are the most expressive ways of modelling all these different relations. Even though alternatives for constraint representation exist, none are as expressive as polyhedra. Unfortunately, this domain has worst-case exponential space and time complexity meaning that using it on most real-world sized applications would very often cause it to either timeout or to run out of memory making it very impractical. Therefore, other domains have been more widely used such as OCTAGON \cite{mine2006octagon}, ZONE \cite{mine2001new} or PENTAGON \cite{logozzo2010pentagons}, but all of these are less expressive and therefore less precise by design. In recent years several techniques have been developed that have managed to speed up polyhedra analysis without causing it to lose precision \cite{gange2016exploiting,jourdan2017sparsity,marechal2017efficient}. Some of these methods are implemented inside the ELINA framework. We shall now briefly present the methods that are relevant to this work.
+Polyhedra analysis is one of the main tools of static analysis \cite{cousot1977abstract}. During the execution of a program, its statements and expressions can create relationships between the different variables of the program. Polyhedra are the most expressive ways of modelling all these different relations. Even though alternatives for constraint representation exist, none are as expressive as polyhedra. Unfortunately, this domain has worst-case exponential space and time complexity meaning that using it on most real-world sized applications would very often cause it to either timeout or to run out of memory making it very impractical. Therefore, other domains have been more widely used such as Octagon \cite{mine2006octagon}, Zone \cite{mine2001new} or Pentagon \cite{logozzo2010pentagons}, but all of these are less expressive and therefore less precise by design. In recent years several techniques have been developed that have managed to speed up polyhedra analysis without causing it to lose precision \cite{gange2016exploiting,jourdan2017sparsity,marechal2017efficient}. Some of these methods are implemented inside the ELINA framework. We shall now briefly present the methods that are relevant to this work.
 \section{Polyhedra representation}
 One of the techniques used to increase the performance of static analysis involves the way in which we represent our domain \cite{singh2015making}. Polyhedra, for example, can be represented with both the constraint representation and the generator representation \cite{motzkin1953double}. To illustrate these different representations I will proceed with the following example. Let's assume we have the following statement:
 \paragraph{Example 3.1}\mbox{}\\
 \begin{center}
 	$if \; x\geq1\wedge y \geq 1 \wedge x - y \leq 0: $\\ 
 	$...\;\;\;\;\;$\\
-	$end \qquad\qquad\qquad\qquad\qquad$
+	$end \qquad\qquad\qquad\qquad\qquad\qquad$
 \end{center}
 
 Inside of the if statement, the polyhedron would have the following shape:
@@ -24,11 +24,11 @@ Inside of the if statement, the polyhedron would have the following shape:
     \draw [thin, gray, ->] (-2,0) -- (4,0)      % draw x-axis line
         node [right, black] {$x$};             % add label for x-axis
 
-    \draw [draw=black,thick] (4.2,4.2) -- (1,1)% draw the graph
+    \draw [draw=black,thick] (4.,4.) -- (1,1)% draw the graph
    	 	node [left, black, scale =0.5] {$(1,1)$};
-    \draw [draw=black,thick] (1,1) -- (4.2,1) 
+    \draw [draw=black,thick] (1,1) -- (4.,1) 
     	node [right, black, scale =0.5] {};
-    \fill[fill=blue!20] (1,1)--(4.2,4.2)--(4.2,1);
+    \fill[fill=blue!20] (1,1)--(4.,4.)--(4.,1);  
 	\end{tikzpicture}
 	\caption{Example of a polyhedron modelling the above constraints}
 

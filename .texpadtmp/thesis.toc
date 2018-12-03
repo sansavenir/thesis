@@ -50,20 +50,20 @@
 \contentsline {paragraph}{\nonumberline Divergence of the action value prediction}{20}{section*.28}
 \contentsline {subsection}{\numberline {4.2.5}Experience replay memory}{20}{subsection.4.2.5}
 \contentsline {subsection}{\numberline {4.2.6}Separating target from max Q estimators}{21}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}Further optimisations}{22}{section.4.3}
+\contentsline {section}{\numberline {4.3}Q-networks for faster Polyhedra analysis}{22}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Separating the problem into two}{22}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Feature selection}{24}{subsection.4.3.2}
 \contentsline {subsubsection}{\nonumberline Adding new features}{24}{section*.29}
 \contentsline {subsubsection}{\nonumberline Bucketing}{25}{section*.30}
 \contentsline {subsection}{\numberline {4.3.3}Reward Function modelling}{26}{subsection.4.3.3}
 \contentsline {subsubsection}{\nonumberline Performance reward}{26}{section*.31}
-\contentsline {subsubsection}{\nonumberline Precision reward}{26}{section*.32}
+\contentsline {subsubsection}{\nonumberline Precision reward}{27}{section*.32}
 \contentsline {subsection}{\numberline {4.3.4}Action selection algorithms}{27}{subsection.4.3.4}
-\contentsline {subsubsection}{\nonumberline Algorithm 1}{27}{section*.33}
-\contentsline {subsubsection}{\nonumberline Algorithm 2}{28}{section*.34}
+\contentsline {subsubsection}{\nonumberline Algorithm 1}{28}{section*.33}
+\contentsline {subsubsection}{\nonumberline Algorithm 2}{29}{section*.34}
 \contentsline {subsubsection}{\nonumberline Algorithm 3}{29}{section*.35}
 \contentsline {subsubsection}{\nonumberline Algorithm 4}{30}{section*.36}
-\contentsline {section}{\numberline {4.4}Neural network characteristics}{30}{section.4.4}
+\contentsline {section}{\numberline {4.4}Neural network characteristics}{31}{section.4.4}
 \contentsline {section}{\numberline {4.5}Training}{31}{section.4.5}
 \contentsline {chapter}{\numberline {5}Experimental Results}{33}{chapter.5}
 \contentsline {subsubsection}{\nonumberline Precision measuring}{33}{section*.37}

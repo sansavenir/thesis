@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  2 DEC 2018 18:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  3 DEC 2018 19:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1379,17 +1379,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23] [24]
-Overfull \hbox (47.49547pt too wide) in paragraph at lines 222--257
+ [23]
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+Overfull \hbox (83.53685pt too wide) in paragraph at lines 224--259
  [] 
  []
 
-[25] [26] [27]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28] [29] [30]) (./chapters/ch05-implementation.tex [31] [32
+ [25] [26] [27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [28] [29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30] [31]) (./chapters/ch05-implementation.tex [32]
 Chapter 5.
 
 Overfull \hbox (2.28004pt too wide) has occurred while \output is active
@@ -1399,7 +1411,9 @@ Overfull \hbox (2.28004pt too wide) has occurred while \output is active
 
 Overfull \vbox (460.54948pt too high) has occurred while \output is active []
 
- [33] <figures/r1.png, id=638, 462.528pt x 346.896pt>
+ [33
+
+] <figures/r1.png, id=638, 462.528pt x 346.896pt>
 File: figures/r1.png Graphic file (type png)
  <use figures/r1.png>
 Package pdftex.def Info: figures/r1.png used on input line 38.
@@ -1873,14 +1887,14 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  36680 strings out of 493089
- 768263 string characters out of 6134842
+ 768262 string characters out of 6134842
  890630 words of memory out of 5000000
  39292 multiletter control sequences out of 15000+600000
  77433 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,29n,73p,10373b,1251s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (48 pages, 655583 bytes).
+Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (48 pages, 655952 bytes).
 PDF statistics:
  858 PDF objects out of 1000 (max. 8388607)
  770 compressed objects within 8 object streams
