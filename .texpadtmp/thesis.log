@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  4 DEC 2018 18:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  4 DEC 2018 18:12
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1341,14 +1341,31 @@ Overfull \vbox (460.54948pt too high) has occurred while \output is active []
 LaTeX Warning: Command \c invalid in math mode on input line 88.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--120
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 97.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
 
  []
 
-[13] [14]
+[13]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 128.
+See the caption package documentation for explanation.
+
+[14]
 Underfull \vbox (badness 7379) has occurred while \output is active []
 
- [15]) (./chapters/ch04-technical-aspects.tex [16]
+ [15]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 177.
+See the caption package documentation for explanation.
+
+) (./chapters/ch04-technical-aspects.tex [16]
 Chapter 4.
 
 Overfull \hbox (2.28004pt too wide) has occurred while \output is active
@@ -1389,16 +1406,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
-Overfull \hbox (83.53685pt too wide) in paragraph at lines 224--259
+ [24] [25]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 228.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (83.53685pt too wide) in paragraph at lines 229--264
  [] 
  []
 
+[26
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25] [26] [27]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+] [27]
+Underfull \vbox (badness 1688) has occurred while \output is active []
 
  [28] [29]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1415,7 +1437,7 @@ Overfull \vbox (460.54948pt too high) has occurred while \output is active []
 
  [33
 
-] <figures/r1.png, id=638, 462.528pt x 346.896pt>
+] <figures/r1.png, id=641, 462.528pt x 346.896pt>
 File: figures/r1.png Graphic file (type png)
  <use figures/r1.png>
 Package pdftex.def Info: figures/r1.png used on input line 38.
@@ -1425,7 +1447,7 @@ Overfull \hbox (53.46957pt too wide) in paragraph at lines 38--39
 [][] 
  []
 
-<figures/r2.png, id=639, 462.528pt x 346.896pt>
+<figures/r2.png, id=642, 462.528pt x 346.896pt>
 File: figures/r2.png Graphic file (type png)
  <use figures/r2.png>
 Package pdftex.def Info: figures/r2.png used on input line 42.
@@ -1435,7 +1457,7 @@ Overfull \hbox (53.46957pt too wide) in paragraph at lines 42--43
 [][] 
  []
 
-<figures/r3.png, id=640, 462.528pt x 346.896pt>
+<figures/r3.png, id=643, 462.528pt x 346.896pt>
 File: figures/r3.png Graphic file (type png)
  <use figures/r3.png>
 Package pdftex.def Info: figures/r3.png used on input line 46.
@@ -1446,14 +1468,23 @@ Overfull \hbox (53.46957pt too wide) in paragraph at lines 46--47
  []
 
 [34 <./figures/r1.png> <./figures/r2.png> <./figures/r3.png>]
-Overfull \hbox (22.6961pt too wide) in paragraph at lines 58--79
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 58.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (22.6961pt too wide) in paragraph at lines 59--80
  [] 
  []
 
 [35]
-Underfull \vbox (badness 7888) has occurred while \output is active []
 
- [36]) (./chapters/ch06-evaluation.tex) (./chapters/ch07-conclusion.tex [37] [38
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 101.
+See the caption package documentation for explanation.
+
+[36]) (./chapters/ch06-evaluation.tex) (./chapters/ch07-conclusion.tex [37] [38
 
 ]
 Chapter 6.
@@ -1888,18 +1919,18 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36680 strings out of 493089
- 768262 string characters out of 6134842
+ 36686 strings out of 493089
+ 768329 string characters out of 6134842
  890630 words of memory out of 5000000
- 39292 multiletter control sequences out of 15000+600000
+ 39293 multiletter control sequences out of 15000+600000
  77433 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,29n,73p,10373b,1251s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (48 pages, 656046 bytes).
+Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (48 pages, 657796 bytes).
 PDF statistics:
- 858 PDF objects out of 1000 (max. 8388607)
- 770 compressed objects within 8 object streams
- 276 named destinations out of 1000 (max. 500000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 776 compressed objects within 8 object streams
+ 281 named destinations out of 1000 (max. 500000)
  402 words of extra memory for PDF output out of 10000 (max. 10000000)
 

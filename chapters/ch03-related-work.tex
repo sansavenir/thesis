@@ -94,6 +94,7 @@ Once we can represent our polyhedra, to make them useful, a set of operators has
      In the following table, we can see the respective complexities of the different operators according to the representation
 	 
 \begin{center}
+\captionof{table}{Operator complexity according to the representation}
 \begin{tabular}{||c c c c||} 
  
  \hline
@@ -123,9 +124,8 @@ As we can see, no representation is less complex than the other, as some of the 
  \section{Polyhedra Decomposition}
 Another technique used for increasing the efficiency of polyhedra analysis is the use of online decomposition \cite{singh2017fast}. It is based on the observation that during the execution of a program, not all its variables are dependent on one another. Using this observation, we can separate the set of all variables into smaller, independent sets. Therefore, instead of representing the whole set of variables with one large polyhedron, we can instead represent it with various smaller ones.\\ Let's assume we have a set of variables $\chi$ in a Polyhedron $P$. The set $\chi$ can be partitioned as $\pi_P=\{ \chi_1,\chi_2,..,\chi_r\}$, $\chi_i\subseteq\chi $. We call the partitioning of the set permissible if no two variables $x_i$ and $x_j$ exist that are in different blocks in $\pi$ and are related by a constraint in P. We call the $\top$ partition, a partition where all the variables are in one block, i.e no partitioning is done. Similarly, the $\perp$ partition is a partition where each variable has its own block, i.e all variables are independent of one another. Once the decomposition has been done in this way, during the execution of an operator, it only has to be executed on the subset of blocks that contain the same variables. This allows for a very large performance gain in both space and time, giving us the following time complexity for the various operators.
 
-\paragraph{Table 2} Asymptotic time complexity of Polyhedra domain operators with decomposition
-
 \begin{center}
+\captionof{table}{Operator complexity with decomposition}
 \begin{tabular}{||c c||} 
  
  \hline
@@ -174,6 +174,7 @@ Intuitively, using reinforcement learning for polyhedra analysis seems quite str
 \subsubsection{Adapting polyhedra analysis for Reinforcement Learning}
 As explained in section 2.1., reinforcement learning uses a defined set of concepts. In some way, these concepts have to be translated into the domain of polyhedra analysis. A possible mapping can be done in the following way.
 \begin{center}
+\captionof{table}{Mapping of RL concepts to polyhedra analysis}
 \begin{tabular}{||c c||} 
  \hline
  RL concept & Polyhedra analysis concept  \\ [0.5ex] 

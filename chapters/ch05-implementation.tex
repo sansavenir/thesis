@@ -55,6 +55,7 @@ It is worth noting that whilst these experiments do give us some interesting inf
 \section{Action selection algorithm}
 The second problem was selecting the best action selection algorithm. In section 4.3.4., four different action selection algorithms were proposed. In order to select the best one of these, we proceeded by training a DQN using each of them and then comparing the overall precision. Not all the training had to be done separately for the four algorithms. Firstly, we could train estimators from only random actions and then simply specialise each of them with their own action selection algorithm. We then compared the results on a set of seven different benchmarks.
 \begin{center}
+\captionof{table}{Results of experiments with different action selection algorithms}
 \Indm\Indm\Indm\begin{tabular}{||c c c c c c||} 
  
  \hline
@@ -97,10 +98,11 @@ We test the benchmarks using four different analyses:
 The following table displays the results of the experiments. It shows the average of the precision percentages when compared to the abstraction-less analysis. The total runtime on all benchmarks, the number of benchmarks that the analysis timed out on. The number of benchmarks where the algorithm achieved $100\%$ precision. Finally, for the reinforcement learning algorithms, the number of benchmarks where they outperform the other RL algorithms with regards to precision. 
 
 \begin{center}
+\captionof{table}{Results with final algorithms}
 \begin{tabular}{||c c c c c||}
  
  \hline
- Results & Elina & Q-learning & DQN & Separated DQN \\ [0.5ex] 
+ Results on 81 bench. & Elina & Q-learning & DQN & Separated DQN \\ [0.5ex] 
  \hline\hline
  Avg. prec. (\%) & 100 & 87.1 & 94.9 & 91.6\\
  Runtime (hr.) & 18:28 & 14:05 & 15:35 & 11:21\\
