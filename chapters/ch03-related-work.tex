@@ -44,7 +44,7 @@ In constraint representation, we model the polyhedron as the intersection of a f
 \begin{equation}
     P=\{x\in Q^n |Ax\leq b \wedge Dx=e\}
 \end{equation}
-where A,D are matrices and b,e are vectors of natural numbers. Therefore, the constraint representation of the above example would be:
+where $A,D$ are matrices and $b,e$ are vectors of natural numbers. Therefore, the constraint representation of the above example would be:
 
 \begin{equation}
     C = \{-x \leq -1, -y \leq -1, x\leq y \} 
@@ -58,8 +58,7 @@ In order to encode a Polyhedron with the generator representation, we have to mo
     \item A finite set $V\in Q^n$ of vertices $v_i \in V$.
     \item A finite set $R \subseteq Q^n$ of rays. $r_i \in R$ are direction vectors of infinite edges of the polyhedron with one end bounded. Each ray starts from a $v \in V$.
     \item  A finite set $Z \subseteq Q^n$ of lines. $z_i \in Z$ are direction vectors of infinite edges of the polyhedron with both ends unbounded. Each line passes through a $v \in V$.
-\end{itemize}Inside of the if statement, the polyhedron would have the following shape:
-%TODO finish example
+\end{itemize}
 The result of generator representation on the previous example would have the following form: 
 \begin{equation}
     G = \{ V = \{(1,1)\}, R = \{(1,1),(1,0) \}, Z = \emptyset \}

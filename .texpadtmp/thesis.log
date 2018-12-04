@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  4 DEC 2018 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  4 DEC 2018 19:33
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1338,22 +1338,22 @@ Overfull \vbox (460.54948pt too high) has occurred while \output is active []
 
  [11] [12]
 
-LaTeX Warning: Command \c invalid in math mode on input line 88.
+LaTeX Warning: Command \c invalid in math mode on input line 87.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 97.
+(caption)                particular \caption on input line 96.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
  []
 
 [13]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 128.
+(caption)                particular \caption on input line 127.
 See the caption package documentation for explanation.
 
 [14]
@@ -1362,7 +1362,7 @@ Underfull \vbox (badness 7379) has occurred while \output is active []
  [15]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 177.
+(caption)                particular \caption on input line 176.
 See the caption package documentation for explanation.
 
 ) (./chapters/ch04-technical-aspects.tex [16]
@@ -1927,7 +1927,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  64i,29n,73p,10373b,1251s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (48 pages, 657796 bytes).
+Output written on "/Users/jakubkotal/Dropbox/thesis template/.texpadtmp/thesis.pdf" (48 pages, 657749 bytes).
 PDF statistics:
  864 PDF objects out of 1000 (max. 8388607)
  776 compressed objects within 8 object streams

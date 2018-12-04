@@ -17,7 +17,7 @@ Reinforcement Learning \cite{kaelbling1996reinforcement} is a very general probl
 \end{figure}
 
 \section{Concepts}
-In order to be able to solve a problem with reinforcement learning, it first has to be mapped to the following reinforcement learning (RL) concepts:
+In order to be able to solve a problem with reinforcement learning (RL), it first has to be mapped to the following RL concepts:
 \begin{itemize}
 	\item A set of agent states $S$, with the initial state $s_0\in S$
 	\item A set of actions $A$
@@ -114,7 +114,7 @@ Several approximation techniques exist. One of the most popular ones, as well as
     \item If the optimal policy is nonlinear, it cannot be learned
 \end{itemize}
 Some workarounds for these problems are possible, such as discretising the continuous variables. However, these also cause a loss of information and therefore precision.\\
-Recently, a lot of work has been done on the incorporation of nonlinear function approximators inside of reinforcement learning. These methods do not suffer from the above-mentioned problems and have therefore been able to offer some very promising results on problems that were too complex for reinforcement learning in the past.
+Recently, a lot of work has been done on the incorporation of nonlinear function approximators inside of reinforcement learning. These methods do not suffer from the above-mentioned problems and have therefore been able to offer some very promising results on problems that were considered too complex for reinforcement learning in the past.
 \subsection{Deep Q-networks}
 Deep Q-networks (DQN) \cite{mnih2013playing} are a novel method used for reinforcement learning that has gained a lot of attention in recent years. This is due to the ability that a single algorithm has in achieving very good results on a broad array of tasks and this without the need of any specialised knowledge about the task beforehand. This has led some to consider the method as the first major step towards general artificial intelligence.\\
 What separates deep Q-networks from other reinforcement learning methods is that they use neural networks (NN) (i.e nonlinear functions) to approximate the Q-function. Reinforcement learning has been known to diverge when nonlinear function approximators have been used. Various techniques have been developed to combat the divergence of these methods, such as neural fitted Q-iteration \cite{riedmiller2005neural} or experience replay memory \cite{Mnih2015}. These techniques have allowed NN's to become a viable tool for reinforcement learning and to achieve some very remarkable results. Most notably, \cite{Mnih2015} were able to design an algorithm that, without the need of any prior knowledge about the task, achieved human-level performance on a large number of different Atari games.
